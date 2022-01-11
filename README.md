@@ -10,7 +10,7 @@ The following illustration show how the algorithm generates artificial samples. 
 <div align="left">
 <br/>
 <p align="center">
-<img align="center" width=50% src="https://github.com/jsivaku1/kNNMTD/illustration.pdf"></img>
+<img align="center" width=50% src="https://github.com/jsivaku1/kNNMTD/illustration.png"></img>
 </p>
 </div>
 
