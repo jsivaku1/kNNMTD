@@ -16,9 +16,9 @@ The following illustration show how the algorithm generates artificial samples. 
 
 All the final benchmark datasets used in the paper after preprocessing is available inside the data folder.
 
-- mode = -1 $$\imply$$ Unsupervised 
-- mode = 0 $$\imply$$ Classification
-- mode = 1 $$\imply$$ Regression
+- mode = -1 $$\Rightarrow$$ Unsupervised 
+- mode = 0 $$\Rightarrow$$ Classification
+- mode = 1 $$\Rightarrow$$ Regression
 
 
 ## Usage 
