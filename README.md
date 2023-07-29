@@ -40,7 +40,7 @@ model = kNNMTD(n_obs = 100,k=3,mode=0)
 synthetic = model.fit(real,class_col='ca_cervix')
 pcd = PCD(real,synthetic)
 
-# Generate samples for classification task
+# Generate samples for regression task
 real = pd.read_csv('../Data/prostate.csv')
 model = kNNMTD(n_obs = 100,k=4,mode=1)
 synthetic = model.fit(real,class_col='lpsa')
