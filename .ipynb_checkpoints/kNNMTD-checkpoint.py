@@ -79,7 +79,6 @@ class kNNMTD():
             knn.fit(X_train, y_train)
             dist, nn_indices = knn.kneighbors(X=np.array(val_to_test).reshape(1,-1), return_distance=True)
             neighbor_df = xtrain[np.squeeze(nn_indices)]
-            y_neighbor_df = ytrain[np.squeeze(nn_indices)]
         elif(self.type == 1):
             X_train = xtrain.reshape(-1, 1)
             y_train = ytrain
@@ -87,15 +86,13 @@ class kNNMTD():
             knn.fit(X_train, y_train)
             dist, nn_indices = knn.kneighbors(X=np.array(val_to_test).reshape(1,-1), return_distance=True)
             neighbor_df = xtrain[np.squeeze(nn_indices)]
-            y_neighbor_df = ytrain[np.squeeze(nn_indices)]
         else:
             X_train = xtrain.reshape(-1, 1)
             y_train = ytrain
             dist = [np.square(x - val_to_test) for x in X_train]
             nn_indices = heapq.nsmallest(3, range(len(dist)), dist.__getitem__)
             neighbor_df = xtrain[np.squeeze(nn_indices)]
-            y_neighbor_df = ytrain[np.squeeze(nn_indices)]
-        return nn_indices, neighbor_df, y_neighbor_df
+        return nn_indices, neighbor_df
 
     def fit(self, train,class_col=None):
         train.reset_index(inplace=True, drop=True)
@@ -128,14 +125,14 @@ class kNNMTD():
                             ind = np.digitize(x, bins=centers , right=True)
                             x = np.array([bin_val[i] for i in ind])
                             y = np.array([t for _ in range(self._gen_obs)])
-                            nn_indices, neighbor_val_array, _ = self.getNeighbors(val[col], x, y)
+                            nn_indices, neighbor_val_array = self.getNeighbors(val[col], x, y)
                             temp[col] = pd.Series(neighbor_val_array)  
                         elif(col==class_col):
                             temp[col] = pd.Series(np.array([t for _ in range(self._gen_obs)]))
                         else:
                             x = self.diffusion(neighbor_df)
                             y = np.array([t for _ in range(self._gen_obs)])
-                            nn_indices, neighbor_val_array, _ = self.getNeighbors(val[col], x, y)
+                            nn_indices, neighbor_val_array = self.getNeighbors(val[col], x, y)
                             temp[col] = pd.Series(neighbor_val_array)        
                     temp[class_col] = t
                     temp_surr_data = pd.concat([temp_surr_data, temp])            
@@ -161,14 +158,13 @@ class kNNMTD():
                         ind = np.digitize(x, bins=centers , right=True)
                         x = np.array([bin_val[i] for i in ind])
                         y = self.diffusion(y_neighbor_df)  
-                        nn_indices, neighbor_val_array, _ = self.getNeighbors(val[col], x, y)
+                        nn_indices, neighbor_val_array = self.getNeighbors(val[col], x, y)
                         temp[col] = pd.Series(neighbor_val_array)  
                     else:
                         x = self.diffusion(neighbor_df)
                         y = self.diffusion(y_neighbor_df)
-                        nn_indices, neighbor_val_array, y_neighbor_val_array = self.getNeighbors(val[col], x, y)
-                        temp[col] = pd.Series(neighbor_val_array)
-                    temp[class_col] = pd.Series(y_neighbor_val_array)     
+                        nn_indices, neighbor_val_array = self.getNeighbors(val[col], x, y)
+                        temp[col] = pd.Series(neighbor_val_array)        
                 temp_surr_data = pd.concat([temp_surr_data, temp])    
             surrogate_data = pd.concat([surrogate_data, temp_surr_data])           
             synth_data = self.sample(surrogate_data,train,class_col)     
@@ -187,11 +183,11 @@ class kNNMTD():
                         x = self.diffusion(neighbor_df)  
                         ind = np.digitize(x, bins=centers , right=True)
                         x = np.array([bin_val[i] for i in ind])
-                        nn_indices, neighbor_val_array, _ = self.getNeighbors(val[col], x, None)
+                        nn_indices, neighbor_val_array = self.getNeighbors(val[col], x, None)
                         temp[col] = pd.Series(neighbor_val_array)  
                     else:
                         x = self.diffusion(neighbor_df)
-                        nn_indices, neighbor_val_array,_ = self.getNeighbors(val[col], x, None)
+                        nn_indices, neighbor_val_array = self.getNeighbors(val[col], x, None)
                         temp[col] = pd.Series(neighbor_val_array)        
                 temp_surr_data = pd.concat([temp_surr_data, temp])    
             surrogate_data = pd.concat([surrogate_data, temp_surr_data])           
