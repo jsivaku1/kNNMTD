@@ -21,3 +21,6 @@ model = kNNMTD(n_obs = 100, k=4, mode=1)
 synthetic = model.fit(real,class_col='lpsa')
 pcd = PCD(real,synthetic)
 print(pcd)
+
+
+
