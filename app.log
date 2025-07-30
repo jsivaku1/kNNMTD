@@ -68,3 +68,14 @@ TypeError: 'NoneType' object is not subscriptable
 2025-07-30 20:16:34,839 INFO app Thread-11 : Synthetic data saved to 'synthetic_20250730-201634.csv'.
 2025-07-30 20:16:34,840 INFO werkzeug Thread-11 : 127.0.0.1 - - [30/Jul/2025 20:16:34] "POST /generate HTTP/1.1" 200 -
 2025-07-30 20:16:34,850 INFO werkzeug Thread-12 : 127.0.0.1 - - [30/Jul/2025 20:16:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-30 20:44:59,259 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-30 20:44:59,259 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2025-07-30 20:44:59,260 INFO werkzeug MainThread :  * Restarting with stat
+2025-07-30 20:45:00,445 WARNING werkzeug MainThread :  * Debugger is active!
+2025-07-30 20:45:00,458 INFO werkzeug MainThread :  * Debugger PIN: 142-116-905
+2025-07-30 20:45:07,170 INFO werkzeug Thread-2 : 127.0.0.1 - - [30/Jul/2025 20:45:07] "GET / HTTP/1.1" 200 -
+2025-07-30 20:45:07,179 INFO werkzeug Thread-3 : 127.0.0.1 - - [30/Jul/2025 20:45:07] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-07-30 20:45:07,179 INFO werkzeug Thread-4 : 127.0.0.1 - - [30/Jul/2025 20:45:07] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-07-30 20:45:08,069 INFO werkzeug Thread-5 : 127.0.0.1 - - [30/Jul/2025 20:45:08] "GET / HTTP/1.1" 200 -
+2025-07-30 20:45:08,075 INFO werkzeug Thread-6 : 127.0.0.1 - - [30/Jul/2025 20:45:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
