@@ -1,0 +1,180 @@
+/* --- Font Imports from Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@400;700&display=swap');
+
+/* --- CSS Variables for Bohemian Green Theme --- */
+:root {
+    --bg-color: #F8F6F2; /* Soft, warm off-white background */
+    --container-bg: #FFFFFF; /* Clean white for the main card */
+    --primary-green: #5F6F52; /* Muted, earthy sage green */
+    --primary-green-darker: #4A5541; /* Darker green for hover effects */
+    --text-color: #3C403D; /* Dark charcoal, softer than black */
+    --border-color: #D4DCD3; /* Light, subtle border color */
+    --accent-color: #E0A96D; /* Warm terracotta/gold accent for focus */
+    --success-bg: #EAF0E5; /* Very light green for success messages */
+    --error-bg: #FAEBE7; /* Very light, warm red for error messages */
+    --error-text: #A3584A; /* Muted red for error text */
+
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Lato', sans-serif;
+}
+
+/* --- General Styling --- */
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: var(--container-bg);
+    padding: 40px 50px;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07);
+    width: 100%;
+    max-width: 650px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+h1 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 2.8em;
+    color: var(--primary-green);
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1.8em;
+    color: var(--text-color);
+}
+
+p {
+    color: #666;
+    margin-bottom: 35px;
+    line-height: 1.6;
+}
+
+/* --- Form Elements --- */
+.form-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+input[type="number"],
+input[type="text"],
+select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    background-color: #fcfcfc;
+    font-family: var(--font-body);
+    font-size: 1em;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px rgba(95, 111, 82, 0.2);
+}
+
+/* Custom File Input */
+input[type="file"] {
+    border: 1px dashed var(--border-color);
+    padding: 20px 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+input[type="file"]:hover {
+    border-color: var(--primary-green);
+    background-color: #f9f9f9;
+}
+
+/* --- Buttons --- */
+.btn {
+    background-color: var(--primary-green);
+    color: white;
+    padding: 16px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-decoration: none;
+    display: inline-block;
+    box-sizing: border-box;
+    letter-spacing: 0.5px;
+}
+
+.btn:hover {
+    background-color: var(--primary-green-darker);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Results & Error Pages --- */
+.results-box {
+    border-radius: 12px;
+    padding: 25px;
+    margin: 30px 0;
+    background-color: var(--success-bg);
+    border: 1px solid var(--primary-green);
+}
+
+.pcd-score {
+    font-size: 3em;
+    font-weight: 700;
+    color: var(--primary-green);
+    margin: 10px 0;
+}
+
+/* Error specific styling */
+.container h1[style*="color: #e74c3c;"] {
+    color: var(--error-text) !important;
+}
+
+.results-box[style*="background-color: #f2dede;"] {
+    background-color: var(--error-bg) !important;
+    border-color: var(--error-text) !important;
+}
+
+.results-box p[style*="color: #a94442;"] {
+    color: var(--error-text) !important;
+    font-weight: 700;
+}
+
+/* --- Links --- */
+.link-back {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.link-back:hover {
+    color: var(--primary-green-darker);
+    text-decoration: underline;
+}

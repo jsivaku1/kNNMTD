@@ -1,0 +1,70 @@
+2025-07-30 20:09:45,501 WARNING werkzeug MainThread :  * Debugger is active!
+2025-07-30 20:09:45,509 INFO werkzeug MainThread :  * Debugger PIN: 142-116-905
+2025-07-30 20:10:15,357 INFO werkzeug MainThread :  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/utils.py', reloading
+2025-07-30 20:10:16,905 WARNING werkzeug MainThread :  * Debugger is active!
+2025-07-30 20:10:16,912 INFO werkzeug MainThread :  * Debugger PIN: 142-116-905
+2025-07-30 20:10:22,129 INFO werkzeug Thread-2 : 127.0.0.1 - - [30/Jul/2025 20:10:22] "GET / HTTP/1.1" 200 -
+2025-07-30 20:10:22,141 INFO werkzeug Thread-3 : 127.0.0.1 - - [30/Jul/2025 20:10:22] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-07-30 20:10:37,518 INFO app Thread-4 : File 'pima.csv' uploaded successfully.
+2025-07-30 20:10:37,518 INFO app Thread-4 : Parameters received: n_obs=1000, k=3, mode=-1, class_col='None'
+2025-07-30 20:10:37,530 INFO app Thread-4 : Starting kNNMTD model fitting...
+2025-07-30 20:10:37,559 ERROR app Thread-4 : An unexpected error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 91, in generate_synthetic_data
+    synthetic_df = model.fit(real_df) # Unsupervised case
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/kNNMTD.py", line 190, in fit
+    nn_indices, neighbor_val_array, _ = self.getNeighbors(val[col], x, None)
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/kNNMTD.py", line 97, in getNeighbors
+    y_neighbor_df = ytrain[np.squeeze(nn_indices)]
+TypeError: 'NoneType' object is not subscriptable
+
+2025-07-30 20:10:37,568 INFO werkzeug Thread-4 : 127.0.0.1 - - [30/Jul/2025 20:10:37] "[35m[1mPOST /generate HTTP/1.1[0m" 500 -
+2025-07-30 20:10:37,574 INFO werkzeug Thread-5 : 127.0.0.1 - - [30/Jul/2025 20:10:37] "GET /generate?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-07-30 20:10:37,574 INFO werkzeug Thread-6 : 127.0.0.1 - - [30/Jul/2025 20:10:37] "GET /generate?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-07-30 20:10:37,578 INFO werkzeug Thread-7 : 127.0.0.1 - - [30/Jul/2025 20:10:37] "GET /generate?__debugger__=yes&cmd=resource&f=console.png&s=rh2BohjNtyrwczClJSVS HTTP/1.1" 200 -
+2025-07-30 20:10:37,610 INFO werkzeug Thread-8 : 127.0.0.1 - - [30/Jul/2025 20:10:37] "GET /generate?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-07-30 20:11:25,855 INFO app Thread-9 : File 'pima.csv' uploaded successfully.
+2025-07-30 20:11:25,856 INFO app Thread-9 : Parameters received: n_obs=1000, k=3, mode=-1, class_col='None'
+2025-07-30 20:11:25,861 INFO app Thread-9 : Starting kNNMTD model fitting...
+2025-07-30 20:11:25,884 ERROR app Thread-9 : An unexpected error occurred: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 91, in generate_synthetic_data
+    synthetic_df = model.fit(real_df) # Unsupervised case
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/kNNMTD.py", line 190, in fit
+    nn_indices, neighbor_val_array, _ = self.getNeighbors(val[col], x, None)
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/kNNMTD.py", line 97, in getNeighbors
+    y_neighbor_df = ytrain[np.squeeze(nn_indices)]
+TypeError: 'NoneType' object is not subscriptable
+
+2025-07-30 20:11:25,887 INFO werkzeug Thread-9 : 127.0.0.1 - - [30/Jul/2025 20:11:25] "POST /generate HTTP/1.1" 200 -
+2025-07-30 20:11:25,894 INFO werkzeug Thread-10 : 127.0.0.1 - - [30/Jul/2025 20:11:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-30 20:12:20,408 INFO werkzeug Thread-11 : 127.0.0.1 - - [30/Jul/2025 20:12:20] "GET / HTTP/1.1" 200 -
+2025-07-30 20:12:20,413 INFO werkzeug Thread-12 : 127.0.0.1 - - [30/Jul/2025 20:12:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-30 20:12:20,416 INFO werkzeug Thread-13 : 127.0.0.1 - - [30/Jul/2025 20:12:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-30 20:15:35,570 INFO werkzeug MainThread :  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/kNNMTD.py', reloading
+2025-07-30 20:15:37,347 WARNING werkzeug MainThread :  * Debugger is active!
+2025-07-30 20:15:37,355 INFO werkzeug MainThread :  * Debugger PIN: 142-116-905
+2025-07-30 20:15:38,315 INFO werkzeug Thread-2 : 127.0.0.1 - - [30/Jul/2025 20:15:38] "GET / HTTP/1.1" 200 -
+2025-07-30 20:15:38,331 INFO werkzeug Thread-3 : 127.0.0.1 - - [30/Jul/2025 20:15:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-30 20:16:06,311 INFO app Thread-4 : File 'fat.csv' uploaded successfully.
+2025-07-30 20:16:06,311 INFO app Thread-4 : Parameters received: n_obs=1000, k=3, mode=1, class_col='ca_cervix'
+2025-07-30 20:16:06,315 ERROR app Thread-4 : Column 'ca_cervix' not found in the uploaded dataset.
+2025-07-30 20:16:06,317 INFO werkzeug Thread-4 : 127.0.0.1 - - [30/Jul/2025 20:16:06] "POST /generate HTTP/1.1" 200 -
+2025-07-30 20:16:06,321 INFO werkzeug Thread-5 : 127.0.0.1 - - [30/Jul/2025 20:16:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-30 20:16:20,165 INFO app Thread-6 : File 'fat.csv' uploaded successfully.
+2025-07-30 20:16:20,165 INFO app Thread-6 : Parameters received: n_obs=1000, k=3, mode=-1, class_col='ca_cervix'
+2025-07-30 20:16:20,174 ERROR app Thread-6 : Column 'ca_cervix' not found in the uploaded dataset.
+2025-07-30 20:16:20,177 INFO werkzeug Thread-6 : 127.0.0.1 - - [30/Jul/2025 20:16:20] "POST /generate HTTP/1.1" 200 -
+2025-07-30 20:16:20,184 INFO werkzeug Thread-7 : 127.0.0.1 - - [30/Jul/2025 20:16:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-30 20:16:23,088 INFO werkzeug Thread-8 : 127.0.0.1 - - [30/Jul/2025 20:16:23] "GET / HTTP/1.1" 200 -
+2025-07-30 20:16:23,093 INFO werkzeug Thread-9 : 127.0.0.1 - - [30/Jul/2025 20:16:23] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-30 20:16:23,096 INFO werkzeug Thread-10 : 127.0.0.1 - - [30/Jul/2025 20:16:23] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-30 20:16:32,247 INFO app Thread-11 : File 'cervical.csv' uploaded successfully.
+2025-07-30 20:16:32,247 INFO app Thread-11 : Parameters received: n_obs=100, k=3, mode=-1, class_col='None'
+2025-07-30 20:16:32,249 INFO app Thread-11 : Starting kNNMTD model fitting...
+2025-07-30 20:16:34,564 INFO app Thread-11 : kNNMTD model fitting complete.
+2025-07-30 20:16:34,564 INFO app Thread-11 : Calculating PCD score...
+2025-07-30 20:16:34,836 INFO app Thread-11 : PCD score calculated: 1.7166
+2025-07-30 20:16:34,839 INFO app Thread-11 : Synthetic data saved to 'synthetic_20250730-201634.csv'.
+2025-07-30 20:16:34,840 INFO werkzeug Thread-11 : 127.0.0.1 - - [30/Jul/2025 20:16:34] "POST /generate HTTP/1.1" 200 -
+2025-07-30 20:16:34,850 INFO werkzeug Thread-12 : 127.0.0.1 - - [30/Jul/2025 20:16:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
