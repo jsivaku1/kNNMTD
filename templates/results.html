@@ -5,16 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generation Complete</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <div class="container">
+    <div class="container results-container">
         <h1>Generation Complete! ✅</h1>
-        <p>Your synthetic dataset has been successfully created.</p>
+        <p>Your synthetic dataset and performance analysis are ready.</p>
         
-        <div class="results-box">
-            <h2>Pairwise Correlation Difference (PCD)</h2>
-            <p class="pcd-score">{{ pcd_score }}</p>
-            <small>This measures the structural similarity between the real and synthetic data. Lower is better.</small>
+        <!-- Pipeline and Summary Section -->
+        <div class="summary-grid">
+            <div class="summary-card">
+                <h2>Pipeline Stages</h2>
+                <ul class="pipeline-list">
+                    {% for stage in pipeline_stages %}
+                        <li>{{ stage }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="summary-card">
+                <h2>Generation Summary</h2>
+                <table class="summary-table">
+                    {% for key, value in input_options.items() %}
+                    <tr>
+                        <td>{{ key }}</td>
+                        <td>{{ value }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                <h3>Final Metrics</h3>
+                <table class="summary-table">
+                    {% for key, value in final_metrics.items() %}
+                    <tr>
+                        <td>{{ key }}</td>
+                        <td><span class="metric-value">{{ value }}</span></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+
+        <!-- Training Plots Section -->
+        <div class="chart-grid">
+            <div class="chart-card">
+                <h2>PCD Score Over Epochs</h2>
+                <canvas id="pcdChart"></canvas>
+            </div>
+            {% if ml_metrics_over_time and ml_metrics_over_time.items() | list | length > 0 %}
+            <div class="chart-card">
+                <h2>ML Utility Metrics Over Epochs</h2>
+                <canvas id="mlChart"></canvas>
+            </div>
+            {% endif %}
         </div>
 
         <a href="{{ url_for('download_file', filename=generated_filename) }}" class="btn download-btn">
@@ -23,5 +64,70 @@
         <br>
         <a href="{{ url_for('index') }}" class="link-back">Generate another dataset</a>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pcdScores = {{ pcd_scores | tojson }};
+            const mlMetricsOverTime = {{ ml_metrics_over_time | tojson }};
+            const epochs = Array.from({ length: pcdScores.length }, (_, i) => `Epoch ${i + 1}`);
+
+            // --- PCD Chart ---
+            if (pcdScores && pcdScores.length > 0) {
+                const pcdCtx = document.getElementById('pcdChart').getContext('2d');
+                new Chart(pcdCtx, {
+                    type: 'line',
+                    data: {
+                        labels: epochs,
+                        datasets: [{
+                            label: 'PCD Score',
+                            data: pcdScores,
+                            borderColor: '#38BDF8',
+                            backgroundColor: 'rgba(56, 189, 248, 0.2)',
+                            fill: true,
+                            tension: 0.3
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: { beginAtZero: true, title: { display: true, text: 'PCD Value', color: '#D1D5DB' }, ticks: { color: '#9CA3AF' }, grid: { color: '#374151' } },
+                            x: { title: { display: true, text: 'Generation Epoch', color: '#D1D5DB' }, ticks: { color: '#9CA3AF' }, grid: { color: '#374151' } }
+                        },
+                        plugins: { legend: { labels: { color: '#D1D5DB' } } }
+                    }
+                });
+            }
+
+            // --- ML Metrics Chart ---
+            if (mlMetricsOverTime && Object.keys(mlMetricsOverTime).length > 0) {
+                const mlCtx = document.getElementById('mlChart').getContext('2d');
+                const colors = ['#EC4899', '#10B981', '#F59E0B', '#8B5CF6', '#F97316'];
+                const datasets = Object.keys(mlMetricsOverTime).map((metricName, index) => ({
+                    label: metricName,
+                    data: mlMetricsOverTime[metricName],
+                    borderColor: colors[index % colors.length],
+                    backgroundColor: 'transparent',
+                    tension: 0.3,
+                    fill: false
+                }));
+
+                new Chart(mlCtx, {
+                    type: 'line',
+                    data: {
+                        labels: epochs,
+                        datasets: datasets
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: { beginAtZero: true, max: 1.05, title: { display: true, text: 'Metric Score', color: '#D1D5DB' }, ticks: { color: '#9CA3AF' }, grid: { color: '#374151' } },
+                            x: { title: { display: true, text: 'Generation Epoch', color: '#D1D5DB' }, ticks: { color: '#9CA3AF' }, grid: { color: '#374151' } }
+                        },
+                        plugins: { legend: { labels: { color: '#D1D5DB' } } }
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>

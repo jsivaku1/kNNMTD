@@ -1,48 +1,44 @@
 import pandas as pd
 import numpy as np
-from dython.nominal import associations, numerical_encoding
+from dython.nominal import associations
 
-def find_cateorical_columns(data):
-    categorical_columns = []
-    for col in data.columns:
-        levels = len(list(data[col].value_counts().index))
-        if(levels < 10):
-            categorical_columns.append(col)
-    return tuple(categorical_columns)
+def analyze_columns(df):
+    """
+    Analyzes dataframe columns and categorizes them as suitable for 
+    classification or regression based on dtype and unique value counts.
+    """
+    categorical_cols = []
+    numerical_cols = []
+    
+    for col in df.columns:
+        # Rule for categorical: object/category dtype, or integer with few unique values (e.g., <= 15)
+        if pd.api.types.is_object_dtype(df[col]) or pd.api.types.is_categorical_dtype(df[col]):
+            categorical_cols.append({'name': col, 'type': str(df[col].dtype)})
+        elif pd.api.types.is_integer_dtype(df[col]) and df[col].nunique() <= 15:
+            categorical_cols.append({'name': col, 'type': str(df[col].dtype)})
+        # Rule for numerical: float, or integer with many unique values
+        elif pd.api.types.is_numeric_dtype(df[col]):
+            numerical_cols.append({'name': col, 'type': str(df[col].dtype)})
+            
+    return {'categorical': categorical_cols, 'numerical': numerical_cols}
 
-def change_dtype(data):
-    for col in data.columns:
-        levels = len(list(data[col].value_counts().index))
-        if(levels < 10):
-            data[col] = data[col].astype('category')
-    return data
-
-def match_dtypes(real,synthetic):
-    for col in real.columns:
-            synthetic[col]=synthetic[col].astype(real[col].dtypes.name)
-    return synthetic
 
 def PCD(real,synthetic):
     """
     Calculates the Pairwise Correlation Difference (PCD).
     This version includes a check to prevent errors if the association calculation fails.
     """
-    real = change_dtype(real)
-    synthetic = match_dtypes(real,synthetic)
-    
-    # Calculate associations for real and synthetic data
+    if real.empty or synthetic.empty:
+        return np.nan
+
+    # dython's 'associations' can handle mixed types, no need for manual dtype changes here.
     real_corr_matrix = associations(real, nan_strategy='drop_samples', compute_only=True)['corr']
     synth_corr_matrix = associations(synthetic, nan_strategy='drop_samples', compute_only=True)['corr']
     
-    # --- ROBUSTNESS CHECK ---
-    # Check if either of the correlation matrices are None, which can happen with certain datasets
     if real_corr_matrix is None or synth_corr_matrix is None:
-        # You can either return a specific value like NaN or raise a more informative error
-        # Returning NaN is often safer for automated pipelines.
-        print("Warning: Correlation matrix could not be computed for real or synthetic data. PCD cannot be calculated.")
+        print("Warning: Correlation matrix could not be computed. PCD cannot be calculated.")
         return np.nan
 
-    # Calculate the Frobenius norm of the difference
     pcd_score = np.linalg.norm((real_corr_matrix - synth_corr_matrix), ord='fro')
     
     return np.round(pcd_score, 4)
