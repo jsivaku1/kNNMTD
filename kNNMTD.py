@@ -1,233 +1,159 @@
 import pandas as pd
 import numpy as np
-from sklearn.metrics import accuracy_score,confusion_matrix,recall_score,precision_score,f1_score,\
-                                roc_curve, roc_auc_score, precision_recall_curve,auc, average_precision_score, precision_recall_fscore_support, classification_report
-from sklearn.model_selection import train_test_split, StratifiedKFold, KFold
-from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
-from sklearn.neighbors import KNeighborsClassifier, KNeighborsRegressor
-import matplotlib.pyplot as plt
-from sklearn.model_selection import GridSearchCV
-from sklearn import preprocessing
-import random
-from scipy.spatial import distance
-from imblearn.over_sampling import SMOTE
-from imblearn.under_sampling import NearMiss 
-from scipy.spatial.distance import cdist
 from sklearn.neighbors import NearestNeighbors
-import heapq
 
 class kNNMTD():
-    # type = 0 => Classification
-    # type = 1 => Regression
-    # type = -1 => Unsupervised 
-    def __init__(self, n_obs=100, k=3,mode=-1, random_state=1):
-        self.type = mode
+    """
+    k-Nearest Neighbor Mega-Trend Diffusion (kNNMTD).
+    This is a corrected and optimized version that follows the iterative logic of the
+    original paper but uses vectorization to significantly speed up the process.
+    """
+    def __init__(self, n_obs=100, k=5, random_state=None, n_epochs=10):
+        if k < 2:
+            raise ValueError("k must be at least 2.")
         self.n_obs = n_obs
-        self._gen_obs = self.n_obs *10
         self.k = k
-        np.random.RandomState(random_state)
+        self.rng = np.random.default_rng(random_state)
+        self.n_epochs = n_epochs
 
+    def _diffusion(self, sample_array):
+        """Calculates diffusion bounds for a 2D array of neighbor samples."""
+        min_vals = np.min(sample_array, axis=1)
+        max_vals = np.max(sample_array, axis=1)
+        u_set = (min_vals + max_vals) / 2.0
         
-    def diffusion(self, sample):
-        if(type(sample.values[0] == str)):
-            sample = np.array(sample,dtype=float)
-        new_sample = []
-        n = len(sample)
-        min_val = np.min(sample)
-        max_val = np.max(sample)
-        u_set = (min_val + max_val) / 2
-        if(u_set == min_val or u_set == max_val):
-            Nl = len([i for i in sample if i <= u_set])
-            Nu = len([i for i in sample if i >= u_set])
-        else:
-            Nl = len([i for i in sample if i < u_set])
-            Nu = len([i for i in sample if i > u_set])
-        skew_l = Nl / (Nl + Nu)
-        skew_u = Nu / (Nl + Nu)
-        var = np.var(sample,ddof=1)
-        if(var == 0):
-            a = min_val/5
-            b = max_val*5
-            h=0
-            new_sample = np.random.uniform(a, b, size=self._gen_obs) 
-        else:
-            h = var / n
-            a = u_set - (skew_l * np.sqrt(-2 * (var/Nl) * np.log(10**(-20))))
-            b = u_set + (skew_u * np.sqrt(-2 * (var/Nu) * np.log(10**(-20))))
-            L = a if a <= min_val else min_val
-            U = b if b >= max_val else max_val
-            while(len(new_sample) < self._gen_obs):
-                    x = np.random.uniform(L,U)
-                    if(x <= u_set):
-                        MF = (x-L) / (u_set-L)
-                    elif(x > u_set):
-                        MF = (U-x)/(U-u_set)
-                    elif(x < L or x > U) :
-                        MF = 0
-                    rs = np.random.uniform(0,1)
-                    if(MF > rs):
-                        new_sample.append(x)
-                    else:
-                        continue
-        return np.array(new_sample)
+        N_L = np.sum(sample_array < u_set[:, np.newaxis], axis=1)
+        N_U = np.sum(sample_array >= u_set[:, np.newaxis], axis=1)
+        
+        total_N = N_L + N_U
+        total_N[total_N == 0] = 1
+        
+        skew_L = N_L / total_N
+        skew_U = N_U / total_N
+        
+        variance = np.var(sample_array, axis=1, ddof=1)
+        variance[np.isnan(variance)] = 0
+        
+        a = np.zeros_like(variance)
+        b = np.zeros_like(variance)
+        
+        zero_var_mask = (variance == 0)
+        a[zero_var_mask] = min_vals[zero_var_mask] / 5.0
+        b[zero_var_mask] = max_vals[zero_var_mask] * 5.0
+        
+        non_zero_mask = ~zero_var_mask
+        safe_N_L = np.copy(N_L[non_zero_mask]); safe_N_L[safe_N_L == 0] = 1
+        safe_N_U = np.copy(N_U[non_zero_mask]); safe_N_U[safe_N_U == 0] = 1
+        
+        log_term = np.log(10**-20)
+        sqrt_term_L = np.sqrt(-2 * (variance[non_zero_mask] / safe_N_L) * log_term)
+        sqrt_term_U = np.sqrt(-2 * (variance[non_zero_mask] / safe_N_U) * log_term)
+        
+        a[non_zero_mask] = u_set[non_zero_mask] - skew_L[non_zero_mask] * sqrt_term_L
+        b[non_zero_mask] = u_set[non_zero_mask] + skew_U[non_zero_mask] * sqrt_term_U
+        
+        return np.minimum(a, min_vals), np.maximum(b, max_vals)
 
-    def getNeighbors(self, val_to_test, xtrain, ytrain):
-        """
-        Finds the nearest neighbors. This function is now corrected to handle
-        the unsupervised case where ytrain is None.
-        """
-        if self.type == 0:
-            X_train = xtrain.reshape(-1, 1)
-            y_train = ytrain
-            knn = KNeighborsClassifier(n_neighbors=self.k)
-            knn.fit(X_train, y_train)
-            dist, nn_indices = knn.kneighbors(X=np.array(val_to_test).reshape(1,-1), return_distance=True)
-            neighbor_df = xtrain[np.squeeze(nn_indices)]
-            y_neighbor_df = ytrain[np.squeeze(nn_indices)]
-        elif self.type == 1:
-            X_train = xtrain.reshape(-1, 1)
-            y_train = ytrain
-            knn = KNeighborsRegressor(n_neighbors=self.k)
-            knn.fit(X_train, y_train)
-            dist, nn_indices = knn.kneighbors(X=np.array(val_to_test).reshape(1,-1), return_distance=True)
-            neighbor_df = xtrain[np.squeeze(nn_indices)]
-            y_neighbor_df = ytrain[np.squeeze(nn_indices)]
-        else:  # Unsupervised case (self.type == -1)
-            X_train = xtrain.reshape(-1, 1)
-            # ytrain is None in this case, so we calculate neighbors based on X only.
-            dist = [np.square(x - val_to_test) for x in X_train]
-            nn_indices = heapq.nsmallest(self.k, range(len(dist)), dist.__getitem__)
-            neighbor_df = xtrain[np.squeeze(nn_indices)]
-            y_neighbor_df = None # No y-neighbors in unsupervised mode.
+    def _get_pam_samples(self, lb, ub, u_set, pool_size):
+        """Generates samples using PAM in a vectorized way."""
+        # Shape of lb, ub, u_set is (n_features,)
+        # We generate candidates for each feature independently
+        candidate_samples = self.rng.uniform(lb, ub, size=(pool_size, len(lb)))
+        
+        mf_vals = np.zeros_like(candidate_samples)
+        
+        # Calculate MF for each feature's candidates
+        for i in range(len(lb)):
+            col_candidates = candidate_samples[:, i]
             
-        return nn_indices, neighbor_df, y_neighbor_df
+            mask1 = col_candidates <= u_set[i]
+            denom1 = u_set[i] - lb[i]
+            if denom1 != 0: mf_vals[mask1, i] = (col_candidates[mask1] - lb[i]) / denom1
+            
+            mask2 = col_candidates > u_set[i]
+            denom2 = ub[i] - u_set[i]
+            if denom2 != 0: mf_vals[mask2, i] = (ub[i] - col_candidates[mask2]) / denom2
+            
+        mf_product = np.prod(mf_vals, axis=1)
+        random_thresholds = self.rng.uniform(0, 1, size=pool_size)
+        return candidate_samples[mf_product > random_thresholds]
 
-    def fit(self, train,class_col=None):
-        train.reset_index(inplace=True, drop=True)
-        if(self.type != -1):
-            X_train = train.drop(class_col,axis=1)
-            y_train = train[class_col]
-        else:
-            X_train = train.copy()
-        columns = X_train.columns
-        temp_surr_data = pd.DataFrame(columns = list(train.columns))
-        surrogate_data = pd.DataFrame(columns = list(train.columns))
-        synth_data = pd.DataFrame(columns = list(train.columns))
-        temp = pd.DataFrame(columns = list(train.columns))
-        if(self.type == 0):
-            for t in np.unique(train[class_col]):
-                train_class_df = train[train[class_col] == t]
-                train_class_df.reset_index(inplace=True, drop=True)
-                for ix,val in train_class_df.iterrows():
-                    for col in columns:
-                        X_train = train_class_df[col].values.reshape(-1, 1)
-                        y_train = train_class_df[class_col].values
-                        knn = KNeighborsClassifier(n_neighbors=self.k)
-                        knn.fit(X_train, y_train)
-                        nn_indices = knn.kneighbors(X=np.array(val[col]).reshape(1,-1), return_distance=False)
-                        neighbor_df = train_class_df[col][np.squeeze(nn_indices)]
-                        if(col != class_col and (neighbor_df.dtype == np.int64 or neighbor_df.dtype == np.int32)): 
-                            bin_val =  np.unique(train_class_df[col])
-                            centers = (bin_val[1:]+bin_val[:-1])/2
-                            x = self.diffusion(neighbor_df)  
-                            ind = np.digitize(x, bins=centers , right=True)
-                            x = np.array([bin_val[i] for i in ind])
-                            y = np.array([t for _ in range(self._gen_obs)])
-                            nn_indices, neighbor_val_array, _ = self.getNeighbors(val[col], x, y)
-                            temp[col] = pd.Series(neighbor_val_array)  
-                        elif(col==class_col):
-                            temp[col] = pd.Series(np.array([t for _ in range(self._gen_obs)]))
-                        else:
-                            x = self.diffusion(neighbor_df)
-                            y = np.array([t for _ in range(self._gen_obs)])
-                            nn_indices, neighbor_val_array, _ = self.getNeighbors(val[col], x, y)
-                            temp[col] = pd.Series(neighbor_val_array)        
-                    temp[class_col] = t
-                    temp_surr_data = pd.concat([temp_surr_data, temp])            
-            surrogate_data = pd.concat([surrogate_data, temp_surr_data])                          
-            synth_data = self.sample(surrogate_data,train,class_col)     
-        elif(self.type == 1):
-            train_class_df = train.copy()
-            train_class_df.reset_index(inplace=True, drop=True)
-            for ix,val in train_class_df.iterrows():
-                for col in columns:
-                    X_train = train_class_df[col].values.reshape(-1, 1)
-                    y_train = train_class_df[class_col].values
-                    knn = KNeighborsRegressor(n_neighbors=self.k)
-                    knn.fit(X_train, y_train)
-                    #Find corresponding attribute neighbors
-                    nn_indices = knn.kneighbors(X=np.array(val[col]).reshape(1,-1), return_distance=False)
-                    neighbor_df = train_class_df[col][np.squeeze(nn_indices)]    
-                    y_neighbor_df = train_class_df[class_col][np.squeeze(nn_indices)]
-                    if(neighbor_df.dtype == np.int64 or neighbor_df.dtype == np.int32): 
-                        bin_val =  np.unique(train_class_df[col])
-                        centers = (bin_val[1:]+bin_val[:-1])/2
-                        x = self.diffusion(neighbor_df)  
-                        ind = np.digitize(x, bins=centers , right=True)
-                        x = np.array([bin_val[i] for i in ind])
-                        y = self.diffusion(y_neighbor_df)  
-                        nn_indices, neighbor_val_array, _ = self.getNeighbors(val[col], x, y)
-                        temp[col] = pd.Series(neighbor_val_array)  
-                    else:
-                        x = self.diffusion(neighbor_df)
-                        y = self.diffusion(y_neighbor_df)
-                        nn_indices, neighbor_val_array, y_neighbor_val_array = self.getNeighbors(val[col], x, y)
-                        temp[col] = pd.Series(neighbor_val_array)
-                    temp[class_col] = pd.Series(y_neighbor_val_array)     
-                temp_surr_data = pd.concat([temp_surr_data, temp])    
-            surrogate_data = pd.concat([surrogate_data, temp_surr_data])           
-            synth_data = self.sample(surrogate_data,train,class_col)     
-        else: # Unsupervised case
-            train_class_df = train.copy()
-            train_class_df.reset_index(inplace=True, drop=True)
-            for ix,val in train_class_df.iterrows():
-                for col in columns:
-                    X_train = train_class_df[col].values.reshape(-1, 1)
-                    dist = [np.square(x - val[col]) for x in X_train]
-                    nn_indices = heapq.nsmallest(self.k, range(len(dist)), dist.__getitem__)
-                    neighbor_df = train_class_df[col][np.squeeze(nn_indices)]    
-                    if(neighbor_df.dtype == np.int64 or neighbor_df.dtype == np.int32): 
-                        bin_val =  np.unique(train_class_df[col])
-                        centers = (bin_val[1:]+bin_val[:-1])/2
-                        x = self.diffusion(neighbor_df)  
-                        ind = np.digitize(x, bins=centers , right=True)
-                        x = np.array([bin_val[i] for i in ind])
-                        # Call getNeighbors with ytrain=None for unsupervised
-                        nn_indices, neighbor_val_array, _ = self.getNeighbors(val[col], x, None)
-                        temp[col] = pd.Series(neighbor_val_array)  
-                    else:
-                        x = self.diffusion(neighbor_df)
-                        # Call getNeighbors with ytrain=None for unsupervised
-                        nn_indices, neighbor_val_array,_ = self.getNeighbors(val[col], x, None)
-                        temp[col] = pd.Series(neighbor_val_array)        
-                temp_surr_data = pd.concat([temp_surr_data, temp])    
-            surrogate_data = pd.concat([surrogate_data, temp_surr_data])           
-            synth_data = self.sample(surrogate_data,train,class_col=None)             
-        return synth_data
+    def fit_generate(self, X, y=None):
+        if not isinstance(X, pd.DataFrame):
+            X = pd.DataFrame(X, columns=[f'feature_{i}' for i in range(X.shape[1])])
 
-    def sample(self, data,real,class_col):
-        surrogate_data = data.copy()
-        train = real.copy()
-        synth_data = pd.DataFrame(columns = list(train.columns))
-        for x in train.columns:
-            surrogate_data[x]=surrogate_data[x].astype(train[x].dtypes.name)
-        surrogate_data.reset_index(inplace=True, drop=True)
-        if(not isinstance(class_col,type(None)) and len(np.unique(train[class_col]))<=5):
-            num, div = np.abs(self.n_obs), len(np.unique(surrogate_data[class_col]))
-            class_num = [num // div + (1 if x < num % div else 0)  for x in range (div)]
-            for i in range(len(np.unique(surrogate_data[class_col]))):
-                try:
-                    temp_data = surrogate_data[surrogate_data[class_col] == np.unique(surrogate_data[class_col])[i]].sample(class_num[i])
-                except ValueError:
-                    temp_data = surrogate_data[surrogate_data[class_col] == np.unique(surrogate_data[class_col])[i]].sample(class_num[i], replace='True')
-                synth_data = pd.concat([synth_data,temp_data],axis=0)
+        task_mode = 'unsupervised'
+        if y is not None:
+            task_mode = 'regression' if pd.api.types.is_numeric_dtype(y) and y.nunique() > 15 else 'classification'
+
+        full_real_df = pd.concat([X, y.to_frame(name=y.name)], axis=1) if y is not None else X
+        
+        all_synthetic_data = []
+        obs_per_epoch = int(np.ceil(self.n_obs / self.n_epochs))
+
+        # Pre-fit nearest neighbor models to speed up the loop
+        nn_models = {}
+        if task_mode == 'classification':
+            for class_label in y.unique():
+                class_data = full_real_df[y == class_label]
+                if len(class_data) >= self.k:
+                    # Use .values to avoid feature name warnings
+                    nn_models[class_label] = NearestNeighbors(n_neighbors=self.k).fit(class_data.values)
         else:
-            try:
-                temp_data = surrogate_data.sample(np.abs(self.n_obs))
-            except ValueError:
-                temp_data = surrogate_data.sample(np.abs(self.n_obs), replace='True')
-            synth_data = pd.concat([synth_data,temp_data],axis=0) 
-        for x in train.columns:
-            synth_data[x]=synth_data[x].astype(train[x].dtypes.name)
-        synth_data.reset_index(inplace=True, drop=True)
-        return synth_data
+            nn_models['all'] = NearestNeighbors(n_neighbors=self.k).fit(full_real_df.values)
+
+        for epoch in range(self.n_epochs):
+            surrogate_rows = []
+            for i in range(len(full_real_df)):
+                real_row_df = full_real_df.iloc[[i]]
+                
+                model, search_data = None, full_real_df
+                if task_mode == 'classification':
+                    current_class = y.iloc[i]
+                    if current_class in nn_models:
+                        model = nn_models[current_class]
+                        search_data = full_real_df[y == current_class]
+                else:
+                    model = nn_models.get('all')
+                
+                if model is None: continue
+
+                _, indices = model.kneighbors(real_row_df.values)
+                neighbor_df = search_data.iloc[indices[0]]
+                
+                lb, ub = self._diffusion(neighbor_df.values.T)
+                u_set = (neighbor_df.min(axis=0) + neighbor_df.max(axis=0)) / 2.0
+                
+                pool = self._get_pam_samples(lb, ub, u_set.values, pool_size=100)
+                
+                if len(pool) > 0:
+                    distances = np.linalg.norm(pool - real_row_df.values, axis=1)
+                    best_sample = pool[np.argmin(distances)]
+                    surrogate_rows.append(best_sample)
+                else:
+                    surrogate_rows.append(real_row_df.values[0])
+
+            if not surrogate_rows: continue
+            
+            surrogate_df = pd.DataFrame(surrogate_rows, columns=full_real_df.columns)
+            
+            if task_mode == 'classification':
+                surrogate_y = surrogate_df[y.name].round().astype(int)
+                n_classes = y.nunique()
+                samples_per_class = int(np.ceil(obs_per_epoch / n_classes)) if n_classes > 0 else obs_per_epoch
+                epoch_samples_list = []
+                for class_label in y.unique():
+                    class_surrogates = surrogate_df[surrogate_y == class_label]
+                    if not class_surrogates.empty:
+                        epoch_samples_list.append(
+                            class_surrogates.sample(n=samples_per_class, replace=True, random_state=self.rng)
+                        )
+                if epoch_samples_list:
+                    epoch_samples = pd.concat(epoch_samples_list)
+                else:
+                    epoch_samples = pd.DataFrame(columns=full_real_df.columns)
+            else:
+                epoch_samples = surrogate_df.sample(n=obs_per_epoch, replace=True, random_state=self.rng)
+            
+            all_synthetic_data.append(epoch_samples)
+            yield pd.concat(all_synthetic_data, ignore_index=True)

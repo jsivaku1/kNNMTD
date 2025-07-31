@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF--8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>kNNMTD Synthetic Data Generator</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>kNNMTD Synthetic Data Generator 📈</h1>
-        <p>Upload your dataset, choose your parameters, and generate new synthetic samples.</p>
+        <h1>kNNMTD Synthetic Data Generator</h1>
+        <p>Upload a dataset to begin the analysis and generation process.</p>
         
         <form action="/generate" method="post" enctype="multipart/form-data" id="generation-form">
             
@@ -18,51 +18,107 @@
                 <input type="file" id="dataset" name="dataset" accept=".csv" required>
             </div>
 
-            <div class="form-group">
-                <label for="mode">2. Select Task Type</label>
-                <select name="mode" id="mode" required>
-                    <option value="-1">Unsupervised</option>
-                    <option value="0">Classification</option>
-                    <option value="1">Regression</option>
+            <div id="analysis-spinner" class="hidden">
+                <div class="spinner"></div><p>Analyzing dataset...</p>
+            </div>
+
+            <!-- Unified Dropdown for Target Column -->
+            <div class="form-group" id="target-column-group">
+                <label for="class_col">2. Select Target Column (Optional)</label>
+                <select id="class_col" name="class_col">
+                    <option value="none">None (Unsupervised Task)</option>
+                    <!-- Options will be populated by JavaScript -->
                 </select>
             </div>
-
-            <div class="form-group" id="class-col-group" style="display: none;">
-                <label for="class_col">Target/Class Column Name</label>
-                <input type="text" id="class_col" name="class_col" placeholder="e.g., ca_cervix">
-            </div>
-
+            
             <div class="form-group">
-                <label for="k_value">3. Select 'k' Value</label>
+                <label for="k_value">3. Select 'k' Value (will be optimized automatically)</label>
                 <select name="k_value" id="k_value" required>
                     <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
+                    <option value="5" selected>5</option>
                     <option value="7">7</option>
                 </select>
             </div>
 
             <div class="form-group">
-                <label for="n_obs">4. Number of Synthetic Samples to Generate</label>
-                <input type="number" id="n_obs" name="n_obs" value="100" min="1" required>
+                <label for="n_epochs">4. Number of Epochs</label>
+                <input type="number" id="n_epochs" name="n_epochs" value="10" min="1" max="100" step="1" required>
             </div>
 
-            <button type="submit" class="btn">Generate Data</button>
+            <div class="form-group">
+                <label for="n_obs">5. Number of Synthetic Samples to Generate</label>
+                <input type="number" id="n_obs" name="n_obs" value="100" min="10" step="10" required>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container hidden" id="progress-container">
+                <div class="progress-bar-label">Generating Data...</div>
+                <div class="progress-bar">
+                    <div class="progress-bar-fill" id="progress-bar-fill"></div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn" id="generate-btn">Generate Data</button>
         </form>
     </div>
 
     <script>
-        document.getElementById('mode').addEventListener('change', function() {
-            var classColGroup = document.getElementById('class-col-group');
-            var classColInput = document.getElementById('class_col');
-            // Show if mode is Classification (0) or Regression (1)
-            if (this.value === '0' || this.value === '1') {
-                classColGroup.style.display = 'block';
-                classColInput.required = true;
-            } else {
-                classColGroup.style.display = 'none';
-                classColInput.required = false;
-            }
+        document.addEventListener('DOMContentLoaded', function() {
+            const fileInput = document.getElementById('dataset');
+            const targetSelect = document.getElementById('class_col');
+            const spinner = document.getElementById('analysis-spinner');
+            const form = document.getElementById('generation-form');
+            const generateBtn = document.getElementById('generate-btn');
+            const progressContainer = document.getElementById('progress-container');
+            const progressBarFill = document.getElementById('progress-bar-fill');
+
+            fileInput.addEventListener('change', async function() {
+                const file = this.files[0];
+                if (!file) return;
+                spinner.classList.remove('hidden');
+                targetSelect.innerHTML = '<option value="none">None (Unsupervised Task)</option>'; // Reset
+                
+                const formData = new FormData();
+                formData.append('dataset', file);
+
+                try {
+                    const response = await fetch('/info', { method: 'POST', body: formData });
+                    if (!response.ok) throw new Error('Server error during analysis.');
+                    
+                    const columnData = await response.json();
+                    if (columnData.error) throw new Error(columnData.error);
+
+                    if (columnData.categorical && columnData.categorical.length > 0) {
+                        const optgroupCat = document.createElement('optgroup');
+                        optgroupCat.label = 'Categorical (for Classification)';
+                        columnData.categorical.forEach(col => {
+                            optgroupCat.innerHTML += `<option value="${col.name}">${col.name}</option>`;
+                        });
+                        targetSelect.appendChild(optgroupCat);
+                    }
+
+                    if (columnData.numerical && columnData.numerical.length > 0) {
+                        const optgroupNum = document.createElement('optgroup');
+                        optgroupNum.label = 'Numerical (for Regression)';
+                        columnData.numerical.forEach(col => {
+                            optgroupNum.innerHTML += `<option value="${col.name}">${col.name}</option>`;
+                        });
+                        targetSelect.appendChild(optgroupNum);
+                    }
+
+                } catch (error) {
+                    alert(`Error analyzing file: ${error.message}`);
+                } finally {
+                    spinner.classList.add('hidden');
+                }
+            });
+            
+            form.addEventListener('submit', () => {
+                generateBtn.classList.add('hidden');
+                progressContainer.classList.remove('hidden');
+                progressBarFill.style.width = '0%';
+                setTimeout(() => { progressBarFill.style.width = '100%'; }, 100);
+            });
         });
     </script>
 </body>
