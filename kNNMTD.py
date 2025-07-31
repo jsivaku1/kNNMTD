@@ -72,29 +72,34 @@ class kNNMTD():
         return np.array(new_sample)
 
     def getNeighbors(self, val_to_test, xtrain, ytrain):
-        if(self.type == 0):
+        """
+        Finds the nearest neighbors. This function is now corrected to handle
+        the unsupervised case where ytrain is None.
+        """
+        if self.type == 0:
             X_train = xtrain.reshape(-1, 1)
             y_train = ytrain
-            knn = KNeighborsClassifier(n_neighbors=3)
+            knn = KNeighborsClassifier(n_neighbors=self.k)
             knn.fit(X_train, y_train)
             dist, nn_indices = knn.kneighbors(X=np.array(val_to_test).reshape(1,-1), return_distance=True)
             neighbor_df = xtrain[np.squeeze(nn_indices)]
             y_neighbor_df = ytrain[np.squeeze(nn_indices)]
-        elif(self.type == 1):
+        elif self.type == 1:
             X_train = xtrain.reshape(-1, 1)
             y_train = ytrain
-            knn = KNeighborsRegressor(n_neighbors=3)
+            knn = KNeighborsRegressor(n_neighbors=self.k)
             knn.fit(X_train, y_train)
             dist, nn_indices = knn.kneighbors(X=np.array(val_to_test).reshape(1,-1), return_distance=True)
             neighbor_df = xtrain[np.squeeze(nn_indices)]
             y_neighbor_df = ytrain[np.squeeze(nn_indices)]
-        else:
+        else:  # Unsupervised case (self.type == -1)
             X_train = xtrain.reshape(-1, 1)
-            y_train = ytrain
+            # ytrain is None in this case, so we calculate neighbors based on X only.
             dist = [np.square(x - val_to_test) for x in X_train]
-            nn_indices = heapq.nsmallest(3, range(len(dist)), dist.__getitem__)
+            nn_indices = heapq.nsmallest(self.k, range(len(dist)), dist.__getitem__)
             neighbor_df = xtrain[np.squeeze(nn_indices)]
-            y_neighbor_df = ytrain[np.squeeze(nn_indices)]
+            y_neighbor_df = None # No y-neighbors in unsupervised mode.
+            
         return nn_indices, neighbor_df, y_neighbor_df
 
     def fit(self, train,class_col=None):
@@ -172,7 +177,7 @@ class kNNMTD():
                 temp_surr_data = pd.concat([temp_surr_data, temp])    
             surrogate_data = pd.concat([surrogate_data, temp_surr_data])           
             synth_data = self.sample(surrogate_data,train,class_col)     
-        else:
+        else: # Unsupervised case
             train_class_df = train.copy()
             train_class_df.reset_index(inplace=True, drop=True)
             for ix,val in train_class_df.iterrows():
@@ -187,10 +192,12 @@ class kNNMTD():
                         x = self.diffusion(neighbor_df)  
                         ind = np.digitize(x, bins=centers , right=True)
                         x = np.array([bin_val[i] for i in ind])
+                        # Call getNeighbors with ytrain=None for unsupervised
                         nn_indices, neighbor_val_array, _ = self.getNeighbors(val[col], x, None)
                         temp[col] = pd.Series(neighbor_val_array)  
                     else:
                         x = self.diffusion(neighbor_df)
+                        # Call getNeighbors with ytrain=None for unsupervised
                         nn_indices, neighbor_val_array,_ = self.getNeighbors(val[col], x, None)
                         temp[col] = pd.Series(neighbor_val_array)        
                 temp_surr_data = pd.concat([temp_surr_data, temp])    

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generation Complete</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Generation Complete! ✅</h1>
+        <p>Your synthetic dataset has been successfully created.</p>
+        
+        <div class="results-box">
+            <h2>Pairwise Correlation Difference (PCD)</h2>
+            <p class="pcd-score">{{ pcd_score }}</p>
+            <small>This measures the structural similarity between the real and synthetic data. Lower is better.</small>
+        </div>
+
+        <a href="{{ url_for('download_file', filename=generated_filename) }}" class="btn download-btn">
+            Download Synthetic Data (.csv)
+        </a>
+        <br>
+        <a href="{{ url_for('index') }}" class="link-back">Generate another dataset</a>
+    </div>
+</body>
+</html>
