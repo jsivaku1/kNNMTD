@@ -746,3 +746,5 @@ jinja2.exceptions.TemplateRuntimeError: No test named 'list' found.
 2025-08-01 12:59:38,255 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:59:38] "POST /info HTTP/1.1" 200 -
 2025-08-01 12:59:55,472 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:59:55] "POST /generate HTTP/1.1" 200 -
 2025-08-01 12:59:55,481 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:59:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 13:28:06,843 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-01 13:28:06,852 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
