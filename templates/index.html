@@ -7,59 +7,78 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h1>kNNMTD Synthetic Data Generator</h1>
-        <p>Upload a dataset to begin the analysis and generation process.</p>
-        
-        <form action="/generate" method="post" enctype="multipart/form-data" id="generation-form">
+    <div class="main-grid">
+        <!-- Left Column: Information -->
+        <div class="info-container">
+            <div class="info-header">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="header-icon"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                <h1 class="custom-gradient-title">kNNMTD Generator</h1>
+            </div>
+            <p class="tagline">Intelligent Synthetic Data for Complex Datasets</p>
             
-            <div class="form-group">
-                <label for="dataset">1. Upload Your Dataset (.csv)</label>
-                <input type="file" id="dataset" name="dataset" accept=".csv" required>
+            <div class="feature-box">
+                <h3>Why kNNMTD Stands Out</h3>
+                <p>kNNMTD is specifically designed to overcome the challenges of generating high-quality synthetic data from small and imbalanced datasets, a common problem in many real-world scenarios.</p>
+                <ul>
+                    <li><span class="highlight">Handles Minority Classes:</span> Its iterative, row-by-row approach ensures that even rare data patterns are learned and represented in the synthetic output.</li>
+                    <li><span class="highlight">Preserves Data Structure:</span> By finding neighbors for each attribute individually, it maintains the complex relationships and correlations present in the original data.</li>
+                    <li><span class="highlight">Automated & Smart:</span> This tool automates the entire pipeline, from data cleaning and preparation to finding the optimal 'k' value for the best results.</li>
+                </ul>
             </div>
+        </div>
 
-            <div id="analysis-spinner" class="hidden">
-                <div class="spinner"></div><p>Analyzing dataset...</p>
-            </div>
-
-            <!-- Unified Dropdown for Target Column -->
-            <div class="form-group" id="target-column-group">
-                <label for="class_col">2. Select Target Column (Optional)</label>
-                <select id="class_col" name="class_col">
-                    <option value="none">None (Unsupervised Task)</option>
-                    <!-- Options will be populated by JavaScript -->
-                </select>
-            </div>
+        <!-- Right Column: Action Form -->
+        <div class="container action-container">
+            <h2>Start Generating</h2>
+            <p>Upload a dataset to begin the analysis and generation process.</p>
             
-            <div class="form-group">
-                <label for="k_value">3. Select 'k' Value (will be optimized automatically)</label>
-                <select name="k_value" id="k_value" required>
-                    <option value="3">3</option>
-                    <option value="5" selected>5</option>
-                    <option value="7">7</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="n_epochs">4. Number of Epochs</label>
-                <input type="number" id="n_epochs" name="n_epochs" value="10" min="1" max="100" step="1" required>
-            </div>
-
-            <div class="form-group">
-                <label for="n_obs">5. Number of Synthetic Samples to Generate</label>
-                <input type="number" id="n_obs" name="n_obs" value="100" min="10" step="10" required>
-            </div>
-
-            <!-- Progress Bar -->
-            <div class="progress-container hidden" id="progress-container">
-                <div class="progress-bar-label">Generating Data...</div>
-                <div class="progress-bar">
-                    <div class="progress-bar-fill" id="progress-bar-fill"></div>
+            <form action="/generate" method="post" enctype="multipart/form-data" id="generation-form">
+                
+                <div class="form-group">
+                    <label for="dataset">1. Upload Your Dataset (.csv)</label>
+                    <input type="file" id="dataset" name="dataset" accept=".csv" required>
                 </div>
-            </div>
 
-            <button type="submit" class="btn" id="generate-btn">Generate Data</button>
-        </form>
+                <div id="analysis-spinner" class="hidden">
+                    <div class="spinner"></div><p>Analyzing dataset...</p>
+                </div>
+
+                <div class="form-group" id="target-column-group">
+                    <label for="class_col">2. Select Target Column (Optional)</label>
+                    <select id="class_col" name="class_col">
+                        <option value="none">None (Unsupervised Task)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="k_value">3. Select 'k' Value (will be optimized automatically)</label>
+                    <select name="k_value" id="k_value" required>
+                        <option value="3">3</option>
+                        <option value="5" selected>5</option>
+                        <option value="7">7</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="n_epochs">4. Number of Epochs</label>
+                    <input type="number" id="n_epochs" name="n_epochs" value="10" min="1" max="100" step="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="n_obs">5. Number of Synthetic Samples</label>
+                    <input type="number" id="n_obs" name="n_obs" value="100" min="10" step="10" required>
+                </div>
+
+                <div class="progress-container hidden" id="progress-container">
+                    <div class="progress-bar-label">Generating Data...</div>
+                    <div class="progress-bar">
+                        <div class="progress-bar-fill" id="progress-bar-fill"></div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn" id="generate-btn">Generate Data</button>
+            </form>
+        </div>
     </div>
 
     <script>
@@ -76,7 +95,7 @@
                 const file = this.files[0];
                 if (!file) return;
                 spinner.classList.remove('hidden');
-                targetSelect.innerHTML = '<option value="none">None (Unsupervised Task)</option>'; // Reset
+                targetSelect.innerHTML = '<option value="none">None (Unsupervised Task)</option>';
                 
                 const formData = new FormData();
                 formData.append('dataset', file);

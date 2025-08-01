@@ -1,59 +1,59 @@
-# Synthetic sampling from small datasets: A modified mega-trend diffusion approach using k-nearest neighbors
+# kNNMTD: A No-Code Web Application for Synthetic Data Generation
 
 ## Overview
-The repository implements the synthetic sampling technique called kNNMTD using the small datasets. The algorithm uses a three-step procedure. 
-- Firstly, the k-Nearest Neighbor (kNN) algorithm is applied on each of the instances
-- Secondly, the neighboring samples are diffused using mega-trend diffusion (MTD)
-- Finally, the samples are generated using the domain ranges from MTD through plausibility assessment mechanism, then kNN is applied on the synthetic samples to select the closest acceptable samples 
+This repository provides a powerful, no-code web application for generating high-quality synthetic data from small or imbalanced datasets using the **k-Nearest Neighbor Mega-Trend Diffusion (kNNMTD)** algorithm. The algorithm is based on the research paper: ["Synthetic sampling from small datasets: A modified mega-trend diffusion approach using k-nearest neighbors."](https://doi.org/10.1016/j.knosys.2021.107687).
 
-The following illustration show how the algorithm generates artificial samples. For more information, refer the original [paper](https://doi.org/10.1016/j.knosys.2021.107687).
-<div align="left">
+The core of the algorithm uses a three-step iterative procedure to ensure the generated data preserves the statistical properties of the original dataset, even for minority classes:
+1.  For each data point, it identifies the **k-Nearest Neighbors (kNN)** within its own class (for classification tasks).
+2.  The neighboring samples are then used to create a plausible data range using **Mega-Trend Diffusion (MTD)**.
+3.  Finally, new samples are generated from these ranges and filtered to select the most realistic data points.
+
+<div align="center">
 <br/>
 <p align="center">
-<img align="center" width=90% src="https://github.com/jsivaku1/kNNMTD/blob/main/illustration.png"></img>
+<img align="center" width=80% src="https://github.com/jsivaku1/kNNMTD/blob/main/illustration.png"></img>
 </p>
 </div>
 
-All the final benchmark datasets used in the paper after preprocessing is available inside the data folder.
+## ✨ Key Features of the Web Application
 
-- mode = -1 &#8594; Unsupervised 
-- mode = 0 &#8594; Classification
-- mode = 1 &#8594; Regression
+This repository has been updated from a simple script to a full-featured web application with an intelligent backend pipeline:
+
+* **No-Code Interface:** An intuitive UI allows you to upload your dataset and generate synthetic data without writing a single line of code.
+* **Automatic Data Cleaning Pipeline:** The app automatically handles common data issues:
+    * **Missing Value Imputation:** Fills missing numerical data with the median and categorical data with the mode.
+    * **Categorical Data Encoding:** Converts text-based columns into a numerical format for the algorithm.
+* **Smart Task Detection:** You no longer need to specify the task type. The app automatically detects whether the task is **Classification**, **Regression**, or **Unsupervised** based on the target column you select.
+* **Automatic `k` Optimization:** The application tests a range of `k` values to find the optimal one that produces the synthetic data with the best statistical similarity (lowest PCD score) to your original data.
+* **Detailed Performance Analysis:** The results page provides a comprehensive analysis of the generated data, including:
+    * A summary of the pipeline stages and the optimal `k` value chosen.
+    * Plots showing the improvement of **PCD score** and **ML Utility metrics** (like Accuracy, F1-score, AUC) over each generation epoch.
+
+## 🚀 How to Run the Web Application
+
+### 1. Installation
+First, clone the repository and install the necessary dependencies.
+
+```bash
+git clone [https://github.com/jsivaku1/kNNMTD.git](https://github.com/jsivaku1/kNNMTD.git)
+cd kNNMTD
+pip install -r requirements.txt
 
 
-## Usage 
-```python3
-import pandas as pd
-import numpy as np
-from kNNMTD import *
-from utils import *
+2. Running the App
+Once the dependencies are installed, you can start the Flask web server with a single command:
+python3 app.py
 
-# Generate samples for unsupervised learning task
-real = pd.read_csv('../Data/wisconsin_breast.csv')
-model = kNNMTD(n_obs = 300,k=3,mode=-1)
-synthetic = model.fit(real)
-pcd = PCD(real,synthetic)
 
-# Generate samples for classification task
-real = pd.read_csv('../Data/cervical.csv')
-model = kNNMTD(n_obs = 100,k=3,mode=0)
-synthetic = model.fit(real,class_col='ca_cervix')
-pcd = PCD(real,synthetic)
-
-# Generate samples for regression task
-real = pd.read_csv('../Data/prostate.csv')
-model = kNNMTD(n_obs = 100,k=4,mode=1)
-synthetic = model.fit(real,class_col='lpsa')
-pcd = PCD(real,synthetic)
-```
-
-# Citing kNNMTD
-
-Please cite the following work if you are using the source code:
-
-- Jayanth Sivakumar, Karthik Ramamurthy, Menaka Radhakrishnan, and Daehan Won. "Synthetic sampling from small datasets: A modified mega-trend diffusion approach using k-nearest neighbors." Knowledge-Based Systems (2021): 107687.
-
-```LaTeX
+3. Usage
+Open your web browser and navigate to http://127.0.0.1:5000.
+Upload your .csv dataset.
+Select your target column (or leave it as "None" for unsupervised tasks).
+Choose your desired parameters (k will be optimized automatically).
+Click "Generate Data" and view the results.
+Citing kNNMTD
+Please cite the original work if you are using this application or its underlying algorithm:
+Jayanth Sivakumar, Karthik Ramamurthy, Menaka Radhakrishnan, and Daehan Won. "Synthetic sampling from small datasets: A modified mega-trend diffusion approach using k-nearest neighbors." Knowledge-Based Systems (2021): 107687.
 @article{sivakumar2021synthetic,
   title={Synthetic sampling from small datasets: A modified mega-trend diffusion approach using k-nearest neighbors},
   author={Sivakumar, Jayanth and Ramamurthy, Karthik and Radhakrishnan, Menaka and Won, Daehan},
@@ -62,4 +62,5 @@ Please cite the following work if you are using the source code:
   year={2021},
   publisher={Elsevier}
 }
-```
+
+

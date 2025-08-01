@@ -1,1183 +1,748 @@
-2025-07-31 07:47:46,493 - WARNING -  * Debugger is active!
-2025-07-31 07:47:46,503 - INFO -  * Debugger PIN: 142-116-905
-2025-07-31 07:47:54,411 - INFO - Parameters: n_obs=100, k=5, mode=0, class_col='ca_cervix'
-2025-07-31 07:47:54,415 - INFO - Starting epoch-based generation...
-2025-07-31 07:47:54,446 - INFO - Epoch 1: Samples=0, PCD=nan
-2025-07-31 07:47:54,464 - INFO - Epoch 2: Samples=0, PCD=nan
-2025-07-31 07:47:54,482 - INFO - Epoch 3: Samples=0, PCD=nan
-2025-07-31 07:47:54,498 - INFO - Epoch 4: Samples=0, PCD=nan
-2025-07-31 07:47:54,515 - INFO - Epoch 5: Samples=0, PCD=nan
-2025-07-31 07:47:54,532 - INFO - Epoch 6: Samples=0, PCD=nan
-2025-07-31 07:47:54,549 - INFO - Epoch 7: Samples=0, PCD=nan
-2025-07-31 07:47:54,567 - INFO - Epoch 8: Samples=0, PCD=nan
-2025-07-31 07:47:54,585 - INFO - Epoch 9: Samples=0, PCD=nan
-2025-07-31 07:47:54,603 - INFO - Epoch 10: Samples=0, PCD=nan
-2025-07-31 07:47:54,604 - ERROR - Generation failed. No synthetic data was produced.
-2025-07-31 07:47:54,608 - INFO - 127.0.0.1 - - [31/Jul/2025 07:47:54] "POST /generate HTTP/1.1" 200 -
-2025-07-31 07:47:54,617 - INFO - 127.0.0.1 - - [31/Jul/2025 07:47:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 07:49:46,584 - INFO - Parameters: n_obs=100, k=5, mode=0, class_col='Caesarian'
-2025-07-31 07:49:46,590 - INFO - Starting epoch-based generation...
-2025-07-31 07:49:46,632 - INFO - Epoch 1: Samples=6, PCD=2.5866
-2025-07-31 07:49:46,660 - INFO - Epoch 2: Samples=16, PCD=1.5622
-2025-07-31 07:49:46,687 - INFO - Epoch 3: Samples=21, PCD=1.2089
-2025-07-31 07:49:46,715 - INFO - Epoch 4: Samples=26, PCD=1.3299
-2025-07-31 07:49:46,743 - INFO - Epoch 5: Samples=30, PCD=1.2181
-2025-07-31 07:49:46,769 - INFO - Epoch 6: Samples=37, PCD=1.213
-2025-07-31 07:49:46,794 - INFO - Epoch 7: Samples=45, PCD=1.0892
-2025-07-31 07:49:46,820 - INFO - Epoch 8: Samples=53, PCD=0.9476
-2025-07-31 07:49:46,845 - INFO - Epoch 9: Samples=56, PCD=0.9219
-2025-07-31 07:49:46,870 - INFO - Epoch 10: Samples=62, PCD=0.7797
-2025-07-31 07:49:46,870 - INFO - Running ML utility test...
-2025-07-31 07:49:46,925 - INFO - ML Utility Metrics: {'accuracy': 0.7742, 'f1_score': 0.7696, 'precision': 0.7668, 'recall': 0.7742, 'auc': np.float64(0.7183)}
-2025-07-31 07:49:46,927 - INFO - Process complete. Final synthetic data saved to 'synthetic_20250731-074946.csv'.
-2025-07-31 07:49:46,928 - INFO - 127.0.0.1 - - [31/Jul/2025 07:49:46] "POST /generate HTTP/1.1" 200 -
-2025-07-31 07:49:46,938 - INFO - 127.0.0.1 - - [31/Jul/2025 07:49:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 07:49:57,535 - INFO - Successfully extracted column info from 'cervical.csv'.
-2025-07-31 07:49:57,536 - INFO - 127.0.0.1 - - [31/Jul/2025 07:49:57] "POST /info HTTP/1.1" 200 -
-2025-07-31 07:50:06,515 - INFO - Parameters: n_obs=100, k=3, mode=0, class_col='ca_cervix'
-2025-07-31 07:50:06,516 - INFO - Starting epoch-based generation...
-2025-07-31 07:50:06,539 - INFO - Epoch 1: Samples=0, PCD=nan
-2025-07-31 07:50:06,560 - INFO - Epoch 2: Samples=0, PCD=nan
-2025-07-31 07:50:06,582 - INFO - Epoch 3: Samples=0, PCD=nan
-2025-07-31 07:50:06,603 - INFO - Epoch 4: Samples=0, PCD=nan
-2025-07-31 07:50:06,624 - INFO - Epoch 5: Samples=0, PCD=nan
-2025-07-31 07:50:06,645 - INFO - Epoch 6: Samples=0, PCD=nan
-2025-07-31 07:50:06,666 - INFO - Epoch 7: Samples=0, PCD=nan
-2025-07-31 07:50:06,687 - INFO - Epoch 8: Samples=0, PCD=nan
-2025-07-31 07:50:06,707 - INFO - Epoch 9: Samples=0, PCD=nan
-2025-07-31 07:50:06,728 - INFO - Epoch 10: Samples=0, PCD=nan
-2025-07-31 07:50:06,728 - ERROR - Generation failed. No synthetic data was produced.
-2025-07-31 07:50:06,728 - INFO - 127.0.0.1 - - [31/Jul/2025 07:50:06] "POST /generate HTTP/1.1" 200 -
-2025-07-31 07:50:06,744 - INFO - 127.0.0.1 - - [31/Jul/2025 07:50:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 07:50:18,166 - INFO - Parameters: n_obs=100, k=5, mode=0, class_col='Caesarian'
-2025-07-31 07:50:18,167 - INFO - Starting epoch-based generation...
-2025-07-31 07:50:18,211 - INFO - Epoch 1: Samples=5, PCD=2.7173
-2025-07-31 07:50:18,243 - INFO - Epoch 2: Samples=9, PCD=2.5355
-2025-07-31 07:50:18,277 - INFO - Epoch 3: Samples=13, PCD=2.0479
-2025-07-31 07:50:18,309 - INFO - Epoch 4: Samples=15, PCD=2.0697
-2025-07-31 07:50:18,338 - INFO - Epoch 5: Samples=23, PCD=1.5932
-2025-07-31 07:50:18,366 - INFO - Epoch 6: Samples=27, PCD=1.4605
-2025-07-31 07:50:18,398 - INFO - Epoch 7: Samples=33, PCD=1.4787
-2025-07-31 07:50:18,428 - INFO - Epoch 8: Samples=37, PCD=1.5257
-2025-07-31 07:50:18,455 - INFO - Epoch 9: Samples=42, PCD=1.4484
-2025-07-31 07:50:18,483 - INFO - Epoch 10: Samples=50, PCD=1.3893
-2025-07-31 07:50:18,483 - INFO - Running ML utility test...
-2025-07-31 07:50:18,542 - INFO - ML Utility Metrics: {'accuracy': 0.68, 'f1_score': 0.68, 'precision': 0.68, 'recall': 0.68, 'auc': np.float64(0.6425)}
-2025-07-31 07:50:18,542 - INFO - Process complete. Final synthetic data saved to 'synthetic_20250731-075018.csv'.
-2025-07-31 07:50:18,543 - INFO - 127.0.0.1 - - [31/Jul/2025 07:50:18] "POST /generate HTTP/1.1" 200 -
-2025-07-31 07:50:18,549 - INFO - 127.0.0.1 - - [31/Jul/2025 07:50:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 07:50:21,711 - INFO - Successfully extracted column info from 'cervical.csv'.
-2025-07-31 07:50:21,712 - INFO - 127.0.0.1 - - [31/Jul/2025 07:50:21] "POST /info HTTP/1.1" 200 -
-2025-07-31 07:52:17,496 - INFO -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
-2025-07-31 07:52:17,629 INFO werkzeug MainThread :  * Restarting with stat
-2025-07-31 07:52:19,159 - WARNING - [_internal.py:97] -  * Debugger is active!
-2025-07-31 07:52:19,167 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
-2025-07-31 07:53:59,754 - INFO - [app.py:135] - Parameters: n_obs=100, k=5, mode=0, class_col='Caesarian'
-2025-07-31 07:53:59,760 - INFO - [app.py:145] - Starting epoch-based generation...
-2025-07-31 07:53:59,802 - INFO - [app.py:150] - Epoch 1: Samples=9, PCD=2.2547
-2025-07-31 07:53:59,841 - INFO - [app.py:150] - Epoch 2: Samples=16, PCD=1.5168
-2025-07-31 07:53:59,885 - INFO - [app.py:150] - Epoch 3: Samples=22, PCD=1.2997
-2025-07-31 07:53:59,915 - INFO - [app.py:150] - Epoch 4: Samples=25, PCD=1.1971
-2025-07-31 07:53:59,944 - INFO - [app.py:150] - Epoch 5: Samples=32, PCD=1.1741
-2025-07-31 07:53:59,972 - INFO - [app.py:150] - Epoch 6: Samples=36, PCD=1.1671
-2025-07-31 07:54:00,000 - INFO - [app.py:150] - Epoch 7: Samples=42, PCD=1.1568
-2025-07-31 07:54:00,027 - INFO - [app.py:150] - Epoch 8: Samples=48, PCD=1.2963
-2025-07-31 07:54:00,070 - INFO - [app.py:150] - Epoch 9: Samples=52, PCD=1.2774
-2025-07-31 07:54:00,128 - INFO - [app.py:150] - Epoch 10: Samples=57, PCD=1.2185
-2025-07-31 07:54:00,128 - INFO - [app.py:158] - Running ML utility test...
-2025-07-31 07:54:00,192 - INFO - [app.py:160] - ML Utility Metrics: {'accuracy': 0.7368, 'f1_score': 0.735, 'precision': 0.7336, 'recall': 0.7368, 'auc': np.float64(0.7555)}
-2025-07-31 07:54:00,193 - INFO - [app.py:165] - Process complete. Final synthetic data saved to 'synthetic_20250731-075400.csv'.
-2025-07-31 07:54:00,199 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 07:54:00] "POST /generate HTTP/1.1" 200 -
-2025-07-31 07:54:00,212 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 07:54:00] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 07:54:47,272 - INFO - [app.py:63] - Successfully extracted column info from 'cleveland_heart.csv'.
-2025-07-31 07:54:47,273 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 07:54:47] "POST /info HTTP/1.1" 200 -
-2025-07-31 07:55:05,531 - INFO - [app.py:135] - Parameters: n_obs=100, k=5, mode=1, class_col='13'
-2025-07-31 07:55:05,535 - INFO - [app.py:145] - Starting epoch-based generation...
-2025-07-31 07:55:05,575 - INFO - [app.py:150] - Epoch 1: Samples=0, PCD=nan
-2025-07-31 07:55:05,604 - INFO - [app.py:150] - Epoch 2: Samples=0, PCD=nan
-2025-07-31 07:55:05,632 - INFO - [app.py:150] - Epoch 3: Samples=0, PCD=nan
-2025-07-31 07:55:05,660 - INFO - [app.py:150] - Epoch 4: Samples=0, PCD=nan
-2025-07-31 07:55:05,688 - INFO - [app.py:150] - Epoch 5: Samples=0, PCD=nan
-2025-07-31 07:55:05,717 - INFO - [app.py:150] - Epoch 6: Samples=0, PCD=nan
-2025-07-31 07:55:05,745 - INFO - [app.py:150] - Epoch 7: Samples=0, PCD=nan
-2025-07-31 07:55:05,773 - INFO - [app.py:150] - Epoch 8: Samples=0, PCD=nan
-2025-07-31 07:55:05,801 - INFO - [app.py:150] - Epoch 9: Samples=0, PCD=nan
-2025-07-31 07:55:05,829 - INFO - [app.py:150] - Epoch 10: Samples=0, PCD=nan
-2025-07-31 07:55:05,829 - ERROR - [app.py:153] - Generation failed. No synthetic data was produced.
-2025-07-31 07:55:05,831 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 07:55:05] "POST /generate HTTP/1.1" 200 -
-2025-07-31 07:55:05,840 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 07:55:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 07:55:35,512 - INFO - [app.py:135] - Parameters: n_obs=100, k=5, mode=0, class_col='Caesarian'
-2025-07-31 07:55:35,518 - INFO - [app.py:145] - Starting epoch-based generation...
-2025-07-31 07:55:35,564 - INFO - [app.py:150] - Epoch 1: Samples=4, PCD=2.2084
-2025-07-31 07:55:35,594 - INFO - [app.py:150] - Epoch 2: Samples=13, PCD=2.0127
-2025-07-31 07:55:35,623 - INFO - [app.py:150] - Epoch 3: Samples=22, PCD=1.1576
-2025-07-31 07:55:35,650 - INFO - [app.py:150] - Epoch 4: Samples=28, PCD=1.1171
-2025-07-31 07:55:35,675 - INFO - [app.py:150] - Epoch 5: Samples=32, PCD=0.9646
-2025-07-31 07:55:35,700 - INFO - [app.py:150] - Epoch 6: Samples=37, PCD=0.8148
-2025-07-31 07:55:35,725 - INFO - [app.py:150] - Epoch 7: Samples=40, PCD=0.9243
-2025-07-31 07:55:35,752 - INFO - [app.py:150] - Epoch 8: Samples=47, PCD=1.0284
-2025-07-31 07:55:35,781 - INFO - [app.py:150] - Epoch 9: Samples=51, PCD=1.0137
-2025-07-31 07:55:35,808 - INFO - [app.py:150] - Epoch 10: Samples=57, PCD=1.0223
-2025-07-31 07:55:35,808 - INFO - [app.py:158] - Running ML utility test...
-2025-07-31 07:55:35,870 - INFO - [app.py:160] - ML Utility Metrics: {'accuracy': 0.6491, 'f1_score': 0.633, 'precision': 0.6444, 'recall': 0.6491, 'auc': np.float64(0.7456)}
-2025-07-31 07:55:35,870 - INFO - [app.py:165] - Process complete. Final synthetic data saved to 'synthetic_20250731-075535.csv'.
-2025-07-31 07:55:35,871 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 07:55:35] "POST /generate HTTP/1.1" 200 -
-2025-07-31 07:55:35,880 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 07:55:35] "GET /static/css/style.css HTTP/1.1" 200 -
-2025-07-31 07:59:45,391 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
-2025-07-31 07:59:45,553 INFO werkzeug MainThread :  * Restarting with stat
-2025-07-31 07:59:47,231 - WARNING - [_internal.py:97] -  * Debugger is active!
-2025-07-31 07:59:47,240 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
-2025-07-31 08:00:05,232 - INFO - [app.py:145] - Starting generation with effective k=5...
-2025-07-31 08:00:05,321 - INFO - [app.py:158] - Epoch 1: Samples=6, PCD=2.8494
-2025-07-31 08:00:05,395 - INFO - [app.py:158] - Epoch 2: Samples=12, PCD=1.5314
-2025-07-31 08:00:05,459 - INFO - [app.py:158] - Epoch 3: Samples=17, PCD=1.5105
-2025-07-31 08:00:05,521 - INFO - [app.py:158] - Epoch 4: Samples=24, PCD=1.4098
-2025-07-31 08:00:05,585 - INFO - [app.py:158] - Epoch 5: Samples=29, PCD=1.4009
-2025-07-31 08:00:05,649 - INFO - [app.py:158] - Epoch 6: Samples=35, PCD=1.2886
-2025-07-31 08:00:05,718 - INFO - [app.py:158] - Epoch 7: Samples=38, PCD=1.1891
-2025-07-31 08:00:05,782 - INFO - [app.py:158] - Epoch 8: Samples=45, PCD=1.2255
-2025-07-31 08:00:05,844 - INFO - [app.py:158] - Epoch 9: Samples=50, PCD=1.2932
-2025-07-31 08:00:05,908 - INFO - [app.py:158] - Epoch 10: Samples=57, PCD=1.2438
-2025-07-31 08:00:05,910 - INFO - [app.py:167] - Process complete. Final data saved to 'caesarian_sd_20250731-080005.csv'.
-2025-07-31 08:00:05,913 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 08:00:05] "POST /generate HTTP/1.1" 200 -
-2025-07-31 08:00:05,928 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 08:00:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 08:00:10,058 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 08:00:10] "POST /info HTTP/1.1" 200 -
-2025-07-31 08:00:14,612 - INFO - [app.py:145] - Starting generation with effective k=5...
-2025-07-31 08:00:14,634 - INFO - [app.py:158] - Epoch 1: Samples=0, PCD=nan
-2025-07-31 08:00:14,640 - INFO - [app.py:158] - Epoch 2: Samples=0, PCD=nan
-2025-07-31 08:00:14,647 - INFO - [app.py:158] - Epoch 3: Samples=0, PCD=nan
-2025-07-31 08:00:14,653 - INFO - [app.py:158] - Epoch 4: Samples=0, PCD=nan
-2025-07-31 08:00:14,660 - INFO - [app.py:158] - Epoch 5: Samples=0, PCD=nan
-2025-07-31 08:00:14,666 - INFO - [app.py:158] - Epoch 6: Samples=0, PCD=nan
-2025-07-31 08:00:14,673 - INFO - [app.py:158] - Epoch 7: Samples=0, PCD=nan
-2025-07-31 08:00:14,679 - INFO - [app.py:158] - Epoch 8: Samples=0, PCD=nan
-2025-07-31 08:00:14,686 - INFO - [app.py:158] - Epoch 9: Samples=0, PCD=nan
-2025-07-31 08:00:14,692 - INFO - [app.py:158] - Epoch 10: Samples=0, PCD=nan
-2025-07-31 08:00:14,694 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 08:00:14] "POST /generate HTTP/1.1" 200 -
-2025-07-31 08:00:14,698 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 08:00:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 08:01:56,533 - INFO - [app.py:145] - Starting generation with effective k=5...
-2025-07-31 08:01:56,605 - INFO - [app.py:158] - Epoch 1: Samples=7, PCD=2.1513
-2025-07-31 08:01:56,665 - INFO - [app.py:158] - Epoch 2: Samples=12, PCD=1.724
-2025-07-31 08:01:56,723 - INFO - [app.py:158] - Epoch 3: Samples=18, PCD=1.6303
-2025-07-31 08:01:56,778 - INFO - [app.py:158] - Epoch 4: Samples=25, PCD=1.3558
-2025-07-31 08:01:56,831 - INFO - [app.py:158] - Epoch 5: Samples=31, PCD=1.1185
-2025-07-31 08:01:56,886 - INFO - [app.py:158] - Epoch 6: Samples=36, PCD=0.8177
-2025-07-31 08:01:56,940 - INFO - [app.py:158] - Epoch 7: Samples=44, PCD=0.8614
-2025-07-31 08:01:56,993 - INFO - [app.py:158] - Epoch 8: Samples=49, PCD=0.951
-2025-07-31 08:01:57,045 - INFO - [app.py:158] - Epoch 9: Samples=55, PCD=0.8954
-2025-07-31 08:01:57,101 - INFO - [app.py:158] - Epoch 10: Samples=60, PCD=0.9041
-2025-07-31 08:01:57,101 - INFO - [app.py:167] - Process complete. Final data saved to 'caesarian_sd_20250731-080157.csv'.
-2025-07-31 08:01:57,104 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 08:01:57] "POST /generate HTTP/1.1" 200 -
-2025-07-31 08:01:57,117 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 08:01:57] "GET /static/css/style.css HTTP/1.1" 200 -
-2025-07-31 08:02:11,297 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 08:02:11] "GET / HTTP/1.1" 200 -
-2025-07-31 08:02:11,301 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 08:02:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 08:02:11,302 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 08:02:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 08:02:15,413 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 08:02:15] "POST /info HTTP/1.1" 200 -
-2025-07-31 08:02:45,365 - INFO - [app.py:145] - Starting generation with effective k=3...
-2025-07-31 08:02:45,411 - INFO - [app.py:158] - Epoch 1: Samples=13, PCD=1.6309
-2025-07-31 08:02:45,442 - INFO - [app.py:158] - Epoch 2: Samples=22, PCD=1.7906
-2025-07-31 08:02:45,474 - INFO - [app.py:158] - Epoch 3: Samples=37, PCD=1.5545
-2025-07-31 08:02:45,505 - INFO - [app.py:158] - Epoch 4: Samples=47, PCD=1.6414
-2025-07-31 08:02:45,536 - INFO - [app.py:158] - Epoch 5: Samples=62, PCD=1.6591
-2025-07-31 08:02:45,565 - INFO - [app.py:158] - Epoch 6: Samples=70, PCD=1.7873
-2025-07-31 08:02:45,593 - INFO - [app.py:158] - Epoch 7: Samples=81, PCD=1.8483
-2025-07-31 08:02:45,621 - INFO - [app.py:158] - Epoch 8: Samples=90, PCD=1.7767
-2025-07-31 08:02:45,649 - INFO - [app.py:158] - Epoch 9: Samples=98, PCD=1.8225
-2025-07-31 08:02:45,677 - INFO - [app.py:158] - Epoch 10: Samples=102, PCD=1.8177
-2025-07-31 08:02:45,678 - INFO - [app.py:167] - Process complete. Final data saved to 'cryotherapy_sd_20250731-080245.csv'.
-2025-07-31 08:02:45,678 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 08:02:45] "POST /generate HTTP/1.1" 200 -
-2025-07-31 08:02:45,687 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 08:02:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 08:05:46,749 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
-2025-07-31 08:05:46,903 INFO werkzeug MainThread :  * Restarting with stat
-2025-07-31 08:05:48,434 - WARNING - [_internal.py:97] -  * Debugger is active!
-2025-07-31 08:05:48,443 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
-2025-07-31 08:09:38,490 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 08:09:38] "GET / HTTP/1.1" 200 -
-2025-07-31 08:09:43,060 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 08:09:43] "GET / HTTP/1.1" 200 -
-2025-07-31 08:11:10,114 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 08:11:10] "GET / HTTP/1.1" 200 -
-2025-07-31 08:11:10,124 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 08:11:10] "GET /static/css/style.css HTTP/1.1" 200 -
-2025-07-31 08:11:13,902 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 08:11:13] "POST /info HTTP/1.1" 200 -
-2025-07-31 08:11:41,240 - INFO - [app.py:146] - Starting generation with effective k=5...
-2025-07-31 08:11:41,269 - INFO - [app.py:159] - Epoch 1: Samples=0, PCD=nan
-2025-07-31 08:11:41,287 - INFO - [app.py:159] - Epoch 2: Samples=0, PCD=nan
-2025-07-31 08:11:41,303 - INFO - [app.py:159] - Epoch 3: Samples=0, PCD=nan
-2025-07-31 08:11:41,320 - INFO - [app.py:159] - Epoch 4: Samples=0, PCD=nan
-2025-07-31 08:11:41,337 - INFO - [app.py:159] - Epoch 5: Samples=0, PCD=nan
-2025-07-31 08:11:41,354 - INFO - [app.py:159] - Epoch 6: Samples=0, PCD=nan
-2025-07-31 08:11:41,371 - INFO - [app.py:159] - Epoch 7: Samples=0, PCD=nan
-2025-07-31 08:11:41,388 - INFO - [app.py:159] - Epoch 8: Samples=0, PCD=nan
-2025-07-31 08:11:41,405 - INFO - [app.py:159] - Epoch 9: Samples=0, PCD=nan
-2025-07-31 08:11:41,421 - INFO - [app.py:159] - Epoch 10: Samples=0, PCD=nan
-2025-07-31 08:11:41,438 - INFO - [app.py:159] - Epoch 11: Samples=0, PCD=nan
-2025-07-31 08:11:41,455 - INFO - [app.py:159] - Epoch 12: Samples=0, PCD=nan
-2025-07-31 08:11:41,471 - INFO - [app.py:159] - Epoch 13: Samples=0, PCD=nan
-2025-07-31 08:11:41,488 - INFO - [app.py:159] - Epoch 14: Samples=0, PCD=nan
-2025-07-31 08:11:41,505 - INFO - [app.py:159] - Epoch 15: Samples=0, PCD=nan
-2025-07-31 08:11:41,521 - INFO - [app.py:159] - Epoch 16: Samples=0, PCD=nan
-2025-07-31 08:11:41,538 - INFO - [app.py:159] - Epoch 17: Samples=0, PCD=nan
-2025-07-31 08:11:41,556 - INFO - [app.py:159] - Epoch 18: Samples=0, PCD=nan
-2025-07-31 08:11:41,574 - INFO - [app.py:159] - Epoch 19: Samples=0, PCD=nan
-2025-07-31 08:11:41,592 - INFO - [app.py:159] - Epoch 20: Samples=0, PCD=nan
-2025-07-31 08:11:41,609 - INFO - [app.py:159] - Epoch 21: Samples=0, PCD=nan
-2025-07-31 08:11:41,627 - INFO - [app.py:159] - Epoch 22: Samples=0, PCD=nan
-2025-07-31 08:11:41,645 - INFO - [app.py:159] - Epoch 23: Samples=0, PCD=nan
-2025-07-31 08:11:41,663 - INFO - [app.py:159] - Epoch 24: Samples=0, PCD=nan
-2025-07-31 08:11:41,681 - INFO - [app.py:159] - Epoch 25: Samples=0, PCD=nan
-2025-07-31 08:11:41,699 - INFO - [app.py:159] - Epoch 26: Samples=0, PCD=nan
-2025-07-31 08:11:41,717 - INFO - [app.py:159] - Epoch 27: Samples=0, PCD=nan
-2025-07-31 08:11:41,734 - INFO - [app.py:159] - Epoch 28: Samples=0, PCD=nan
-2025-07-31 08:11:41,751 - INFO - [app.py:159] - Epoch 29: Samples=0, PCD=nan
-2025-07-31 08:11:41,768 - INFO - [app.py:159] - Epoch 30: Samples=0, PCD=nan
-2025-07-31 08:11:41,785 - INFO - [app.py:159] - Epoch 31: Samples=0, PCD=nan
-2025-07-31 08:11:41,803 - INFO - [app.py:159] - Epoch 32: Samples=0, PCD=nan
-2025-07-31 08:11:41,819 - INFO - [app.py:159] - Epoch 33: Samples=0, PCD=nan
-2025-07-31 08:11:41,836 - INFO - [app.py:159] - Epoch 34: Samples=0, PCD=nan
-2025-07-31 08:11:41,853 - INFO - [app.py:159] - Epoch 35: Samples=0, PCD=nan
-2025-07-31 08:11:41,869 - INFO - [app.py:159] - Epoch 36: Samples=0, PCD=nan
-2025-07-31 08:11:41,886 - INFO - [app.py:159] - Epoch 37: Samples=0, PCD=nan
-2025-07-31 08:11:41,906 - INFO - [app.py:159] - Epoch 38: Samples=0, PCD=nan
-2025-07-31 08:11:41,927 - INFO - [app.py:159] - Epoch 39: Samples=0, PCD=nan
-2025-07-31 08:11:41,946 - INFO - [app.py:159] - Epoch 40: Samples=0, PCD=nan
-2025-07-31 08:11:41,966 - INFO - [app.py:159] - Epoch 41: Samples=0, PCD=nan
-2025-07-31 08:11:41,985 - INFO - [app.py:159] - Epoch 42: Samples=0, PCD=nan
-2025-07-31 08:11:42,005 - INFO - [app.py:159] - Epoch 43: Samples=0, PCD=nan
-2025-07-31 08:11:42,025 - INFO - [app.py:159] - Epoch 44: Samples=0, PCD=nan
-2025-07-31 08:11:42,045 - INFO - [app.py:159] - Epoch 45: Samples=0, PCD=nan
-2025-07-31 08:11:42,065 - INFO - [app.py:159] - Epoch 46: Samples=0, PCD=nan
-2025-07-31 08:11:42,085 - INFO - [app.py:159] - Epoch 47: Samples=0, PCD=nan
-2025-07-31 08:11:42,105 - INFO - [app.py:159] - Epoch 48: Samples=0, PCD=nan
-2025-07-31 08:11:42,125 - INFO - [app.py:159] - Epoch 49: Samples=0, PCD=nan
-2025-07-31 08:11:42,145 - INFO - [app.py:159] - Epoch 50: Samples=0, PCD=nan
-2025-07-31 08:11:42,147 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 08:11:42] "POST /generate HTTP/1.1" 200 -
-2025-07-31 08:11:42,155 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 08:11:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 08:11:43,509 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 08:11:43] "GET / HTTP/1.1" 200 -
-2025-07-31 08:11:43,515 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 08:11:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 08:11:43,518 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 08:11:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 08:11:49,234 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 08:11:49] "POST /info HTTP/1.1" 200 -
-2025-07-31 08:11:58,447 - INFO - [app.py:146] - Starting generation with effective k=5...
-2025-07-31 08:11:58,490 - INFO - [app.py:159] - Epoch 1: Samples=0, PCD=nan
-2025-07-31 08:11:58,517 - INFO - [app.py:159] - Epoch 2: Samples=0, PCD=nan
-2025-07-31 08:11:58,543 - INFO - [app.py:159] - Epoch 3: Samples=0, PCD=nan
-2025-07-31 08:11:58,569 - INFO - [app.py:159] - Epoch 4: Samples=0, PCD=nan
-2025-07-31 08:11:58,595 - INFO - [app.py:159] - Epoch 5: Samples=0, PCD=nan
-2025-07-31 08:11:58,621 - INFO - [app.py:159] - Epoch 6: Samples=0, PCD=nan
-2025-07-31 08:11:58,648 - INFO - [app.py:159] - Epoch 7: Samples=0, PCD=nan
-2025-07-31 08:11:58,675 - INFO - [app.py:159] - Epoch 8: Samples=0, PCD=nan
-2025-07-31 08:11:58,702 - INFO - [app.py:159] - Epoch 9: Samples=0, PCD=nan
-2025-07-31 08:11:58,729 - INFO - [app.py:159] - Epoch 10: Samples=0, PCD=nan
-2025-07-31 08:11:58,758 - INFO - [app.py:159] - Epoch 11: Samples=0, PCD=nan
-2025-07-31 08:11:58,790 - INFO - [app.py:159] - Epoch 12: Samples=0, PCD=nan
-2025-07-31 08:11:58,821 - INFO - [app.py:159] - Epoch 13: Samples=0, PCD=nan
-2025-07-31 08:11:58,854 - INFO - [app.py:159] - Epoch 14: Samples=0, PCD=nan
-2025-07-31 08:11:58,885 - INFO - [app.py:159] - Epoch 15: Samples=0, PCD=nan
-2025-07-31 08:11:58,915 - INFO - [app.py:159] - Epoch 16: Samples=0, PCD=nan
-2025-07-31 08:11:58,944 - INFO - [app.py:159] - Epoch 17: Samples=0, PCD=nan
-2025-07-31 08:11:58,973 - INFO - [app.py:159] - Epoch 18: Samples=0, PCD=nan
-2025-07-31 08:11:59,003 - INFO - [app.py:159] - Epoch 19: Samples=0, PCD=nan
-2025-07-31 08:11:59,034 - INFO - [app.py:159] - Epoch 20: Samples=0, PCD=nan
-2025-07-31 08:11:59,065 - INFO - [app.py:159] - Epoch 21: Samples=0, PCD=nan
-2025-07-31 08:11:59,095 - INFO - [app.py:159] - Epoch 22: Samples=0, PCD=nan
-2025-07-31 08:11:59,126 - INFO - [app.py:159] - Epoch 23: Samples=0, PCD=nan
-2025-07-31 08:11:59,158 - INFO - [app.py:159] - Epoch 24: Samples=0, PCD=nan
-2025-07-31 08:11:59,189 - INFO - [app.py:159] - Epoch 25: Samples=0, PCD=nan
-2025-07-31 08:11:59,221 - INFO - [app.py:159] - Epoch 26: Samples=0, PCD=nan
-2025-07-31 08:11:59,253 - INFO - [app.py:159] - Epoch 27: Samples=0, PCD=nan
-2025-07-31 08:11:59,284 - INFO - [app.py:159] - Epoch 28: Samples=0, PCD=nan
-2025-07-31 08:11:59,317 - INFO - [app.py:159] - Epoch 29: Samples=0, PCD=nan
-2025-07-31 08:11:59,348 - INFO - [app.py:159] - Epoch 30: Samples=0, PCD=nan
-2025-07-31 08:11:59,380 - INFO - [app.py:159] - Epoch 31: Samples=0, PCD=nan
-2025-07-31 08:11:59,411 - INFO - [app.py:159] - Epoch 32: Samples=0, PCD=nan
-2025-07-31 08:11:59,444 - INFO - [app.py:159] - Epoch 33: Samples=0, PCD=nan
-2025-07-31 08:11:59,478 - INFO - [app.py:159] - Epoch 34: Samples=0, PCD=nan
-2025-07-31 08:11:59,512 - INFO - [app.py:159] - Epoch 35: Samples=0, PCD=nan
-2025-07-31 08:11:59,546 - INFO - [app.py:159] - Epoch 36: Samples=0, PCD=nan
-2025-07-31 08:11:59,581 - INFO - [app.py:159] - Epoch 37: Samples=0, PCD=nan
-2025-07-31 08:11:59,616 - INFO - [app.py:159] - Epoch 38: Samples=0, PCD=nan
-2025-07-31 08:11:59,651 - INFO - [app.py:159] - Epoch 39: Samples=0, PCD=nan
-2025-07-31 08:11:59,685 - INFO - [app.py:159] - Epoch 40: Samples=0, PCD=nan
-2025-07-31 08:11:59,719 - INFO - [app.py:159] - Epoch 41: Samples=0, PCD=nan
-2025-07-31 08:11:59,752 - INFO - [app.py:159] - Epoch 42: Samples=0, PCD=nan
-2025-07-31 08:11:59,786 - INFO - [app.py:159] - Epoch 43: Samples=0, PCD=nan
-2025-07-31 08:11:59,820 - INFO - [app.py:159] - Epoch 44: Samples=0, PCD=nan
-2025-07-31 08:11:59,854 - INFO - [app.py:159] - Epoch 45: Samples=0, PCD=nan
-2025-07-31 08:11:59,888 - INFO - [app.py:159] - Epoch 46: Samples=0, PCD=nan
-2025-07-31 08:11:59,923 - INFO - [app.py:159] - Epoch 47: Samples=0, PCD=nan
-2025-07-31 08:11:59,957 - INFO - [app.py:159] - Epoch 48: Samples=0, PCD=nan
-2025-07-31 08:11:59,990 - INFO - [app.py:159] - Epoch 49: Samples=0, PCD=nan
-2025-07-31 08:12:00,024 - INFO - [app.py:159] - Epoch 50: Samples=0, PCD=nan
-2025-07-31 08:12:00,024 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 08:12:00] "POST /generate HTTP/1.1" 200 -
-2025-07-31 08:12:00,034 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 08:12:00] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 14:56:50,152 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/kNNMTD.py', reloading
-2025-07-31 14:56:50,333 INFO werkzeug MainThread :  * Restarting with stat
-2025-07-31 14:56:51,920 - WARNING - [_internal.py:97] -  * Debugger is active!
-2025-07-31 14:56:51,933 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
-2025-07-31 15:01:31,555 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
-2025-07-31 15:01:31,674 INFO werkzeug MainThread :  * Restarting with stat
-2025-07-31 15:01:33,205 - WARNING - [_internal.py:97] -  * Debugger is active!
-2025-07-31 15:01:33,215 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
-2025-07-31 15:01:36,532 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:01:36] "GET / HTTP/1.1" 200 -
-2025-07-31 15:01:36,541 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:01:36] "GET /static/css/style.css HTTP/1.1" 200 -
-2025-07-31 15:01:36,541 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:01:36] "GET /static/css/style.css HTTP/1.1" 200 -
-2025-07-31 15:01:43,549 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:01:43] "POST /info HTTP/1.1" 200 -
-2025-07-31 15:01:55,970 - INFO - [app.py:146] - Starting generation with effective k=3...
-2025-07-31 15:01:56,299 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:01:56] "POST /generate HTTP/1.1" 200 -
-2025-07-31 15:01:56,306 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:01:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 15:02:38,797 - INFO - [app.py:146] - Starting generation with effective k=3...
-2025-07-31 15:02:39,109 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:02:39] "POST /generate HTTP/1.1" 200 -
-2025-07-31 15:02:39,118 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:02:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 15:02:54,771 - INFO - [app.py:146] - Starting generation with effective k=3...
-2025-07-31 15:02:55,708 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:02:55] "POST /generate HTTP/1.1" 200 -
-2025-07-31 15:02:55,717 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:02:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 15:06:17,726 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
-2025-07-31 15:06:17,833 INFO werkzeug MainThread :  * Restarting with stat
-2025-07-31 15:06:19,295 - WARNING - [_internal.py:97] -  * Debugger is active!
-2025-07-31 15:06:19,303 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
-2025-07-31 15:06:20,439 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/kNNMTD.py', reloading
-2025-07-31 15:06:20,560 INFO werkzeug MainThread :  * Restarting with stat
-2025-07-31 15:06:22,076 - WARNING - [_internal.py:97] -  * Debugger is active!
-2025-07-31 15:06:22,084 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
-2025-07-31 15:06:24,380 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:06:24] "GET / HTTP/1.1" 200 -
-2025-07-31 15:06:24,393 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:06:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 15:06:24,397 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:06:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 15:06:27,147 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:06:27] "GET / HTTP/1.1" 200 -
-2025-07-31 15:06:27,151 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:06:27] "GET /static/css/style.css HTTP/1.1" 200 -
-2025-07-31 15:06:27,153 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:06:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 15:06:34,503 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:06:34] "POST /info HTTP/1.1" 200 -
-2025-07-31 15:06:49,804 - INFO - [app.py:150] - Starting generation with k=5, epochs=10, task=classification...
-2025-07-31 15:06:49,972 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:06:49] "POST /generate HTTP/1.1" 200 -
-2025-07-31 15:06:49,982 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:06:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 15:07:02,201 - INFO - [app.py:150] - Starting generation with k=3, epochs=10, task=classification...
-2025-07-31 15:07:02,382 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:07:02] "POST /generate HTTP/1.1" 200 -
-2025-07-31 15:07:02,400 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:07:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 15:07:07,335 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:07:07] "POST /info HTTP/1.1" 200 -
-2025-07-31 15:07:14,688 - INFO - [app.py:150] - Starting generation with k=3, epochs=10, task=classification...
-2025-07-31 15:07:15,473 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:07:15] "POST /generate HTTP/1.1" 200 -
-2025-07-31 15:07:15,484 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:07:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 15:12:26,049 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/kNNMTD.py', reloading
-2025-07-31 15:12:26,170 INFO werkzeug MainThread :  * Restarting with stat
-2025-07-31 15:12:27,636 - WARNING - [_internal.py:97] -  * Debugger is active!
-2025-07-31 15:12:27,645 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
-2025-07-31 15:12:36,661 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:12:36] "GET / HTTP/1.1" 200 -
-2025-07-31 15:12:36,673 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:12:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 15:12:41,447 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:12:41] "POST /info HTTP/1.1" 200 -
-2025-07-31 15:12:51,437 - INFO - [app.py:150] - Starting generation with k=3, epochs=10, task=classification...
-2025-07-31 15:12:51,616 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:12:51] "POST /generate HTTP/1.1" 200 -
-2025-07-31 15:12:51,626 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:12:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 15:12:54,442 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:12:54] "GET / HTTP/1.1" 200 -
-2025-07-31 15:12:54,447 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:12:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 15:12:54,449 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:12:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 15:13:05,645 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:13:05] "POST /info HTTP/1.1" 200 -
-2025-07-31 15:13:10,455 - INFO - [app.py:150] - Starting generation with k=5, epochs=10, task=unsupervised...
-2025-07-31 15:13:10,792 - INFO - [app.py:163] - Epoch 1: Samples=1, PCD=6.0644
-2025-07-31 15:13:10,910 - INFO - [app.py:163] - Epoch 2: Samples=1, PCD=6.0644
-2025-07-31 15:13:10,981 - INFO - [app.py:163] - Epoch 3: Samples=1, PCD=6.0644
-2025-07-31 15:13:11,051 - INFO - [app.py:163] - Epoch 4: Samples=1, PCD=6.0644
-2025-07-31 15:13:11,122 - INFO - [app.py:163] - Epoch 5: Samples=1, PCD=6.0644
-2025-07-31 15:13:11,194 - INFO - [app.py:163] - Epoch 6: Samples=1, PCD=6.0644
-2025-07-31 15:13:11,196 - INFO - [app.py:172] - Process complete. Final data saved to 'cleveland_heart_sd_20250731-151311.csv'.
-2025-07-31 15:13:11,198 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:13:11] "POST /generate HTTP/1.1" 200 -
-2025-07-31 15:13:11,207 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:13:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 15:15:53,253 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
-2025-07-31 15:15:53,416 INFO werkzeug MainThread :  * Restarting with stat
-2025-07-31 15:15:55,288 - WARNING - [_internal.py:97] -  * Debugger is active!
-2025-07-31 15:15:55,299 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
-2025-07-31 15:16:14,627 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:16:14] "GET / HTTP/1.1" 200 -
-2025-07-31 15:16:14,634 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:16:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 15:16:19,338 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:16:19] "POST /info HTTP/1.1" 200 -
-2025-07-31 15:16:24,741 - INFO - [app.py:139] - Detected task mode: unsupervised
-2025-07-31 15:16:24,742 - INFO - [app.py:45] - Starting data preparation...
-2025-07-31 15:16:24,745 - INFO - [app.py:50] - Imputed missing values in numeric column '0' with median.
-2025-07-31 15:16:24,746 - INFO - [app.py:50] - Imputed missing values in numeric column '1' with median.
-2025-07-31 15:16:24,747 - INFO - [app.py:50] - Imputed missing values in numeric column '2' with median.
-2025-07-31 15:16:24,747 - INFO - [app.py:50] - Imputed missing values in numeric column '3' with median.
-2025-07-31 15:16:24,748 - INFO - [app.py:50] - Imputed missing values in numeric column '4' with median.
-2025-07-31 15:16:24,748 - INFO - [app.py:50] - Imputed missing values in numeric column '5' with median.
-2025-07-31 15:16:24,748 - INFO - [app.py:50] - Imputed missing values in numeric column '6' with median.
-2025-07-31 15:16:24,749 - INFO - [app.py:50] - Imputed missing values in numeric column '7' with median.
-2025-07-31 15:16:24,749 - INFO - [app.py:50] - Imputed missing values in numeric column '8' with median.
-2025-07-31 15:16:24,750 - INFO - [app.py:50] - Imputed missing values in numeric column '9' with median.
-2025-07-31 15:16:24,750 - INFO - [app.py:50] - Imputed missing values in numeric column '10' with median.
-2025-07-31 15:16:24,751 - INFO - [app.py:50] - Imputed missing values in numeric column '11' with median.
-2025-07-31 15:16:24,751 - INFO - [app.py:50] - Imputed missing values in numeric column '12' with median.
-2025-07-31 15:16:24,751 - INFO - [app.py:50] - Imputed missing values in numeric column '13' with median.
-2025-07-31 15:16:24,758 - INFO - [app.py:61] - Applied one-hot encoding to categorical features.
-2025-07-31 15:16:24,758 - INFO - [app.py:159] - Starting k optimization. Trying k values: [2, 3, 5]
-2025-07-31 15:16:25,620 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:16:25] "POST /generate HTTP/1.1" 200 -
-2025-07-31 15:16:25,629 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:16:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 15:16:33,272 - INFO - [app.py:139] - Detected task mode: unsupervised
-2025-07-31 15:16:33,273 - INFO - [app.py:45] - Starting data preparation...
-2025-07-31 15:16:33,274 - INFO - [app.py:50] - Imputed missing values in numeric column '0' with median.
-2025-07-31 15:16:33,274 - INFO - [app.py:50] - Imputed missing values in numeric column '1' with median.
-2025-07-31 15:16:33,275 - INFO - [app.py:50] - Imputed missing values in numeric column '2' with median.
-2025-07-31 15:16:33,276 - INFO - [app.py:50] - Imputed missing values in numeric column '3' with median.
-2025-07-31 15:16:33,276 - INFO - [app.py:50] - Imputed missing values in numeric column '4' with median.
-2025-07-31 15:16:33,277 - INFO - [app.py:50] - Imputed missing values in numeric column '5' with median.
-2025-07-31 15:16:33,277 - INFO - [app.py:50] - Imputed missing values in numeric column '6' with median.
-2025-07-31 15:16:33,278 - INFO - [app.py:50] - Imputed missing values in numeric column '7' with median.
-2025-07-31 15:16:33,279 - INFO - [app.py:50] - Imputed missing values in numeric column '8' with median.
-2025-07-31 15:16:33,279 - INFO - [app.py:50] - Imputed missing values in numeric column '9' with median.
-2025-07-31 15:16:33,280 - INFO - [app.py:50] - Imputed missing values in numeric column '10' with median.
-2025-07-31 15:16:33,280 - INFO - [app.py:50] - Imputed missing values in numeric column '11' with median.
-2025-07-31 15:16:33,281 - INFO - [app.py:50] - Imputed missing values in numeric column '12' with median.
-2025-07-31 15:16:33,282 - INFO - [app.py:50] - Imputed missing values in numeric column '13' with median.
-2025-07-31 15:16:33,283 - INFO - [app.py:61] - Applied one-hot encoding to categorical features.
-2025-07-31 15:16:33,283 - INFO - [app.py:159] - Starting k optimization. Trying k values: [2, 3, 5]
-2025-07-31 15:16:34,102 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:16:34] "POST /generate HTTP/1.1" 200 -
-2025-07-31 15:16:34,109 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:16:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 15:16:38,756 - INFO - [app.py:139] - Detected task mode: unsupervised
-2025-07-31 15:16:38,756 - INFO - [app.py:45] - Starting data preparation...
-2025-07-31 15:16:38,757 - INFO - [app.py:50] - Imputed missing values in numeric column '0' with median.
-2025-07-31 15:16:38,758 - INFO - [app.py:50] - Imputed missing values in numeric column '1' with median.
-2025-07-31 15:16:38,758 - INFO - [app.py:50] - Imputed missing values in numeric column '2' with median.
-2025-07-31 15:16:38,758 - INFO - [app.py:50] - Imputed missing values in numeric column '3' with median.
-2025-07-31 15:16:38,759 - INFO - [app.py:50] - Imputed missing values in numeric column '4' with median.
-2025-07-31 15:16:38,759 - INFO - [app.py:50] - Imputed missing values in numeric column '5' with median.
-2025-07-31 15:16:38,759 - INFO - [app.py:50] - Imputed missing values in numeric column '6' with median.
-2025-07-31 15:16:38,760 - INFO - [app.py:50] - Imputed missing values in numeric column '7' with median.
-2025-07-31 15:16:38,760 - INFO - [app.py:50] - Imputed missing values in numeric column '8' with median.
-2025-07-31 15:16:38,761 - INFO - [app.py:50] - Imputed missing values in numeric column '9' with median.
-2025-07-31 15:16:38,761 - INFO - [app.py:50] - Imputed missing values in numeric column '10' with median.
-2025-07-31 15:16:38,762 - INFO - [app.py:50] - Imputed missing values in numeric column '11' with median.
-2025-07-31 15:16:38,762 - INFO - [app.py:50] - Imputed missing values in numeric column '12' with median.
-2025-07-31 15:16:38,763 - INFO - [app.py:50] - Imputed missing values in numeric column '13' with median.
-2025-07-31 15:16:38,764 - INFO - [app.py:61] - Applied one-hot encoding to categorical features.
-2025-07-31 15:16:38,764 - INFO - [app.py:159] - Starting k optimization. Trying k values: [2, 3, 5]
-2025-07-31 15:16:39,594 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:16:39] "POST /generate HTTP/1.1" 200 -
-2025-07-31 15:16:39,602 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:16:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 15:19:38,482 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
-2025-07-31 15:19:38,623 INFO werkzeug MainThread :  * Restarting with stat
-2025-07-31 15:19:40,403 - WARNING - [_internal.py:97] -  * Debugger is active!
-2025-07-31 15:19:40,412 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
-2025-07-31 15:20:26,671 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:20:26] "GET / HTTP/1.1" 200 -
-2025-07-31 15:20:26,688 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:20:26] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 15:20:31,103 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:20:31] "POST /info HTTP/1.1" 200 -
-2025-07-31 15:20:33,021 - INFO - [app.py:139] - Detected task mode: unsupervised
-2025-07-31 15:20:33,021 - INFO - [app.py:45] - Starting data preparation...
-2025-07-31 15:20:33,024 - INFO - [app.py:50] - Imputed missing values in numeric column 'Age' with median.
-2025-07-31 15:20:33,025 - INFO - [app.py:50] - Imputed missing values in numeric column 'Deliverynumber' with median.
-2025-07-31 15:20:33,025 - INFO - [app.py:50] - Imputed missing values in numeric column 'Deliverytime' with median.
-2025-07-31 15:20:33,026 - INFO - [app.py:50] - Imputed missing values in numeric column 'BloodofPressure' with median.
-2025-07-31 15:20:33,027 - INFO - [app.py:50] - Imputed missing values in numeric column 'HeartProblem' with median.
-2025-07-31 15:20:33,027 - INFO - [app.py:50] - Imputed missing values in numeric column 'Caesarian' with median.
-2025-07-31 15:20:33,029 - INFO - [app.py:61] - Applied one-hot encoding to categorical features.
-2025-07-31 15:20:33,029 - INFO - [app.py:158] - Starting k optimization. Trying k values: [2, 3, 5]
-2025-07-31 15:20:33,103 - INFO - [app.py:171] - Tested k=2, final PCD=3.3935
-2025-07-31 15:20:33,127 - INFO - [app.py:171] - Tested k=3, final PCD=2.7403
-2025-07-31 15:20:33,154 - INFO - [app.py:171] - Tested k=5, final PCD=1.1893
-2025-07-31 15:20:33,154 - INFO - [app.py:180] - Automatic Optimization: Best 'k' value found to be 5 (out of [2, 3, 5]) with a PCD of 1.1893.
-2025-07-31 15:20:33,340 - INFO - [app.py:201] - Process complete. Final data saved to 'caesarian_sd_20250731-152033.csv'.
-2025-07-31 15:20:33,343 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:20:33] "POST /generate HTTP/1.1" 200 -
-2025-07-31 15:20:33,349 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:20:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 15:20:45,969 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:20:45] "POST /info HTTP/1.1" 200 -
-2025-07-31 15:20:50,205 - INFO - [app.py:139] - Detected task mode: classification
-2025-07-31 15:20:50,205 - INFO - [app.py:45] - Starting data preparation...
-2025-07-31 15:20:50,207 - INFO - [app.py:50] - Imputed missing values in numeric column 'behavior_sexualRisk' with median.
-2025-07-31 15:20:50,207 - INFO - [app.py:50] - Imputed missing values in numeric column 'behavior_eating' with median.
-2025-07-31 15:20:50,208 - INFO - [app.py:50] - Imputed missing values in numeric column 'behavior_personalHygine' with median.
-2025-07-31 15:20:50,209 - INFO - [app.py:50] - Imputed missing values in numeric column 'intention_aggregation' with median.
-2025-07-31 15:20:50,209 - INFO - [app.py:50] - Imputed missing values in numeric column 'intention_commitment' with median.
-2025-07-31 15:20:50,210 - INFO - [app.py:50] - Imputed missing values in numeric column 'attitude_consistency' with median.
-2025-07-31 15:20:50,211 - INFO - [app.py:50] - Imputed missing values in numeric column 'attitude_spontaneity' with median.
-2025-07-31 15:20:50,211 - INFO - [app.py:50] - Imputed missing values in numeric column 'norm_significantPerson' with median.
-2025-07-31 15:20:50,212 - INFO - [app.py:50] - Imputed missing values in numeric column 'norm_fulfillment' with median.
-2025-07-31 15:20:50,213 - INFO - [app.py:50] - Imputed missing values in numeric column 'perception_vulnerability' with median.
-2025-07-31 15:20:50,214 - INFO - [app.py:50] - Imputed missing values in numeric column 'perception_severity' with median.
-2025-07-31 15:20:50,214 - INFO - [app.py:50] - Imputed missing values in numeric column 'motivation_strength' with median.
-2025-07-31 15:20:50,215 - INFO - [app.py:50] - Imputed missing values in numeric column 'motivation_willingness' with median.
-2025-07-31 15:20:50,215 - INFO - [app.py:50] - Imputed missing values in numeric column 'socialSupport_emotionality' with median.
-2025-07-31 15:20:50,216 - INFO - [app.py:50] - Imputed missing values in numeric column 'socialSupport_appreciation' with median.
-2025-07-31 15:20:50,216 - INFO - [app.py:50] - Imputed missing values in numeric column 'socialSupport_instrumental' with median.
-2025-07-31 15:20:50,217 - INFO - [app.py:50] - Imputed missing values in numeric column 'empowerment_knowledge' with median.
-2025-07-31 15:20:50,217 - INFO - [app.py:50] - Imputed missing values in numeric column 'empowerment_abilities' with median.
-2025-07-31 15:20:50,217 - INFO - [app.py:50] - Imputed missing values in numeric column 'empowerment_desires' with median.
-2025-07-31 15:20:50,218 - INFO - [app.py:50] - Imputed missing values in numeric column 'ca_cervix' with median.
-2025-07-31 15:20:50,219 - INFO - [app.py:61] - Applied one-hot encoding to categorical features.
-2025-07-31 15:20:50,220 - INFO - [app.py:158] - Starting k optimization. Trying k values: [2, 3, 5]
-2025-07-31 15:20:50,298 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:20:50] "POST /generate HTTP/1.1" 200 -
-2025-07-31 15:20:50,312 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:20:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 15:21:04,919 - INFO - [app.py:139] - Detected task mode: classification
-2025-07-31 15:21:04,919 - INFO - [app.py:45] - Starting data preparation...
-2025-07-31 15:21:04,920 - INFO - [app.py:50] - Imputed missing values in numeric column 'behavior_sexualRisk' with median.
-2025-07-31 15:21:04,921 - INFO - [app.py:50] - Imputed missing values in numeric column 'behavior_eating' with median.
-2025-07-31 15:21:04,921 - INFO - [app.py:50] - Imputed missing values in numeric column 'behavior_personalHygine' with median.
-2025-07-31 15:21:04,922 - INFO - [app.py:50] - Imputed missing values in numeric column 'intention_aggregation' with median.
-2025-07-31 15:21:04,923 - INFO - [app.py:50] - Imputed missing values in numeric column 'intention_commitment' with median.
-2025-07-31 15:21:04,923 - INFO - [app.py:50] - Imputed missing values in numeric column 'attitude_consistency' with median.
-2025-07-31 15:21:04,924 - INFO - [app.py:50] - Imputed missing values in numeric column 'attitude_spontaneity' with median.
-2025-07-31 15:21:04,924 - INFO - [app.py:50] - Imputed missing values in numeric column 'norm_significantPerson' with median.
-2025-07-31 15:21:04,925 - INFO - [app.py:50] - Imputed missing values in numeric column 'norm_fulfillment' with median.
-2025-07-31 15:21:04,925 - INFO - [app.py:50] - Imputed missing values in numeric column 'perception_vulnerability' with median.
-2025-07-31 15:21:04,925 - INFO - [app.py:50] - Imputed missing values in numeric column 'perception_severity' with median.
-2025-07-31 15:21:04,926 - INFO - [app.py:50] - Imputed missing values in numeric column 'motivation_strength' with median.
-2025-07-31 15:21:04,926 - INFO - [app.py:50] - Imputed missing values in numeric column 'motivation_willingness' with median.
-2025-07-31 15:21:04,927 - INFO - [app.py:50] - Imputed missing values in numeric column 'socialSupport_emotionality' with median.
-2025-07-31 15:21:04,928 - INFO - [app.py:50] - Imputed missing values in numeric column 'socialSupport_appreciation' with median.
-2025-07-31 15:21:04,928 - INFO - [app.py:50] - Imputed missing values in numeric column 'socialSupport_instrumental' with median.
-2025-07-31 15:21:04,929 - INFO - [app.py:50] - Imputed missing values in numeric column 'empowerment_knowledge' with median.
-2025-07-31 15:21:04,929 - INFO - [app.py:50] - Imputed missing values in numeric column 'empowerment_abilities' with median.
-2025-07-31 15:21:04,930 - INFO - [app.py:50] - Imputed missing values in numeric column 'empowerment_desires' with median.
-2025-07-31 15:21:04,930 - INFO - [app.py:50] - Imputed missing values in numeric column 'ca_cervix' with median.
-2025-07-31 15:21:04,931 - INFO - [app.py:61] - Applied one-hot encoding to categorical features.
-2025-07-31 15:21:04,931 - INFO - [app.py:158] - Starting k optimization. Trying k values: [2, 3, 5]
-2025-07-31 15:21:04,996 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:21:04] "POST /generate HTTP/1.1" 200 -
-2025-07-31 15:21:05,005 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:21:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 15:21:33,071 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:21:33] "POST /info HTTP/1.1" 200 -
-2025-07-31 15:21:34,360 - INFO - [app.py:139] - Detected task mode: unsupervised
-2025-07-31 15:21:34,360 - INFO - [app.py:45] - Starting data preparation...
-2025-07-31 15:21:34,362 - INFO - [app.py:50] - Imputed missing values in numeric column '0' with median.
-2025-07-31 15:21:34,363 - INFO - [app.py:50] - Imputed missing values in numeric column '1' with median.
-2025-07-31 15:21:34,364 - INFO - [app.py:50] - Imputed missing values in numeric column '2' with median.
-2025-07-31 15:21:34,364 - INFO - [app.py:50] - Imputed missing values in numeric column '3' with median.
-2025-07-31 15:21:34,365 - INFO - [app.py:50] - Imputed missing values in numeric column '4' with median.
-2025-07-31 15:21:34,365 - INFO - [app.py:50] - Imputed missing values in numeric column '5' with median.
-2025-07-31 15:21:34,366 - INFO - [app.py:50] - Imputed missing values in numeric column '6' with median.
-2025-07-31 15:21:34,366 - INFO - [app.py:50] - Imputed missing values in numeric column '7' with median.
-2025-07-31 15:21:34,367 - INFO - [app.py:50] - Imputed missing values in numeric column '8' with median.
-2025-07-31 15:21:34,367 - INFO - [app.py:50] - Imputed missing values in numeric column '9' with median.
-2025-07-31 15:21:34,368 - INFO - [app.py:50] - Imputed missing values in numeric column '10' with median.
-2025-07-31 15:21:34,369 - INFO - [app.py:50] - Imputed missing values in numeric column '11' with median.
-2025-07-31 15:21:34,369 - INFO - [app.py:50] - Imputed missing values in numeric column '12' with median.
-2025-07-31 15:21:34,370 - INFO - [app.py:50] - Imputed missing values in numeric column '13' with median.
-2025-07-31 15:21:34,371 - INFO - [app.py:61] - Applied one-hot encoding to categorical features.
-2025-07-31 15:21:34,371 - INFO - [app.py:158] - Starting k optimization. Trying k values: [2, 3, 5]
-2025-07-31 15:21:34,471 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:21:34] "POST /generate HTTP/1.1" 200 -
-2025-07-31 15:21:34,483 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:21:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 15:21:40,559 - INFO - [app.py:139] - Detected task mode: regression
-2025-07-31 15:21:40,560 - INFO - [app.py:45] - Starting data preparation...
-2025-07-31 15:21:40,560 - INFO - [app.py:50] - Imputed missing values in numeric column '0' with median.
-2025-07-31 15:21:40,561 - INFO - [app.py:50] - Imputed missing values in numeric column '1' with median.
-2025-07-31 15:21:40,562 - INFO - [app.py:50] - Imputed missing values in numeric column '2' with median.
-2025-07-31 15:21:40,562 - INFO - [app.py:50] - Imputed missing values in numeric column '3' with median.
-2025-07-31 15:21:40,563 - INFO - [app.py:50] - Imputed missing values in numeric column '4' with median.
-2025-07-31 15:21:40,563 - INFO - [app.py:50] - Imputed missing values in numeric column '5' with median.
-2025-07-31 15:21:40,564 - INFO - [app.py:50] - Imputed missing values in numeric column '6' with median.
-2025-07-31 15:21:40,565 - INFO - [app.py:50] - Imputed missing values in numeric column '7' with median.
-2025-07-31 15:21:40,565 - INFO - [app.py:50] - Imputed missing values in numeric column '8' with median.
-2025-07-31 15:21:40,566 - INFO - [app.py:50] - Imputed missing values in numeric column '9' with median.
-2025-07-31 15:21:40,567 - INFO - [app.py:50] - Imputed missing values in numeric column '10' with median.
-2025-07-31 15:21:40,568 - INFO - [app.py:50] - Imputed missing values in numeric column '11' with median.
-2025-07-31 15:21:40,568 - INFO - [app.py:50] - Imputed missing values in numeric column '12' with median.
-2025-07-31 15:21:40,569 - INFO - [app.py:50] - Imputed missing values in numeric column '13' with median.
-2025-07-31 15:21:40,571 - INFO - [app.py:61] - Applied one-hot encoding to categorical features.
-2025-07-31 15:21:40,571 - INFO - [app.py:158] - Starting k optimization. Trying k values: [2, 3, 5]
-2025-07-31 15:21:40,687 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:21:40] "POST /generate HTTP/1.1" 200 -
-2025-07-31 15:21:40,699 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:21:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 15:25:58,222 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:25:58] "POST /info HTTP/1.1" 200 -
-2025-07-31 15:26:00,310 - INFO - [app.py:139] - Detected task mode: unsupervised
-2025-07-31 15:26:00,310 - INFO - [app.py:45] - Starting data preparation...
-2025-07-31 15:26:00,311 - INFO - [app.py:50] - Imputed missing values in numeric column 'brozek' with median.
-2025-07-31 15:26:00,311 - INFO - [app.py:50] - Imputed missing values in numeric column 'density' with median.
-2025-07-31 15:26:00,311 - INFO - [app.py:50] - Imputed missing values in numeric column 'age' with median.
-2025-07-31 15:26:00,312 - INFO - [app.py:50] - Imputed missing values in numeric column 'weight' with median.
-2025-07-31 15:26:00,312 - INFO - [app.py:50] - Imputed missing values in numeric column 'height' with median.
-2025-07-31 15:26:00,312 - INFO - [app.py:50] - Imputed missing values in numeric column 'adipos' with median.
-2025-07-31 15:26:00,313 - INFO - [app.py:50] - Imputed missing values in numeric column 'free' with median.
-2025-07-31 15:26:00,313 - INFO - [app.py:50] - Imputed missing values in numeric column 'neck' with median.
-2025-07-31 15:26:00,313 - INFO - [app.py:50] - Imputed missing values in numeric column 'chest' with median.
-2025-07-31 15:26:00,314 - INFO - [app.py:50] - Imputed missing values in numeric column 'abdom' with median.
-2025-07-31 15:26:00,314 - INFO - [app.py:50] - Imputed missing values in numeric column 'hip' with median.
-2025-07-31 15:26:00,315 - INFO - [app.py:50] - Imputed missing values in numeric column 'thigh' with median.
-2025-07-31 15:26:00,316 - INFO - [app.py:50] - Imputed missing values in numeric column 'knee' with median.
-2025-07-31 15:26:00,317 - INFO - [app.py:50] - Imputed missing values in numeric column 'ankle' with median.
-2025-07-31 15:26:00,318 - INFO - [app.py:50] - Imputed missing values in numeric column 'biceps' with median.
-2025-07-31 15:26:00,319 - INFO - [app.py:50] - Imputed missing values in numeric column 'forearm' with median.
-2025-07-31 15:26:00,320 - INFO - [app.py:50] - Imputed missing values in numeric column 'wrist' with median.
-2025-07-31 15:26:00,322 - INFO - [app.py:61] - Applied one-hot encoding to categorical features.
-2025-07-31 15:26:00,322 - INFO - [app.py:158] - Starting k optimization. Trying k values: [2, 3, 5]
-2025-07-31 15:26:00,681 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:26:00] "POST /generate HTTP/1.1" 200 -
-2025-07-31 15:26:00,692 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:26:00] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 15:26:05,668 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:26:05] "POST /info HTTP/1.1" 200 -
-2025-07-31 15:26:06,640 - INFO - [app.py:139] - Detected task mode: unsupervised
-2025-07-31 15:26:06,640 - INFO - [app.py:45] - Starting data preparation...
-2025-07-31 15:26:06,641 - INFO - [app.py:50] - Imputed missing values in numeric column '0' with median.
-2025-07-31 15:26:06,642 - INFO - [app.py:50] - Imputed missing values in numeric column '1' with median.
-2025-07-31 15:26:06,642 - INFO - [app.py:50] - Imputed missing values in numeric column '2' with median.
-2025-07-31 15:26:06,642 - INFO - [app.py:50] - Imputed missing values in numeric column '3' with median.
-2025-07-31 15:26:06,643 - INFO - [app.py:50] - Imputed missing values in numeric column '4' with median.
-2025-07-31 15:26:06,643 - INFO - [app.py:50] - Imputed missing values in numeric column '5' with median.
-2025-07-31 15:26:06,644 - INFO - [app.py:61] - Applied one-hot encoding to categorical features.
-2025-07-31 15:26:06,644 - INFO - [app.py:158] - Starting k optimization. Trying k values: [2, 3, 5]
-2025-07-31 15:26:06,708 - INFO - [app.py:171] - Tested k=2, final PCD=1.4812
-2025-07-31 15:26:06,759 - INFO - [app.py:171] - Tested k=3, final PCD=0.9834
-2025-07-31 15:26:06,807 - INFO - [app.py:171] - Tested k=5, final PCD=0.7807
-2025-07-31 15:26:06,807 - INFO - [app.py:180] - Automatic Optimization: Best 'k' value found to be 5 (out of [2, 3, 5]) with a PCD of 0.7807.
-2025-07-31 15:26:07,270 - INFO - [app.py:201] - Process complete. Final data saved to 'liver_sd_20250731-152607.csv'.
-2025-07-31 15:26:07,271 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:26:07] "POST /generate HTTP/1.1" 200 -
-2025-07-31 15:26:07,278 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:26:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 15:28:41,398 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
-2025-07-31 15:28:41,506 INFO werkzeug MainThread :  * Restarting with stat
-2025-07-31 15:28:42,935 - WARNING - [_internal.py:97] -  * Debugger is active!
-2025-07-31 15:28:42,944 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
-2025-07-31 15:28:44,082 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/kNNMTD.py', reloading
-2025-07-31 15:28:44,163 INFO werkzeug MainThread :  * Restarting with stat
-2025-07-31 15:28:45,332 - WARNING - [_internal.py:97] -  * Debugger is active!
-2025-07-31 15:28:45,339 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
-2025-07-31 15:28:53,724 - INFO - [app.py:139] - Detected task mode: regression
-2025-07-31 15:28:53,725 - INFO - [app.py:44] - Starting data preparation pipeline...
-2025-07-31 15:28:53,726 - INFO - [app.py:62] - Pipeline: Applied one-hot encoding to categorical features.
-2025-07-31 15:28:53,727 - INFO - [app.py:157] - Starting k optimization. Trying k values: [2, 3, 5]
-2025-07-31 15:28:53,742 - ERROR - [app.py:212] - An unexpected error occurred: Traceback (most recent call last):
-  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 165, in generate_synthetic_data
-    for synthetic_batch in model.fit_generate(X, y):
-  File "/Users/jayanthsivakumar/Desktop/kNNMTD/kNNMTD.py", line 108, in fit_generate
-    _, indices = nn.kneighbors(real_row[[col_name]])
-  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/sklearn/neighbors/_base.py", line 838, in kneighbors
+2025-08-01 12:12:38,745 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:12:38,747 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:12:40,007 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:12:40,008 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:12:40,085 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:12:40,085 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:12:40,085 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:12:40,085 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:12:40,367 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:12:40,368 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:12:40,446 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:12:40,446 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:12:40,446 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:12:40,446 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:12:40,726 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:12:40,727 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:12:40,804 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:12:40,804 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:12:40,804 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:12:40,804 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:12:41,078 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:12:41,079 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:12:41,154 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:12:41,155 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:12:41,155 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:12:41,155 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:12:41,429 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:12:41,430 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:12:41,506 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:12:41,507 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:12:41,507 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:12:41,507 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:12:41,781 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:12:41,782 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:12:41,858 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:12:41,858 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:12:41,858 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:12:41,859 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:12:42,126 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:12:42,127 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:12:42,201 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:12:42,202 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:12:42,202 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:12:42,202 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:12:42,457 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:12:42,458 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:12:42,535 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:12:42,535 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:12:42,535 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:12:42,535 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:12:42,813 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:12:42,814 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:12:42,895 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:12:42,896 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:12:42,896 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:12:42,896 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:12:43,188 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:12:43,189 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:12:43,273 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:12:43,273 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:12:43,273 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:12:43,274 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:12:43,308 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:12:43,309 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:12:43,311 - ERROR - [app.py:262] - An unexpected error occurred: Traceback (most recent call last):
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 237, in generate_synthetic_data
+    return render_template('results.html',
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/templates/results.html", line 62, in top-level template code
+    {% if value is list %}
+jinja2.exceptions.TemplateRuntimeError: No test named 'list' found.
+
+2025-08-01 12:12:43,312 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:12:43] "POST /generate HTTP/1.1" 200 -
+2025-08-01 12:12:43,316 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:12:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:13:17,258 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:13:17] "GET / HTTP/1.1" 200 -
+2025-08-01 12:13:17,263 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:13:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:13:17,265 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:13:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:17:08,851 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
+2025-08-01 12:17:09,018 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-01 12:17:10,809 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-01 12:17:10,819 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-01 12:17:14,050 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:17:14] "POST /info HTTP/1.1" 200 -
+2025-08-01 12:17:19,444 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:17:19,445 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:17:21,400 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:17:21,400 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:17:21,416 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:17:21,416 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:17:21,416 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:17:21,417 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:17:21,932 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:17:21,933 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:17:21,949 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:17:21,949 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:17:21,950 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:17:21,950 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:17:22,456 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:17:22,456 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:17:22,472 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:17:22,472 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:17:22,473 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:17:22,473 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:17:22,995 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:17:22,996 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:17:23,013 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:17:23,013 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:17:23,013 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:17:23,013 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:17:23,545 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:17:23,546 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:17:23,562 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:17:23,562 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:17:23,563 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:17:23,563 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:17:24,090 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:17:24,091 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:17:24,106 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:17:24,107 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:17:24,107 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:17:24,107 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:17:24,645 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:17:24,645 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:17:24,662 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:17:24,662 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:17:24,663 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:17:24,663 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:17:25,263 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:17:25,264 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:17:25,286 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:17:25,286 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:17:25,287 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:17:25,287 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:17:25,878 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:17:25,879 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:17:25,902 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:17:25,902 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:17:25,902 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:17:25,902 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:17:26,600 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:17:26,601 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:17:26,620 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:17:26,621 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:17:26,621 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:17:26,621 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:17:26,657 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:17:26,657 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:17:26,673 - ERROR - [app.py:288] - An unexpected error occurred: Traceback (most recent call last):
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 255, in generate_synthetic_data
+    pca_data = get_pca_data(real_df_processed, final_synthetic_df.pipe(prepare_data)[0])
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 167, in get_pca_data
+    synth_scaled = scaler.transform(synthetic_df_processed)
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/sklearn/utils/_set_output.py", line 319, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/sklearn/preprocessing/_data.py", line 1062, in transform
     X = validate_data(
-  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/sklearn/utils/validation.py", line 2944, in validate_data
-    out = check_array(X, input_name="X", **check_params)
-  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/sklearn/utils/validation.py", line 1093, in check_array
-    raise ValueError(msg)
-ValueError: Expected a 2-dimensional container but got <class 'pandas.core.series.Series'> instead. Pass a DataFrame containing a single row (i.e. single sample) or a single column (i.e. single feature) instead.
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/sklearn/utils/validation.py", line 2919, in validate_data
+    _check_feature_names(_estimator, X, reset=reset)
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/sklearn/utils/validation.py", line 2777, in _check_feature_names
+    raise ValueError(message)
+ValueError: The feature names should match those that were passed during fit.
+Feature names must be in the same order as they were in fit.
 
-2025-07-31 15:28:53,745 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:28:53] "POST /generate HTTP/1.1" 200 -
-2025-07-31 15:28:53,750 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:28:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 15:28:58,088 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:28:58] "POST /info HTTP/1.1" 200 -
-2025-07-31 15:29:02,884 - INFO - [app.py:139] - Detected task mode: classification
-2025-07-31 15:29:02,885 - INFO - [app.py:44] - Starting data preparation pipeline...
-2025-07-31 15:29:02,889 - INFO - [app.py:62] - Pipeline: Applied one-hot encoding to categorical features.
-2025-07-31 15:29:02,890 - INFO - [app.py:157] - Starting k optimization. Trying k values: [2, 3, 5]
-2025-07-31 15:29:02,895 - ERROR - [app.py:212] - An unexpected error occurred: Traceback (most recent call last):
-  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 165, in generate_synthetic_data
-    for synthetic_batch in model.fit_generate(X, y):
-  File "/Users/jayanthsivakumar/Desktop/kNNMTD/kNNMTD.py", line 103, in fit_generate
-    _, indices = nn.kneighbors(real_row[[col_name]])
-  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/sklearn/neighbors/_base.py", line 838, in kneighbors
-    X = validate_data(
-  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/sklearn/utils/validation.py", line 2944, in validate_data
-    out = check_array(X, input_name="X", **check_params)
-  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/sklearn/utils/validation.py", line 1093, in check_array
-    raise ValueError(msg)
-ValueError: Expected a 2-dimensional container but got <class 'pandas.core.series.Series'> instead. Pass a DataFrame containing a single row (i.e. single sample) or a single column (i.e. single feature) instead.
 
-2025-07-31 15:29:02,896 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:29:02] "POST /generate HTTP/1.1" 200 -
-2025-07-31 15:29:02,900 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:29:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 15:30:17,058 - INFO - [app.py:139] - Detected task mode: unsupervised
-2025-07-31 15:30:17,060 - INFO - [app.py:44] - Starting data preparation pipeline...
-2025-07-31 15:30:17,064 - INFO - [app.py:62] - Pipeline: Applied one-hot encoding to categorical features.
-2025-07-31 15:30:17,064 - INFO - [app.py:157] - Starting k optimization. Trying k values: [2, 3, 5]
-2025-07-31 15:30:17,069 - ERROR - [app.py:212] - An unexpected error occurred: Traceback (most recent call last):
-  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 165, in generate_synthetic_data
-    for synthetic_batch in model.fit_generate(X, y):
-  File "/Users/jayanthsivakumar/Desktop/kNNMTD/kNNMTD.py", line 108, in fit_generate
-    _, indices = nn.kneighbors(real_row[[col_name]])
-  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/sklearn/neighbors/_base.py", line 838, in kneighbors
-    X = validate_data(
-  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/sklearn/utils/validation.py", line 2944, in validate_data
-    out = check_array(X, input_name="X", **check_params)
-  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/sklearn/utils/validation.py", line 1093, in check_array
-    raise ValueError(msg)
-ValueError: Expected a 2-dimensional container but got <class 'pandas.core.series.Series'> instead. Pass a DataFrame containing a single row (i.e. single sample) or a single column (i.e. single feature) instead.
+2025-08-01 12:17:26,677 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:17:26] "POST /generate HTTP/1.1" 200 -
+2025-08-01 12:17:26,687 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:17:26] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:18:33,446 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:18:33] "GET / HTTP/1.1" 200 -
+2025-08-01 12:18:33,455 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:18:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:18:33,459 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:18:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:18:38,358 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:18:38] "POST /info HTTP/1.1" 200 -
+2025-08-01 12:20:07,117 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
+2025-08-01 12:20:07,240 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-01 12:20:09,034 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-01 12:20:09,043 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-01 12:20:10,023 - ERROR - [app.py:306] - An unexpected error occurred: Traceback (most recent call last):
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 215, in generate_synthetic_data
+    real_df_processed, inversion_maps = prepare_data(real_df_raw)
+ValueError: too many values to unpack (expected 2)
 
-2025-07-31 15:30:17,070 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:30:17] "POST /generate HTTP/1.1" 200 -
-2025-07-31 15:30:17,077 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:30:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 15:30:24,405 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:30:24] "POST /info HTTP/1.1" 200 -
-2025-07-31 15:30:26,459 - INFO - [app.py:139] - Detected task mode: unsupervised
-2025-07-31 15:30:26,460 - INFO - [app.py:44] - Starting data preparation pipeline...
-2025-07-31 15:30:26,474 - INFO - [app.py:62] - Pipeline: Applied one-hot encoding to categorical features.
-2025-07-31 15:30:26,474 - INFO - [app.py:157] - Starting k optimization. Trying k values: [2, 3, 5]
-2025-07-31 15:30:26,475 - ERROR - [app.py:212] - An unexpected error occurred: Traceback (most recent call last):
-  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 165, in generate_synthetic_data
-    for synthetic_batch in model.fit_generate(X, y):
-  File "/Users/jayanthsivakumar/Desktop/kNNMTD/kNNMTD.py", line 108, in fit_generate
-    _, indices = nn.kneighbors(real_row[[col_name]])
-  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/sklearn/neighbors/_base.py", line 838, in kneighbors
-    X = validate_data(
-  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/sklearn/utils/validation.py", line 2944, in validate_data
-    out = check_array(X, input_name="X", **check_params)
-  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/sklearn/utils/validation.py", line 1093, in check_array
-    raise ValueError(msg)
-ValueError: Expected a 2-dimensional container but got <class 'pandas.core.series.Series'> instead. Pass a DataFrame containing a single row (i.e. single sample) or a single column (i.e. single feature) instead.
+2025-08-01 12:20:10,030 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:20:10] "POST /generate HTTP/1.1" 200 -
+2025-08-01 12:20:10,047 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:20:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:20:11,510 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:20:11] "GET / HTTP/1.1" 200 -
+2025-08-01 12:20:11,517 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:20:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:20:11,520 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:20:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:20:14,372 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:20:14] "POST /info HTTP/1.1" 200 -
+2025-08-01 12:20:19,653 - ERROR - [app.py:306] - An unexpected error occurred: Traceback (most recent call last):
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 215, in generate_synthetic_data
+    real_df_processed, inversion_maps = prepare_data(real_df_raw)
+ValueError: too many values to unpack (expected 2)
 
-2025-07-31 15:30:26,475 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:30:26] "POST /generate HTTP/1.1" 200 -
-2025-07-31 15:30:26,480 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:30:26] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 15:36:16,393 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
-2025-07-31 15:36:16,558 INFO werkzeug MainThread :  * Restarting with stat
-2025-07-31 15:36:18,119 - WARNING - [_internal.py:97] -  * Debugger is active!
-2025-07-31 15:36:18,127 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
-2025-07-31 15:38:28,820 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/kNNMTD.py', reloading
-2025-07-31 15:38:28,929 INFO werkzeug MainThread :  * Restarting with stat
-2025-07-31 15:38:30,253 - WARNING - [_internal.py:97] -  * Debugger is active!
-2025-07-31 15:38:30,261 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
-2025-07-31 15:40:01,294 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:40:01] "GET / HTTP/1.1" 200 -
-2025-07-31 15:40:01,308 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:40:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 15:40:05,633 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:40:05] "POST /info HTTP/1.1" 200 -
-2025-07-31 15:40:18,690 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 15:40:18,691 - INFO - [app.py:69] - Data preparation complete.
-2025-07-31 15:40:18,691 - INFO - [app.py:169] - Detected task mode: classification
-2025-07-31 15:40:18,691 - INFO - [app.py:183] - Starting k optimization. Trying k values: [2, 3, 5]
-2025-07-31 15:40:26,845 - INFO - [app.py:197] - Tested k=2, final PCD=2.3361
-2025-07-31 15:40:35,456 - INFO - [app.py:197] - Tested k=3, final PCD=2.2057
-2025-07-31 15:40:43,855 - INFO - [app.py:197] - Tested k=5, final PCD=1.8864
-2025-07-31 15:40:43,856 - INFO - [app.py:214] - Pipeline Stage 2: Generating data with optimal k=5...
-2025-07-31 15:48:53,146 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 15:48:53,212 - INFO - [app.py:69] - Data preparation complete.
-2025-07-31 15:48:53,250 - INFO - [app.py:169] - Detected task mode: classification
-2025-07-31 15:48:53,251 - INFO - [app.py:183] - Starting k optimization. Trying k values: [2, 3, 5]
-2025-07-31 15:49:10,828 - INFO - [app.py:197] - Tested k=2, final PCD=1.9119
-2025-07-31 15:49:29,907 - INFO - [app.py:197] - Tested k=3, final PCD=1.7312
-2025-07-31 15:49:50,841 - INFO - [app.py:197] - Tested k=5, final PCD=1.7783
-2025-07-31 15:49:50,850 - INFO - [app.py:214] - Pipeline Stage 2: Generating data with optimal k=3...
-2025-07-31 15:53:06,831 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:53:06] "GET / HTTP/1.1" 200 -
-2025-07-31 15:53:06,847 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:53:06] "GET /static/css/style.css HTTP/1.1" 200 -
-2025-07-31 15:53:12,161 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 15:53:12] "POST /info HTTP/1.1" 200 -
-2025-07-31 15:53:38,564 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 15:53:38,572 - INFO - [app.py:69] - Data preparation complete.
-2025-07-31 15:53:38,572 - INFO - [app.py:169] - Detected task mode: unsupervised
-2025-07-31 15:53:38,574 - INFO - [app.py:183] - Starting k optimization. Trying k values: [2, 3, 5]
-2025-07-31 15:55:54,073 - INFO - [app.py:197] - Tested k=2, final PCD=23.1679
-2025-07-31 15:56:47,346 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
-2025-07-31 16:02:39,429 - INFO - [_internal.py:97] - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-2025-07-31 16:02:39,430 - INFO - [_internal.py:97] - [33mPress CTRL+C to quit[0m
-2025-07-31 16:02:39,431 - INFO - [_internal.py:97] -  * Restarting with stat
-2025-07-31 16:02:40,563 - WARNING - [_internal.py:97] -  * Debugger is active!
-2025-07-31 16:02:40,570 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
-2025-07-31 16:02:42,796 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:02:42] "[31m[1mGET /generate HTTP/1.1[0m" 405 -
-2025-07-31 16:02:45,815 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:02:45] "[31m[1mGET /generate HTTP/1.1[0m" 405 -
-2025-07-31 16:03:46,711 - INFO - [_internal.py:97] - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-2025-07-31 16:03:46,711 - INFO - [_internal.py:97] - [33mPress CTRL+C to quit[0m
-2025-07-31 16:03:46,713 - INFO - [_internal.py:97] -  * Restarting with stat
-2025-07-31 16:03:47,823 - WARNING - [_internal.py:97] -  * Debugger is active!
-2025-07-31 16:03:47,834 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
-2025-07-31 16:03:51,692 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:03:51] "[31m[1mGET /generate HTTP/1.1[0m" 405 -
-2025-07-31 16:04:00,753 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:04:00] "GET / HTTP/1.1" 200 -
-2025-07-31 16:04:00,758 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:04:00] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 16:04:07,763 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:04:07] "POST /info HTTP/1.1" 200 -
-2025-07-31 16:04:09,750 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:04:09,753 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:04:09,753 - INFO - [app.py:166] - Detected task mode: unsupervised
-2025-07-31 16:04:09,753 - INFO - [app.py:180] - Starting k optimization. Trying k values: [2, 3, 5]
-2025-07-31 16:04:18,366 - INFO - [app.py:194] - Tested k=2, final PCD=2.5012
-2025-07-31 16:04:27,627 - INFO - [app.py:194] - Tested k=3, final PCD=2.0026
-2025-07-31 16:04:36,557 - INFO - [app.py:194] - Tested k=5, final PCD=2.18
-2025-07-31 16:04:36,558 - INFO - [app.py:211] - Pipeline Stage 2: Generating data with optimal k=3...
-2025-07-31 16:04:45,192 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:04:45,193 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:07:11,545 - INFO - [_internal.py:97] - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-2025-07-31 16:07:11,546 - INFO - [_internal.py:97] - [33mPress CTRL+C to quit[0m
-2025-07-31 16:07:11,546 - INFO - [_internal.py:97] -  * Restarting with stat
-2025-07-31 16:07:12,812 - WARNING - [_internal.py:97] -  * Debugger is active!
-2025-07-31 16:07:12,820 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
-2025-07-31 16:07:12,920 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:07:12] "GET / HTTP/1.1" 200 -
-2025-07-31 16:07:12,928 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:07:12] "GET /static/css/style.css HTTP/1.1" 200 -
-2025-07-31 16:07:18,545 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:07:18] "POST /info HTTP/1.1" 200 -
-2025-07-31 16:07:20,063 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:07:20,065 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:07:20,065 - INFO - [app.py:166] - Detected task mode: unsupervised
-2025-07-31 16:07:20,066 - INFO - [app.py:180] - Starting k optimization. Trying k values: [2, 3, 5]
-2025-07-31 16:07:28,733 - INFO - [app.py:194] - Tested k=2, final PCD=1.924
-2025-07-31 16:21:02,430 - INFO - [_internal.py:97] - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-2025-07-31 16:21:02,431 - INFO - [_internal.py:97] - [33mPress CTRL+C to quit[0m
-2025-07-31 16:21:02,431 - INFO - [_internal.py:97] -  * Restarting with stat
-2025-07-31 16:21:03,564 - WARNING - [_internal.py:97] -  * Debugger is active!
-2025-07-31 16:21:03,573 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
-2025-07-31 16:21:29,560 - INFO - [_internal.py:97] - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-2025-07-31 16:21:29,560 - INFO - [_internal.py:97] - [33mPress CTRL+C to quit[0m
-2025-07-31 16:21:29,561 - INFO - [_internal.py:97] -  * Restarting with stat
-2025-07-31 16:21:30,707 - WARNING - [_internal.py:97] -  * Debugger is active!
-2025-07-31 16:21:30,715 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
-2025-07-31 16:22:18,936 - INFO - [_internal.py:97] - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-2025-07-31 16:22:18,936 - INFO - [_internal.py:97] - [33mPress CTRL+C to quit[0m
-2025-07-31 16:22:18,937 - INFO - [_internal.py:97] -  * Restarting with stat
-2025-07-31 16:22:20,043 - WARNING - [_internal.py:97] -  * Debugger is active!
-2025-07-31 16:22:20,052 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
-2025-07-31 16:22:26,684 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:22:26] "[31m[1mGET /generate HTTP/1.1[0m" 405 -
-2025-07-31 16:22:31,064 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:22:31] "GET / HTTP/1.1" 200 -
-2025-07-31 16:22:31,069 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:22:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 16:22:34,824 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:22:34] "POST /info HTTP/1.1" 200 -
-2025-07-31 16:22:36,761 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:22:36,762 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:22:36,763 - INFO - [app.py:166] - Detected task mode: unsupervised
-2025-07-31 16:22:36,763 - INFO - [app.py:179] - Starting k optimization. Trying k values: [2, 3, 5]
-2025-07-31 16:22:36,777 - ERROR - [app.py:256] - An unexpected error occurred: Traceback (most recent call last):
-  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 187, in generate_synthetic_data
-    for synthetic_batch in model.fit_generate(X, y):
-  File "/Users/jayanthsivakumar/Desktop/kNNMTD/kNNMTD.py", line 123, in fit_generate
-    pool = self._get_pam_samples(lb, ub, u_set.values, pool_size=100)
-  File "/Users/jayanthsivakumar/Desktop/kNNMTD/kNNMTD.py", line 66, in _get_pam_samples
-    mf_vals[mask1] = (candidate_samples[mask1] - lb) / denom1
-ValueError: operands could not be broadcast together with shapes (550,) (11,) 
+2025-08-01 12:20:19,654 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:20:19] "POST /generate HTTP/1.1" 200 -
+2025-08-01 12:20:19,662 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:20:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:20:21,218 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:20:21] "GET / HTTP/1.1" 200 -
+2025-08-01 12:20:21,221 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:20:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:20:21,225 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:20:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:24:43,517 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
+2025-08-01 12:24:43,676 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-01 12:24:45,489 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-01 12:24:45,498 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-01 12:24:48,536 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:24:48] "POST /info HTTP/1.1" 200 -
+2025-08-01 12:24:53,535 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:24:53,536 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:24:53,870 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:24:53,871 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:24:53,890 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:24:53,891 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:24:53,891 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:24:53,891 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:24:53,983 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:24:53,984 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:24:54,005 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:24:54,005 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:24:54,005 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:24:54,005 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:24:54,110 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:24:54,111 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:24:54,132 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:24:54,133 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:24:54,133 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:24:54,133 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:24:54,232 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:24:54,232 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:24:54,252 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:24:54,252 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:24:54,252 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:24:54,252 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:24:54,351 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:24:54,352 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:24:54,372 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:24:54,372 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:24:54,372 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:24:54,372 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:24:54,476 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:24:54,477 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:24:54,497 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:24:54,498 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:24:54,498 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:24:54,498 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:24:54,602 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:24:54,603 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:24:54,623 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:24:54,624 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:24:54,624 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:24:54,624 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:24:54,724 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:24:54,724 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:24:54,744 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:24:54,744 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:24:54,744 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:24:54,744 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:24:54,844 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:24:54,844 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:24:54,864 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:24:54,864 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:24:54,864 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:24:54,864 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:24:54,963 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:24:54,964 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:24:54,984 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:24:54,984 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:24:54,984 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:24:54,984 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:24:55,016 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:24:55,016 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:24:55,031 - ERROR - [app.py:296] - An unexpected error occurred: Traceback (most recent call last):
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 271, in generate_synthetic_data
+    return render_template('results.html',
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/templates/results.html", line 62, in top-level template code
+    {% if value is list %}
+jinja2.exceptions.TemplateRuntimeError: No test named 'list' found.
 
-2025-07-31 16:22:36,778 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:22:36] "POST /generate HTTP/1.1" 200 -
-2025-07-31 16:22:36,782 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:22:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 16:24:19,806 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:24:19,808 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:24:19,809 - INFO - [app.py:166] - Detected task mode: unsupervised
-2025-07-31 16:24:19,809 - INFO - [app.py:179] - Starting k optimization. Trying k values: [2, 3, 5]
-2025-07-31 16:24:19,820 - ERROR - [app.py:256] - An unexpected error occurred: Traceback (most recent call last):
-  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 187, in generate_synthetic_data
-    for synthetic_batch in model.fit_generate(X, y):
-  File "/Users/jayanthsivakumar/Desktop/kNNMTD/kNNMTD.py", line 123, in fit_generate
-    pool = self._get_pam_samples(lb, ub, u_set.values, pool_size=100)
-  File "/Users/jayanthsivakumar/Desktop/kNNMTD/kNNMTD.py", line 66, in _get_pam_samples
-    mf_vals[mask1] = (candidate_samples[mask1] - lb) / denom1
-ValueError: operands could not be broadcast together with shapes (536,) (11,) 
+2025-08-01 12:24:55,032 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:24:55] "POST /generate HTTP/1.1" 200 -
+2025-08-01 12:24:55,043 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:24:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:24:56,685 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:24:56] "GET / HTTP/1.1" 200 -
+2025-08-01 12:24:56,690 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:24:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:24:56,693 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:24:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:26:57,317 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
+2025-08-01 12:26:57,630 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-01 12:26:59,387 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-01 12:26:59,396 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-01 12:27:01,803 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:27:01] "POST /info HTTP/1.1" 200 -
+2025-08-01 12:27:02,663 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:27:02,663 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:27:02,959 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:27:02,960 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:27:03,364 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:27:03,364 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:27:03,461 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:27:03,461 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:27:03,549 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:27:03,550 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:27:03,637 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:27:03,638 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:27:03,727 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:27:03,727 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:27:03,816 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:27:03,816 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:27:03,903 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:27:03,903 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:27:03,991 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:27:03,992 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:27:04,083 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:27:04,084 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:27:04,116 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:27:04,116 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:27:04,131 - ERROR - [app.py:296] - An unexpected error occurred: Traceback (most recent call last):
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 271, in generate_synthetic_data
+    return render_template('results.html',
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/templates/results.html", line 62, in top-level template code
+    {% if value is list %}
+jinja2.exceptions.TemplateRuntimeError: No test named 'list' found.
 
-2025-07-31 16:24:19,821 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:24:19] "POST /generate HTTP/1.1" 200 -
-2025-07-31 16:24:19,827 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:24:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 16:27:53,944 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:27:53] "GET / HTTP/1.1" 200 -
-2025-07-31 16:27:53,950 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:27:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 16:27:58,166 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:27:58] "POST /info HTTP/1.1" 200 -
-2025-07-31 16:27:59,893 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:27:59,894 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:27:59,894 - INFO - [app.py:166] - Detected task mode: unsupervised
-2025-07-31 16:27:59,895 - INFO - [app.py:179] - Starting k optimization. Trying k values: [2, 3, 5]
-2025-07-31 16:27:59,900 - ERROR - [app.py:256] - An unexpected error occurred: Traceback (most recent call last):
-  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 187, in generate_synthetic_data
-    for synthetic_batch in model.fit_generate(X, y):
-  File "/Users/jayanthsivakumar/Desktop/kNNMTD/kNNMTD.py", line 123, in fit_generate
-    pool = self._get_pam_samples(lb, ub, u_set.values, pool_size=100)
-  File "/Users/jayanthsivakumar/Desktop/kNNMTD/kNNMTD.py", line 66, in _get_pam_samples
-    mf_vals[mask1] = (candidate_samples[mask1] - lb) / denom1
-ValueError: operands could not be broadcast together with shapes (343,) (6,) 
+2025-08-01 12:27:04,132 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:27:04] "POST /generate HTTP/1.1" 200 -
+2025-08-01 12:27:04,145 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:27:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:27:05,178 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:27:05] "GET / HTTP/1.1" 200 -
+2025-08-01 12:27:05,180 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:27:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:27:05,182 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:27:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:27:10,080 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:27:10] "POST /info HTTP/1.1" 200 -
+2025-08-01 12:27:14,279 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:27:14,280 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:27:15,453 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:27:15,454 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:27:15,520 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:27:15,520 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:27:15,520 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:27:15,521 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:27:15,793 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:27:15,794 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:27:15,859 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:27:15,860 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:27:15,860 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:27:15,860 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:27:16,158 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:27:16,159 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:27:16,224 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:27:16,225 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:27:16,225 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:27:16,225 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:27:16,499 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:27:16,500 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:27:16,567 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:27:16,568 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:27:16,568 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:27:16,568 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:27:16,841 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:27:16,842 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:27:16,909 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:27:16,909 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:27:16,909 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:27:16,910 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:27:17,183 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:27:17,183 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:27:17,251 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:27:17,251 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:27:17,251 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:27:17,251 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:27:17,530 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:27:17,531 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:27:17,598 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:27:17,598 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:27:17,598 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:27:17,598 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:27:17,871 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:27:17,872 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:27:17,939 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:27:17,940 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:27:17,940 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:27:17,940 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:27:18,213 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:27:18,214 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:27:18,281 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:27:18,281 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:27:18,281 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:27:18,281 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:27:18,557 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:27:18,558 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:27:18,626 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:27:18,627 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:27:18,627 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:27:18,627 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:27:18,658 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:27:18,659 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:27:18,661 - ERROR - [app.py:296] - An unexpected error occurred: Traceback (most recent call last):
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 271, in generate_synthetic_data
+    return render_template('results.html',
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/templates/results.html", line 62, in top-level template code
+    {% if value is list %}
+jinja2.exceptions.TemplateRuntimeError: No test named 'list' found.
 
-2025-07-31 16:27:59,901 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:27:59] "POST /generate HTTP/1.1" 200 -
-2025-07-31 16:27:59,910 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:27:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 16:29:32,673 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:29:32,674 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:29:32,675 - INFO - [app.py:166] - Detected task mode: unsupervised
-2025-07-31 16:29:32,675 - INFO - [app.py:179] - Starting k optimization. Trying k values: [2, 3, 5]
-2025-07-31 16:29:32,679 - ERROR - [app.py:256] - An unexpected error occurred: Traceback (most recent call last):
-  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 187, in generate_synthetic_data
-    for synthetic_batch in model.fit_generate(X, y):
-  File "/Users/jayanthsivakumar/Desktop/kNNMTD/kNNMTD.py", line 123, in fit_generate
-    pool = self._get_pam_samples(lb, ub, u_set.values, pool_size=100)
-  File "/Users/jayanthsivakumar/Desktop/kNNMTD/kNNMTD.py", line 66, in _get_pam_samples
-    mf_vals[mask1] = (candidate_samples[mask1] - lb) / denom1
-ValueError: operands could not be broadcast together with shapes (343,) (6,) 
+2025-08-01 12:27:18,661 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:27:18] "POST /generate HTTP/1.1" 200 -
+2025-08-01 12:27:18,671 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:27:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:29:07,733 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
+2025-08-01 12:29:07,859 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-01 12:29:09,991 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-01 12:29:10,010 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-01 12:29:12,533 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:29:12,534 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:29:13,723 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:29:13,724 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:29:13,792 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:29:13,792 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:29:13,792 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:29:13,793 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:29:14,098 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:29:14,099 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:29:14,169 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:29:14,170 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:29:14,170 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:29:14,170 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:29:14,456 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:29:14,457 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:29:14,526 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:29:14,526 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:29:14,526 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:29:14,526 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:29:14,809 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:29:14,810 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:29:14,879 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:29:14,879 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:29:14,879 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:29:14,879 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:29:15,159 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:29:15,160 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:29:15,236 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:29:15,237 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:29:15,237 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:29:15,237 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:29:15,525 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:29:15,526 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:29:15,596 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:29:15,596 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:29:15,596 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:29:15,597 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:29:15,879 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:29:15,880 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:29:15,948 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:29:15,948 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:29:15,948 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:29:15,948 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:29:16,262 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:29:16,263 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:29:16,333 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:29:16,333 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:29:16,334 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:29:16,334 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:29:16,639 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:29:16,641 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:29:16,710 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:29:16,710 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:29:16,710 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:29:16,710 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:29:16,987 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:29:16,988 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:29:17,055 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:29:17,055 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:29:17,055 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:29:17,056 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:29:17,088 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:29:17,089 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:29:17,102 - ERROR - [app.py:293] - An unexpected error occurred: Traceback (most recent call last):
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 268, in generate_synthetic_data
+    return render_template('results.html',
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/templates/results.html", line 62, in top-level template code
+    {% if value is list %}
+jinja2.exceptions.TemplateRuntimeError: No test named 'list' found.
 
-2025-07-31 16:29:32,680 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:29:32] "POST /generate HTTP/1.1" 200 -
-2025-07-31 16:29:32,685 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:29:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 16:29:41,140 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:29:41,141 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:29:41,141 - INFO - [app.py:166] - Detected task mode: classification
-2025-07-31 16:29:41,145 - INFO - [app.py:179] - Starting k optimization. Trying k values: [2, 3, 5]
-2025-07-31 16:29:41,152 - ERROR - [app.py:256] - An unexpected error occurred: Traceback (most recent call last):
-  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 187, in generate_synthetic_data
-    for synthetic_batch in model.fit_generate(X, y):
-  File "/Users/jayanthsivakumar/Desktop/kNNMTD/kNNMTD.py", line 123, in fit_generate
-    pool = self._get_pam_samples(lb, ub, u_set.values, pool_size=100)
-  File "/Users/jayanthsivakumar/Desktop/kNNMTD/kNNMTD.py", line 66, in _get_pam_samples
-    mf_vals[mask1] = (candidate_samples[mask1] - lb) / denom1
-ValueError: operands could not be broadcast together with shapes (370,) (6,) 
+2025-08-01 12:29:17,103 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:29:17] "POST /generate HTTP/1.1" 200 -
+2025-08-01 12:29:17,116 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:29:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:31:39,211 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
+2025-08-01 12:31:39,367 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-01 12:31:41,139 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-01 12:31:41,149 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-01 12:31:48,111 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:31:48,112 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:31:49,341 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:31:49,342 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:31:49,411 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:31:49,411 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:31:49,411 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:31:49,411 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:31:49,698 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:31:49,699 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:31:49,768 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:31:49,768 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:31:49,768 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:31:49,768 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:31:50,052 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:31:50,053 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:31:50,121 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:31:50,122 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:31:50,122 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:31:50,122 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:31:50,402 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:31:50,403 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:31:50,471 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:31:50,471 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:31:50,471 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:31:50,471 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:31:50,750 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:31:50,751 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:31:50,820 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:31:50,820 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:31:50,820 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:31:50,820 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:31:51,106 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:31:51,107 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:31:51,175 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:31:51,176 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:31:51,176 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:31:51,176 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:31:51,456 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:31:51,457 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:31:51,525 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:31:51,525 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:31:51,525 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:31:51,525 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:31:51,832 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:31:51,833 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:31:51,901 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:31:51,901 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:31:51,901 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:31:51,901 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:31:52,181 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:31:52,182 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:31:52,250 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:31:52,251 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:31:52,251 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:31:52,251 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:31:52,518 - INFO - [app.py:61] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:31:52,519 - INFO - [app.py:69] - Post-processing complete.
+2025-08-01 12:31:52,586 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:31:52,586 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:31:52,586 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:31:52,587 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:31:52,620 - INFO - [app.py:45] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:31:52,620 - INFO - [app.py:56] - Data preparation complete.
+2025-08-01 12:31:52,634 - ERROR - [app.py:296] - An unexpected error occurred: Traceback (most recent call last):
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 271, in generate_synthetic_data
+    return render_template('results.html',
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/templates/results.html", line 62, in top-level template code
+    {% if value is list %}
+jinja2.exceptions.TemplateRuntimeError: No test named 'list' found.
 
-2025-07-31 16:29:41,152 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:29:41] "POST /generate HTTP/1.1" 200 -
-2025-07-31 16:29:41,157 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:29:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 16:30:51,097 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/kNNMTD.py', reloading
-2025-07-31 16:30:51,210 - INFO - [_internal.py:97] -  * Restarting with stat
-2025-07-31 16:30:52,797 - WARNING - [_internal.py:97] -  * Debugger is active!
-2025-07-31 16:30:52,806 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
-2025-07-31 16:31:28,822 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:31:28,824 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:31:28,825 - INFO - [app.py:166] - Detected task mode: classification
-2025-07-31 16:31:28,826 - INFO - [app.py:179] - Starting k optimization. Trying k values: [2, 3, 5]
-2025-07-31 16:31:28,911 - INFO - [app.py:193] - Tested k=2, final PCD=1.2178
-2025-07-31 16:31:28,981 - INFO - [app.py:193] - Tested k=3, final PCD=1.9295
-2025-07-31 16:31:29,052 - INFO - [app.py:193] - Tested k=5, final PCD=1.3441
-2025-07-31 16:31:29,052 - INFO - [app.py:210] - Pipeline Stage 3: Generating data with optimal k=2...
-2025-07-31 16:31:29,107 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:31:29,107 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:31:29,212 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:31:29,212 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:31:29,310 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:31:29,310 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:31:29,412 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:31:29,412 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:31:29,510 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:31:29,510 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:31:29,539 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:31:29,540 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:31:29,540 - INFO - [app.py:166] - Detected task mode: classification
-2025-07-31 16:31:29,541 - INFO - [app.py:179] - Starting k optimization. Trying k values: [2, 3, 5]
-2025-07-31 16:31:29,623 - INFO - [app.py:193] - Tested k=2, final PCD=1.0064
-2025-07-31 16:31:29,702 - INFO - [app.py:193] - Tested k=3, final PCD=1.2506
-2025-07-31 16:31:29,827 - INFO - [app.py:193] - Tested k=5, final PCD=0.8512
-2025-07-31 16:31:29,828 - INFO - [app.py:210] - Pipeline Stage 3: Generating data with optimal k=5...
-2025-07-31 16:31:29,840 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:31:29,843 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:31:29,928 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:31:29,929 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:31:30,064 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:31:30,067 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:31:30,139 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:31:30,140 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:31:30,292 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:31:30,292 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:31:30,348 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:31:30,348 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:31:30,466 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:31:30,467 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:31:30,564 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:31:30,565 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:31:30,664 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:31:30,665 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:31:30,838 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:31:30,840 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:31:30,866 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:31:30,867 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:31:30,986 - INFO - [app.py:225] - Process complete. Final data saved to 'caesarian_sd_20250731-163130.csv'.
-2025-07-31 16:31:31,002 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:31:31] "POST /generate HTTP/1.1" 200 -
-2025-07-31 16:31:31,023 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:31:31,023 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:31:31,130 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:31:31,131 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:31:31,234 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:31:31,235 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:31:31,357 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:31:31,358 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:31:31,405 - INFO - [app.py:225] - Process complete. Final data saved to 'caesarian_sd_20250731-163131.csv'.
-2025-07-31 16:31:31,405 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:31:31] "POST /generate HTTP/1.1" 200 -
-2025-07-31 16:31:31,416 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:31:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 16:32:47,893 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
-2025-07-31 16:32:48,002 - INFO - [_internal.py:97] -  * Restarting with stat
-2025-07-31 16:32:49,616 - WARNING - [_internal.py:97] -  * Debugger is active!
-2025-07-31 16:32:49,627 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
-2025-07-31 16:36:06,013 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:06,016 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:06,017 - INFO - [app.py:174] - Detected task mode: classification
-2025-07-31 16:36:06,018 - INFO - [app.py:187] - Starting k optimization. Trying k values: [2, 3, 5]
-2025-07-31 16:36:06,096 - INFO - [app.py:201] - Tested k=2, final PCD=1.4184
-2025-07-31 16:36:06,169 - INFO - [app.py:201] - Tested k=3, final PCD=1.0789
-2025-07-31 16:36:06,239 - INFO - [app.py:201] - Tested k=5, final PCD=1.1553
-2025-07-31 16:36:06,239 - INFO - [app.py:218] - Pipeline Stage 2: Generating data with optimal k=3...
-2025-07-31 16:36:06,294 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:36:06,294 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:36:06,309 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:06,309 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:06,309 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:06,310 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:06,393 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:36:06,394 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:36:06,408 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:06,409 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:06,409 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:06,409 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:06,492 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:36:06,492 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:36:06,507 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:06,507 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:06,508 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:06,508 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:06,591 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:36:06,592 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:36:06,606 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:06,606 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:06,607 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:06,607 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:06,689 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:36:06,690 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:36:06,704 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:06,704 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:06,705 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:06,705 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:06,787 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:36:06,788 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:36:06,802 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:06,802 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:06,803 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:06,803 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:06,886 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:36:06,887 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:36:06,901 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:06,901 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:06,902 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:06,902 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:06,985 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:36:06,985 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:36:07,000 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:07,000 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:07,000 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:07,000 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:07,083 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:36:07,084 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:36:07,098 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:07,098 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:07,099 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:07,099 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:07,182 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:36:07,183 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:36:07,197 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:07,198 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:07,198 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:07,198 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:07,230 - INFO - [app.py:233] - Process complete. Final data saved to 'caesarian_sd_20250731-163607.csv'.
-2025-07-31 16:36:07,235 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:36:07] "POST /generate HTTP/1.1" 200 -
-2025-07-31 16:36:07,245 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:36:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 16:36:10,967 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:10,969 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:10,970 - INFO - [app.py:174] - Detected task mode: classification
-2025-07-31 16:36:10,970 - INFO - [app.py:187] - Starting k optimization. Trying k values: [2, 3, 5]
-2025-07-31 16:36:11,051 - INFO - [app.py:201] - Tested k=2, final PCD=1.3686
-2025-07-31 16:36:11,116 - INFO - [app.py:201] - Tested k=3, final PCD=1.583
-2025-07-31 16:36:11,181 - INFO - [app.py:201] - Tested k=5, final PCD=1.5513
-2025-07-31 16:36:11,181 - INFO - [app.py:218] - Pipeline Stage 2: Generating data with optimal k=2...
-2025-07-31 16:36:11,231 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:36:11,231 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:36:11,246 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:11,246 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:11,246 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:11,246 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:11,329 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:36:11,329 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:36:11,345 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:11,345 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:11,345 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:11,346 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:11,427 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:36:11,428 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:36:11,442 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:11,442 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:11,442 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:11,443 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:11,527 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:36:11,528 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:36:11,542 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:11,542 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:11,543 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:11,543 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:11,625 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:36:11,626 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:36:11,640 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:11,640 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:11,641 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:11,641 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:11,723 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:36:11,723 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:36:11,738 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:11,738 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:11,738 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:11,738 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:11,820 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:36:11,821 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:36:11,836 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:11,836 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:11,836 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:11,836 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:11,920 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:36:11,920 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:36:11,935 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:11,935 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:11,935 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:11,936 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:12,018 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:36:12,019 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:36:12,033 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:12,034 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:12,034 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:12,034 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:12,117 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:36:12,118 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:36:12,132 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:12,133 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:12,133 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:36:12,133 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:36:12,164 - INFO - [app.py:233] - Process complete. Final data saved to 'caesarian_sd_20250731-163612.csv'.
-2025-07-31 16:36:12,164 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:36:12] "POST /generate HTTP/1.1" 200 -
-2025-07-31 16:36:12,173 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:36:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 16:38:20,073 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:38:20,075 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:38:20,075 - INFO - [app.py:174] - Detected task mode: classification
-2025-07-31 16:38:20,076 - INFO - [app.py:187] - Starting k optimization. Trying k values: [2, 3, 5]
-2025-07-31 16:38:20,152 - INFO - [app.py:201] - Tested k=2, final PCD=1.1135
-2025-07-31 16:38:20,216 - INFO - [app.py:201] - Tested k=3, final PCD=1.8147
-2025-07-31 16:38:20,279 - INFO - [app.py:201] - Tested k=5, final PCD=1.3873
-2025-07-31 16:38:20,279 - INFO - [app.py:218] - Pipeline Stage 2: Generating data with optimal k=2...
-2025-07-31 16:38:20,329 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:38:20,329 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:38:20,346 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:38:20,347 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:38:20,347 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:38:20,347 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:38:20,427 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:38:20,427 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:38:20,441 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:38:20,441 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:38:20,441 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:38:20,442 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:38:20,519 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:38:20,520 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:38:20,534 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:38:20,534 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:38:20,534 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:38:20,577 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:38:20,661 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:38:20,661 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:38:20,676 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:38:20,676 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:38:20,677 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:38:20,677 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:38:20,759 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:38:20,760 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:38:20,774 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:38:20,774 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:38:20,775 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:38:20,775 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:38:20,861 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:38:20,862 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:38:20,876 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:38:20,877 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:38:20,877 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:38:20,877 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:38:20,959 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:38:20,960 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:38:20,974 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:38:20,974 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:38:20,975 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:38:20,975 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:38:21,058 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:38:21,059 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:38:21,073 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:38:21,073 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:38:21,074 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:38:21,074 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:38:21,157 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:38:21,158 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:38:21,172 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:38:21,173 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:38:21,173 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:38:21,173 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:38:21,256 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:38:21,257 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:38:21,272 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:38:21,272 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:38:21,272 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:38:21,272 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:38:21,302 - INFO - [app.py:233] - Process complete. Final data saved to 'caesarian_sd_20250731-163821.csv'.
-2025-07-31 16:38:21,303 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:38:21] "POST /generate HTTP/1.1" 200 -
-2025-07-31 16:38:21,312 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:38:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
-2025-07-31 16:39:04,320 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:39:04] "POST /info HTTP/1.1" 200 -
-2025-07-31 16:39:05,804 - INFO - [app.py:47] - Pipeline Stage 1: Preparing Data...
-2025-07-31 16:39:05,806 - INFO - [app.py:68] - Data preparation complete.
-2025-07-31 16:39:05,806 - INFO - [app.py:174] - Detected task mode: unsupervised
-2025-07-31 16:39:05,806 - INFO - [app.py:187] - Starting k optimization. Trying k values: [2, 3, 5]
-2025-07-31 16:39:06,384 - INFO - [app.py:201] - Tested k=2, final PCD=1.8005
-2025-07-31 16:39:06,950 - INFO - [app.py:201] - Tested k=3, final PCD=1.8047
-2025-07-31 16:39:07,507 - INFO - [app.py:201] - Tested k=5, final PCD=2.0135
-2025-07-31 16:39:07,508 - INFO - [app.py:218] - Pipeline Stage 2: Generating data with optimal k=2...
-2025-07-31 16:39:08,014 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:39:08,015 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:39:08,567 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:39:08,568 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:39:09,119 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:39:09,119 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:39:09,677 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:39:09,677 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:39:10,243 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:39:10,244 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:39:10,867 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:39:10,868 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:39:11,415 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:39:11,416 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:39:11,973 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:39:11,974 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:39:12,536 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:39:12,537 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:39:13,137 - INFO - [app.py:75] - Pipeline Stage 3: Post-processing Data...
-2025-07-31 16:39:13,138 - INFO - [app.py:88] - Post-processing complete.
-2025-07-31 16:39:13,195 - INFO - [app.py:233] - Process complete. Final data saved to 'bioconcentration_sd_20250731-163913.csv'.
-2025-07-31 16:39:13,196 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:39:13] "POST /generate HTTP/1.1" 200 -
-2025-07-31 16:39:13,202 - INFO - [_internal.py:97] - 127.0.0.1 - - [31/Jul/2025 16:39:13] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-08-01 12:31:52,635 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:31:52] "POST /generate HTTP/1.1" 200 -
+2025-08-01 12:31:52,650 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:31:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:36:13,473 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:36:13] "GET / HTTP/1.1" 200 -
+2025-08-01 12:36:13,479 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:36:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:36:13,483 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:36:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:41:20,582 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
+2025-08-01 12:41:20,746 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-01 12:41:22,607 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-01 12:41:22,621 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-01 12:42:38,264 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
+2025-08-01 12:42:38,396 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-01 12:42:40,205 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-01 12:42:40,214 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-01 12:42:42,430 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:42:42] "POST /info HTTP/1.1" 200 -
+2025-08-01 12:42:45,627 - ERROR - [app.py:299] - An unexpected error occurred: Traceback (most recent call last):
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 208, in generate_synthetic_data
+    real_df_processed, inversion_maps = prepare_data(real_df_raw)
+ValueError: too many values to unpack (expected 2)
+
+2025-08-01 12:42:45,634 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:42:45] "POST /generate HTTP/1.1" 200 -
+2025-08-01 12:42:45,642 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:42:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:43:32,193 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:43:32] "GET / HTTP/1.1" 200 -
+2025-08-01 12:43:32,197 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:43:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:43:32,199 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:43:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:43:35,097 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:43:35] "POST /info HTTP/1.1" 200 -
+2025-08-01 12:43:38,653 - ERROR - [app.py:299] - An unexpected error occurred: Traceback (most recent call last):
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 208, in generate_synthetic_data
+    real_df_processed, inversion_maps = prepare_data(real_df_raw)
+ValueError: too many values to unpack (expected 2)
+
+2025-08-01 12:43:38,654 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:43:38] "POST /generate HTTP/1.1" 200 -
+2025-08-01 12:43:38,659 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:43:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:43:40,113 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:43:40] "GET / HTTP/1.1" 200 -
+2025-08-01 12:43:40,119 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:43:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:43:40,122 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:43:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:46:28,654 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:46:28] "POST /info HTTP/1.1" 200 -
+2025-08-01 12:46:34,162 - ERROR - [app.py:299] - An unexpected error occurred: Traceback (most recent call last):
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 208, in generate_synthetic_data
+    real_df_processed, inversion_maps = prepare_data(real_df_raw)
+ValueError: too many values to unpack (expected 2)
+
+2025-08-01 12:46:34,163 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:46:34] "POST /generate HTTP/1.1" 200 -
+2025-08-01 12:46:34,171 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:46:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:49:29,639 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
+2025-08-01 12:49:29,833 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-01 12:49:31,686 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-01 12:49:31,697 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-01 12:50:27,109 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:50:27] "GET / HTTP/1.1" 200 -
+2025-08-01 12:50:27,116 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:50:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:50:27,121 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:50:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:50:30,354 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:50:30] "POST /info HTTP/1.1" 200 -
+2025-08-01 12:50:34,608 - INFO - [app.py:50] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:50:34,608 - INFO - [app.py:61] - Data preparation complete.
+2025-08-01 12:50:35,024 - INFO - [app.py:66] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:50:35,025 - INFO - [app.py:74] - Post-processing complete.
+2025-08-01 12:50:35,065 - INFO - [app.py:50] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:50:35,065 - INFO - [app.py:61] - Data preparation complete.
+2025-08-01 12:50:35,065 - INFO - [app.py:50] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:50:35,065 - INFO - [app.py:61] - Data preparation complete.
+2025-08-01 12:50:35,163 - INFO - [app.py:66] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:50:35,163 - INFO - [app.py:74] - Post-processing complete.
+2025-08-01 12:50:35,200 - INFO - [app.py:50] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:50:35,200 - INFO - [app.py:61] - Data preparation complete.
+2025-08-01 12:50:35,200 - INFO - [app.py:50] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:50:35,200 - INFO - [app.py:61] - Data preparation complete.
+2025-08-01 12:50:35,302 - INFO - [app.py:66] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:50:35,303 - INFO - [app.py:74] - Post-processing complete.
+2025-08-01 12:50:35,341 - INFO - [app.py:50] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:50:35,341 - INFO - [app.py:61] - Data preparation complete.
+2025-08-01 12:50:35,341 - INFO - [app.py:50] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:50:35,341 - INFO - [app.py:61] - Data preparation complete.
+2025-08-01 12:50:35,439 - INFO - [app.py:66] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:50:35,440 - INFO - [app.py:74] - Post-processing complete.
+2025-08-01 12:50:35,477 - INFO - [app.py:50] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:50:35,478 - INFO - [app.py:61] - Data preparation complete.
+2025-08-01 12:50:35,478 - INFO - [app.py:50] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:50:35,478 - INFO - [app.py:61] - Data preparation complete.
+2025-08-01 12:50:35,585 - INFO - [app.py:66] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:50:35,586 - INFO - [app.py:74] - Post-processing complete.
+2025-08-01 12:50:35,626 - INFO - [app.py:50] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:50:35,627 - INFO - [app.py:61] - Data preparation complete.
+2025-08-01 12:50:35,627 - INFO - [app.py:50] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:50:35,627 - INFO - [app.py:61] - Data preparation complete.
+2025-08-01 12:50:35,737 - INFO - [app.py:66] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:50:35,738 - INFO - [app.py:74] - Post-processing complete.
+2025-08-01 12:50:35,779 - INFO - [app.py:50] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:50:35,780 - INFO - [app.py:61] - Data preparation complete.
+2025-08-01 12:50:35,780 - INFO - [app.py:50] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:50:35,780 - INFO - [app.py:61] - Data preparation complete.
+2025-08-01 12:50:35,892 - INFO - [app.py:66] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:50:35,892 - INFO - [app.py:74] - Post-processing complete.
+2025-08-01 12:50:35,934 - INFO - [app.py:50] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:50:35,934 - INFO - [app.py:61] - Data preparation complete.
+2025-08-01 12:50:35,934 - INFO - [app.py:50] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:50:35,934 - INFO - [app.py:61] - Data preparation complete.
+2025-08-01 12:50:36,044 - INFO - [app.py:66] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:50:36,045 - INFO - [app.py:74] - Post-processing complete.
+2025-08-01 12:50:36,087 - INFO - [app.py:50] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:50:36,087 - INFO - [app.py:61] - Data preparation complete.
+2025-08-01 12:50:36,087 - INFO - [app.py:50] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:50:36,087 - INFO - [app.py:61] - Data preparation complete.
+2025-08-01 12:50:36,197 - INFO - [app.py:66] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:50:36,198 - INFO - [app.py:74] - Post-processing complete.
+2025-08-01 12:50:36,237 - INFO - [app.py:50] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:50:36,237 - INFO - [app.py:61] - Data preparation complete.
+2025-08-01 12:50:36,237 - INFO - [app.py:50] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:50:36,237 - INFO - [app.py:61] - Data preparation complete.
+2025-08-01 12:50:36,345 - INFO - [app.py:66] - Pipeline Stage 3: Post-processing Data...
+2025-08-01 12:50:36,345 - INFO - [app.py:74] - Post-processing complete.
+2025-08-01 12:50:36,384 - INFO - [app.py:50] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:50:36,384 - INFO - [app.py:61] - Data preparation complete.
+2025-08-01 12:50:36,384 - INFO - [app.py:50] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:50:36,384 - INFO - [app.py:61] - Data preparation complete.
+2025-08-01 12:50:36,416 - INFO - [app.py:50] - Pipeline Stage 1: Preparing Data...
+2025-08-01 12:50:36,416 - INFO - [app.py:61] - Data preparation complete.
+2025-08-01 12:50:36,429 - ERROR - [app.py:300] - An unexpected error occurred: Traceback (most recent call last):
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 275, in generate_synthetic_data
+    return render_template('results.html',
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/templates/results.html", line 62, in top-level template code
+    {% if value is list %}
+jinja2.exceptions.TemplateRuntimeError: No test named 'list' found.
+
+2025-08-01 12:50:36,430 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:50:36] "POST /generate HTTP/1.1" 200 -
+2025-08-01 12:50:36,440 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:50:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:54:02,643 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
+2025-08-01 12:54:02,765 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-01 12:54:04,308 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-01 12:54:04,317 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-01 12:54:59,779 - ERROR - [app.py:297] - An unexpected error occurred: Traceback (most recent call last):
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 272, in generate_synthetic_data
+    return render_template('results.html',
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/templates/results.html", line 62, in top-level template code
+    {% if value is list %}
+jinja2.exceptions.TemplateRuntimeError: No test named 'list' found.
+
+2025-08-01 12:54:59,781 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:54:59] "POST /generate HTTP/1.1" 200 -
+2025-08-01 12:54:59,793 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:54:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:57:50,712 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:57:50] "GET / HTTP/1.1" 200 -
+2025-08-01 12:57:50,716 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:57:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:57:50,720 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:57:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 12:59:38,255 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:59:38] "POST /info HTTP/1.1" 200 -
+2025-08-01 12:59:55,472 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:59:55] "POST /generate HTTP/1.1" 200 -
+2025-08-01 12:59:55,481 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 12:59:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
