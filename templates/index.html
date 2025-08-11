@@ -85,6 +85,7 @@
                     </div>
                 </div>
 
+                <!-- This progress container replaces the modal -->
                 <div class="progress-container hidden" id="progress-container">
                     <div class="progress-bar-label">Generating Data...</div>
                     <div class="progress-bar">
@@ -156,10 +157,15 @@
             });
             
             form.addEventListener('submit', () => {
+                // This is the key fix: hide the button and show the inline progress bar
                 generateBtn.classList.add('hidden');
                 progressContainer.classList.remove('hidden');
+                progressBarFill.style.transition = 'none';
                 progressBarFill.style.width = '0%';
-                setTimeout(() => { progressBarFill.style.width = '100%'; }, 100);
+                setTimeout(() => { 
+                    progressBarFill.style.transition = 'width 10s ease-in-out';
+                    progressBarFill.style.width = '100%'; 
+                }, 100);
             });
         });
     </script>

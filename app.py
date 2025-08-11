@@ -7,10 +7,11 @@ import logging
 from logging.handlers import RotatingFileHandler
 import traceback
 from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
-from sklearn.metrics import accuracy_score, f1_score, r2_score, mean_absolute_error, roc_auc_score
+from sklearn.metrics import accuracy_score, f1_score, r2_score, mean_absolute_error, roc_auc_score, adjusted_rand_score
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
+from sklearn.cluster import KMeans
 import numpy as np
 from dython.nominal import associations
 
@@ -71,22 +72,36 @@ def align_columns(df_to_align, reference_columns):
     return aligned_df.fillna(0)
 
 def run_ml_utility_test(real_df_raw, synthetic_df_final, target_col_name, task_mode):
-    if target_col_name not in real_df_raw.columns or synthetic_df_final.empty: return {}
-    X_real, y_real = real_df_raw.drop(columns=[target_col_name]), real_df_raw[target_col_name]
-    X_synth, y_synth = synthetic_df_final.drop(columns=[target_col_name]), synthetic_df_final[target_col_name]
-    X_train_processed, X_test_processed = prepare_data(X_synth), prepare_data(X_real)
-    X_test_aligned = align_columns(X_test_processed, X_train_processed.columns)
+    if task_mode != 'unsupervised' and (target_col_name not in real_df_raw.columns or synthetic_df_final.empty): return {}
+    
     metrics = {}
-    if task_mode == 'classification':
-        model = RandomForestClassifier(random_state=42, n_estimators=50).fit(X_train_processed, y_synth)
-        preds = model.predict(X_test_aligned)
-        metrics['accuracy'] = accuracy_score(y_real, preds)
-        metrics['f1_score'] = f1_score(y_real, preds, average='weighted')
-    else:
-        model = RandomForestRegressor(random_state=42, n_estimators=50).fit(X_train_processed, y_synth)
-        preds = model.predict(X_test_aligned)
-        metrics['r2_score'] = r2_score(y_real, preds)
-        metrics['mae'] = mean_absolute_error(y_real, preds)
+    if task_mode == 'classification' or task_mode == 'regression':
+        X_real, y_real = real_df_raw.drop(columns=[target_col_name]), real_df_raw[target_col_name]
+        X_synth, y_synth = synthetic_df_final.drop(columns=[target_col_name]), synthetic_df_final[target_col_name]
+        X_train_processed, X_test_processed = prepare_data(X_synth), prepare_data(X_real)
+        X_test_aligned = align_columns(X_test_processed, X_train_processed.columns)
+        
+        if task_mode == 'classification':
+            model = RandomForestClassifier(random_state=42, n_estimators=50).fit(X_train_processed, y_synth)
+            preds = model.predict(X_test_aligned)
+            metrics['accuracy'] = accuracy_score(y_real, preds)
+            metrics['f1_score'] = f1_score(y_real, preds, average='weighted')
+        else: # regression
+            model = RandomForestRegressor(random_state=42, n_estimators=50).fit(X_train_processed, y_synth)
+            preds = model.predict(X_test_aligned)
+            metrics['r2_score'] = r2_score(y_real, preds)
+            metrics['mae'] = mean_absolute_error(y_real, preds)
+    else: # unsupervised
+        real_processed = prepare_data(real_df_raw)
+        synth_processed = prepare_data(synthetic_df_final)
+        synth_aligned = align_columns(synth_processed, real_processed.columns)
+        
+        n_clusters = 5 # A reasonable default
+        kmeans = KMeans(n_clusters=n_clusters, random_state=42, n_init=10).fit(real_processed)
+        real_labels = kmeans.labels_
+        synth_labels = kmeans.predict(synth_aligned)
+        metrics['Adjusted Rand Score'] = adjusted_rand_score(real_labels, synth_labels)
+
     return {k: round(v, 4) for k, v in metrics.items()}
 
 def get_pca_data(real_df_processed, synthetic_df_processed):
@@ -285,17 +300,14 @@ def get_analysis_data():
         return jsonify(pca_data)
 
     elif analysis_type == 'ml_efficacy':
-        target_col = selected_columns[-1]
-        features = selected_columns[:-1]
-        if not features: return jsonify({"error": "Please select at least one feature and one target column."})
+        target_col = data.get('target_col', None)
+        task = 'unsupervised'
+        if target_col:
+            task = 'classification' if real_df[target_col].nunique() <= 25 else 'regression'
         
-        real_subset = real_df[selected_columns]
-        synth_subset = synth_df[selected_columns]
-        task = 'classification' if real_subset[target_col].nunique() <= 25 else 'regression'
-
-        tstr_metrics = run_ml_utility_test(real_subset, synth_subset, target_col, task)
-        trts_metrics = run_ml_utility_test(synth_subset, real_subset, target_col, task)
-        return jsonify({'tstr': tstr_metrics, 'trts': trts_metrics})
+        tstr_metrics = run_ml_utility_test(real_df, synth_df, target_col, task)
+        trts_metrics = run_ml_utility_test(synth_df, real_df, target_col, task)
+        return jsonify({'tstr': tstr_metrics, 'trts': trts_metrics, 'task': task})
 
     elif analysis_type == 'privacy':
         real_processed = prepare_data(real_df[selected_columns])
