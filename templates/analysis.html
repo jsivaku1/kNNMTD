@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Wizard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container results-container">
+        <div class="header-flex">
+            <h1>Analysis Wizard 🔬</h1>
+            <a href="{{ url_for('index') }}" class="link-back">Back to Home</a>
+        </div>
+        <p>Interactively compare your real and synthetic data to validate its quality, utility, and privacy.</p>
+        
+        <div class="wizard-grid">
+            <div class="analysis-results" id="analysis-results">
+                <div class="placeholder">
+                    <h3>Welcome to the Analysis Wizard</h3>
+                    <p>Select an analysis type and one or more columns from the control panel on the right to begin.</p>
+                </div>
+            </div>
+            <div class="control-panel">
+                <h3>Control Panel</h3>
+                
+                <div class="control-group">
+                    <label>1. Select Analysis Type</label>
+                    <div class="radio-group" id="analysis-type-selector">
+                        <input type="radio" id="type-dist" name="analysis_type" value="distribution" checked><label for="type-dist">Distribution</label>
+                        <input type="radio" id="type-corr" name="analysis_type" value="correlation"><label for="type-corr">Correlation</label>
+                        <input type="radio" id="type-pca" name="analysis_type" value="pca"><label for="type-pca">PCA</label>
+                        <input type="radio" id="type-ml" name="analysis_type" value="ml_efficacy"><label for="type-ml">ML Efficacy</label>
+                        <input type="radio" id="type-privacy" name="analysis_type" value="privacy"><label for="type-privacy">Privacy</label>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label for="column-selector">2. Select Columns</label>
+                    <p class="control-hint" id="control-hint">Select one column to see its distribution.</p>
+                    <select id="column-selector" multiple>
+                        {% for col in columns %}
+                            <option value="{{ col }}">{{ col }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <button class="btn wizard-btn" id="run-analysis-btn">Run Analysis</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const analysisTypeSelector = document.getElementById('analysis-type-selector');
+            const columnSelector = document.getElementById('column-selector');
+            const runAnalysisBtn = document.getElementById('run-analysis-btn');
+            const resultsContainer = document.getElementById('analysis-results');
+            const controlHint = document.getElementById('control-hint');
+
+            const realFilename = "{{ real_filename }}";
+            const synthFilename = "{{ synth_filename }}";
+            let activeCharts = {};
+
+            const analysisHints = {
+                distribution: "Select one column to see its distribution.",
+                correlation: "Select 2 or more columns to compare their correlation heatmaps.",
+                pca: "Select 2 or more columns to perform PCA.",
+                ml_efficacy: "Select features and a target. The last column selected will be the target.",
+                privacy: "Select columns to include in the privacy assessment."
+            };
+
+            analysisTypeSelector.addEventListener('change', function(event) {
+                const selectedType = event.target.value;
+                controlHint.textContent = analysisHints[selectedType];
+            });
+
+            runAnalysisBtn.addEventListener('click', async function() {
+                const analysisType = document.querySelector('input[name="analysis_type"]:checked').value;
+                const selectedColumns = Array.from(columnSelector.selectedOptions).map(opt => opt.value);
+
+                if (selectedColumns.length === 0 && analysisType !== 'pca') {
+                    alert('Please select at least one column for this analysis type.');
+                    return;
+                }
+                
+                resultsContainer.innerHTML = '<div class="spinner-container" style="display: flex; justify-content: center; padding: 40px;"><div class="spinner"></div></div>';
+
+                const response = await fetch('/get_analysis_data', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        real_filename: realFilename,
+                        synth_filename: synthFilename,
+                        analysis_type: analysisType,
+                        columns: selectedColumns
+                    })
+                });
+                const data = await response.json();
+
+                if (data.error) {
+                    resultsContainer.innerHTML = `<div class="error-box">${data.error}</div>`;
+                    return;
+                }
+                
+                renderResults(analysisType, data, selectedColumns);
+            });
+
+            function renderResults(type, data, columns) {
+                Object.values(activeCharts).forEach(chart => chart.destroy());
+                activeCharts = {};
+                resultsContainer.innerHTML = '';
+
+                if (type === 'distribution') {
+                    const col = columns[0];
+                    const card = document.createElement('div');
+                    card.className = 'summary-card';
+                    card.innerHTML = `<h2>Distribution for "${col}"</h2><canvas id="dist-chart"></canvas><div id="stats-table"></div>`;
+                    resultsContainer.appendChild(card);
+                    renderDistributionPlot(document.getElementById('dist-chart').getContext('2d'), data);
+                    if(data.stats) renderStatsTable(document.getElementById('stats-table'), data.stats);
+                } else if (type === 'pca') {
+                    const card = document.createElement('div');
+                    card.className = 'summary-card';
+                    card.innerHTML = `<h2>Data Structure (PCA) - ${data.variance}% Variance Explained</h2><canvas id="pca-chart"></canvas>`;
+                    resultsContainer.appendChild(card);
+                    renderPcaPlot(document.getElementById('pca-chart').getContext('2d'), data);
+                } else if (type === 'correlation') {
+                    const card = document.createElement('div');
+                    card.className = 'summary-card';
+                    card.innerHTML = `<h2>Correlation Heatmaps</h2><div class="summary-grid"><div id="real-heatmap"></div><div id="synth-heatmap"></div></div>`;
+                    resultsContainer.appendChild(card);
+                    renderCorrelationHeatmaps(data);
+                } else if (type === 'ml_efficacy') {
+                    resultsContainer.innerHTML = `
+                        <div class="summary-card">
+                            <h3>Train on Synthetic, Test on Real (TSTR)</h3>
+                            <p>This score measures the synthetic data's ability to create a model that generalizes to real-world data. Higher is better.</p>
+                            <table class="summary-table">${Object.entries(data.tstr).map(([k,v]) => `<tr><td>${k}</td><td>${v}</td></tr>`).join('')}</table>
+                        </div>
+                        <div class="summary-card">
+                            <h3>Train on Real, Test on Synthetic (TRTS)</h3>
+                            <p>This score measures how well the synthetic data matches the patterns of the real data. The closer this is to a model trained and tested on real data, the better.</p>
+                            <table class="summary-table">${Object.entries(data.trts).map(([k,v]) => `<tr><td>${k}</td><td>${v}</td></tr>`).join('')}</table>
+                        </div>
+                    `;
+                } else if (type === 'privacy') {
+                    let insight = "This score indicates a high risk of privacy leakage. The synthetic data is easily distinguishable from the real data.";
+                    if (data.auc < 0.7) insight = "Good privacy. The model struggles to distinguish between real and synthetic data, suggesting new records were created.";
+                    if (data.auc < 0.6) insight = "Excellent privacy. The synthetic data is nearly indistinguishable from the real data.";
+
+                    resultsContainer.innerHTML = `
+                        <div class="summary-card">
+                            <h3>Privacy: Membership Inference Attack</h3>
+                            <div class="metric-display">
+                                <span>AUC Score</span>
+                                <span class="metric-value final">${data.auc}</span>
+                            </div>
+                            <p>${insight}</p>
+                        </div>
+                    `;
+                }
+            }
+            
+            function renderDistributionPlot(ctx, data) {
+                if (data.type === 'categorical') {
+                    const allLabels = [...new Set([...Object.keys(data.real), ...Object.keys(data.synth)])].sort();
+                    const realValues = allLabels.map(label => (data.real[label] || 0) * 100);
+                    const synthValues = allLabels.map(label => (data.synth[label] || 0) * 100);
+                    activeCharts['dist'] = new Chart(ctx, { type: 'bar', data: { labels: allLabels, datasets: [ { label: 'Real Data (%)', data: realValues, backgroundColor: 'rgba(236, 72, 153, 0.7)' }, { label: 'Synthetic Data (%)', data: synthValues, backgroundColor: 'rgba(56, 189, 248, 0.7)' } ] }, options: { responsive: true, scales: { y: { beginAtZero: true, title: { display: true, text: 'Percentage' } } } } });
+                } else {
+                    const realData = data.real.sort((a, b) => a - b);
+                    const synthData = data.synth.sort((a, b) => a - b);
+                    const min = Math.min(...realData, ...synthData);
+                    const max = Math.max(...realData, ...synthData);
+                    const bins = 20;
+                    const step = (max - min) / bins;
+                    const labels = Array.from({length: bins}, (_, i) => (min + i * step).toFixed(2));
+                    const realHist = new Array(bins).fill(0);
+                    const synthHist = new Array(bins).fill(0);
+                    realData.forEach(val => { const binIndex = Math.min(bins - 1, Math.floor((val - min) / step)); realHist[binIndex]++; });
+                    synthData.forEach(val => { const binIndex = Math.min(bins - 1, Math.floor((val - min) / step)); synthHist[binIndex]++; });
+                    activeCharts['dist'] = new Chart(ctx, { type: 'line', data: { labels: labels, datasets: [ { label: 'Real Data', data: realHist, borderColor: 'rgba(236, 72, 153, 1)', fill: false, tension: 0.4 }, { label: 'Synthetic Data', data: synthHist, borderColor: 'rgba(56, 189, 248, 1)', fill: false, tension: 0.4 } ] }, options: { responsive: true, scales: { y: { beginAtZero: true, title: { display: true, text: 'Frequency' } } } } });
+                }
+            }
+
+            function renderStatsTable(container, stats) {
+                container.innerHTML = `<table class="summary-table">
+                    <tr><th>Metric</th><th>Real</th><th>Synth</th></tr>
+                    <tr><td>Mean</td><td>${stats.real.Mean}</td><td>${stats.synth.Mean}</td></tr>
+                    <tr><td>Std Dev</td><td>${stats.real['Std Dev']}</td><td>${stats.synth['Std Dev']}</td></tr>
+                    <tr><td>Min</td><td>${stats.real.Min}</td><td>${stats.synth.Min}</td></tr>
+                    <tr><td>Max</td><td>${stats.real.Max}</td><td>${stats.synth.Max}</td></tr>
+                </table>`;
+            }
+
+            function renderPcaPlot(ctx, data) {
+                 activeCharts['pca'] = new Chart(ctx, { type: 'scatter', data: { datasets: [ { label: 'Real Data (Sample)', data: data.real, backgroundColor: 'rgba(236, 72, 153, 0.7)' }, { label: 'Synthetic Data', data: data.synthetic, backgroundColor: 'rgba(56, 189, 248, 0.7)' } ] }, options: { responsive: true, scales: { y: { title: { display: true, text: 'Principal Component 2' } }, x: { title: { display: true, text: 'Principal Component 1' } } } } });
+            }
+
+            function renderCorrelationHeatmaps(data) {
+                const realContainer = document.getElementById('real-heatmap');
+                const synthContainer = document.getElementById('synth-heatmap');
+                realContainer.innerHTML = '<h4>Real Data Correlations</h4>';
+                synthContainer.innerHTML = '<h4>Synthetic Data Correlations</h4>';
+                
+                const createHeatmap = (container, matrix, labels) => {
+                    const heatmap = document.createElement('div');
+                    heatmap.className = 'heatmap';
+                    heatmap.style.setProperty('--cols', labels.length + 1);
+                    heatmap.appendChild(document.createElement('div'));
+                    labels.forEach(label => { const header = document.createElement('div'); header.className = 'heatmap-cell heatmap-header'; header.textContent = label; heatmap.appendChild(header); });
+                    matrix.forEach((row, i) => {
+                        const rowHeader = document.createElement('div'); rowHeader.className = 'heatmap-cell heatmap-header'; rowHeader.textContent = labels[i]; heatmap.appendChild(rowHeader);
+                        row.forEach(value => {
+                            const cell = document.createElement('div'); cell.className = 'heatmap-cell'; cell.textContent = value.toFixed(2);
+                            const alpha = Math.abs(value); const color = value > 0 ? `rgba(56, 189, 248, ${alpha})` : `rgba(236, 72, 153, ${alpha})`;
+                            cell.style.backgroundColor = color; heatmap.appendChild(cell);
+                        });
+                    });
+                    container.appendChild(heatmap);
+                };
+
+                createHeatmap(realContainer, data.real_matrix, data.labels);
+                createHeatmap(synthContainer, data.synth_matrix, data.labels);
+            }
+
+        });
+    </script>
+</body>
+</html>
