@@ -754,3 +754,674 @@ jinja2.exceptions.TemplateRuntimeError: No test named 'list' found.
 2025-08-01 13:34:52,517 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 13:34:52] "POST /info HTTP/1.1" 200 -
 2025-08-01 13:35:17,138 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 13:35:17] "POST /generate HTTP/1.1" 200 -
 2025-08-01 13:35:17,152 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 13:35:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 13:38:29,932 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 13:38:29] "GET / HTTP/1.1" 200 -
+2025-08-01 13:38:29,937 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 13:38:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 13:38:29,942 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 13:38:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 13:42:45,870 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 13:42:45] "POST /info HTTP/1.1" 200 -
+2025-08-01 13:47:20,442 - INFO - [_internal.py:97] - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-01 13:47:20,442 - INFO - [_internal.py:97] - [33mPress CTRL+C to quit[0m
+2025-08-01 13:47:20,443 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-01 13:47:22,495 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-01 13:47:22,509 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-01 13:47:23,094 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 13:47:23] "[31m[1mGET /generate HTTP/1.1[0m" 405 -
+2025-08-01 13:47:28,187 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 13:47:28] "GET / HTTP/1.1" 200 -
+2025-08-01 13:47:28,194 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 13:47:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 13:47:33,391 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 13:47:33] "POST /info HTTP/1.1" 200 -
+2025-08-01 13:58:24,187 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 13:58:24] "POST /info HTTP/1.1" 200 -
+2025-08-01 13:59:32,889 - INFO - [_internal.py:97] - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-01 13:59:32,889 - INFO - [_internal.py:97] - [33mPress CTRL+C to quit[0m
+2025-08-01 13:59:32,891 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-01 13:59:34,915 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-01 13:59:34,929 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-01 13:59:35,001 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 13:59:35] "[31m[1mGET /generate HTTP/1.1[0m" 405 -
+2025-08-01 13:59:38,975 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 13:59:38] "GET / HTTP/1.1" 200 -
+2025-08-01 13:59:38,983 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 13:59:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 13:59:44,797 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 13:59:44] "POST /info HTTP/1.1" 200 -
+2025-08-01 14:00:28,070 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 14:00:28] "POST /generate HTTP/1.1" 200 -
+2025-08-01 14:00:28,095 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 14:00:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-01 17:34:34,464 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 17:34:34] "GET / HTTP/1.1" 200 -
+2025-08-01 17:34:34,467 - INFO - [_internal.py:97] - 127.0.0.1 - - [01/Aug/2025 17:34:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-05 18:24:26,384 - INFO - [_internal.py:97] - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-05 18:24:26,385 - INFO - [_internal.py:97] - [33mPress CTRL+C to quit[0m
+2025-08-05 18:24:26,385 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-05 18:24:27,239 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-05 18:24:27,247 - INFO - [_internal.py:97] -  * Debugger PIN: 120-248-305
+2025-08-05 18:25:03,353 - INFO - [_internal.py:97] - 127.0.0.1 - - [05/Aug/2025 18:25:03] "GET / HTTP/1.1" 200 -
+2025-08-05 18:25:03,359 - INFO - [_internal.py:97] - 127.0.0.1 - - [05/Aug/2025 18:25:03] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-08-05 18:25:03,377 - INFO - [_internal.py:97] - 127.0.0.1 - - [05/Aug/2025 18:25:03] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+2025-08-05 18:25:03,440 - INFO - [_internal.py:97] - 127.0.0.1 - - [05/Aug/2025 18:25:03] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+2025-08-05 18:25:10,126 - INFO - [_internal.py:97] - 127.0.0.1 - - [05/Aug/2025 18:25:10] "GET / HTTP/1.1" 200 -
+2025-08-05 18:25:10,127 - INFO - [_internal.py:97] - 127.0.0.1 - - [05/Aug/2025 18:25:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-05 18:31:04,344 - INFO - [_internal.py:97] - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-05 18:31:04,345 - INFO - [_internal.py:97] - [33mPress CTRL+C to quit[0m
+2025-08-05 18:31:04,345 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-05 18:31:05,629 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-05 18:31:05,644 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-05 18:31:19,728 - INFO - [_internal.py:97] - 127.0.0.1 - - [05/Aug/2025 18:31:19] "GET / HTTP/1.1" 200 -
+2025-08-05 18:31:19,775 - INFO - [_internal.py:97] - 127.0.0.1 - - [05/Aug/2025 18:31:19] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-08-05 18:31:26,500 - INFO - [_internal.py:97] - 127.0.0.1 - - [05/Aug/2025 18:31:26] "GET / HTTP/1.1" 200 -
+2025-08-05 18:31:26,506 - INFO - [_internal.py:97] - 127.0.0.1 - - [05/Aug/2025 18:31:26] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-05 18:31:26,525 - INFO - [_internal.py:97] - 127.0.0.1 - - [05/Aug/2025 18:31:26] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+2025-08-05 18:31:26,575 - INFO - [_internal.py:97] - 127.0.0.1 - - [05/Aug/2025 18:31:26] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+2025-08-05 19:07:02,847 - INFO - [_internal.py:97] - 127.0.0.1 - - [05/Aug/2025 19:07:02] "POST /info HTTP/1.1" 200 -
+2025-08-05 19:07:34,307 - INFO - [_internal.py:97] - 127.0.0.1 - - [05/Aug/2025 19:07:34] "POST /generate HTTP/1.1" 200 -
+2025-08-05 19:07:34,321 - INFO - [_internal.py:97] - 127.0.0.1 - - [05/Aug/2025 19:07:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 08:41:38,339 - INFO - [_internal.py:97] - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-11 08:41:38,339 - INFO - [_internal.py:97] - [33mPress CTRL+C to quit[0m
+2025-08-11 08:41:38,340 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-11 08:41:39,414 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-11 08:41:39,422 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-11 08:41:50,870 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 08:41:50] "GET / HTTP/1.1" 200 -
+2025-08-11 08:41:51,180 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 08:41:51] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-08-11 08:41:51,363 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 08:41:51] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+2025-08-11 08:41:51,364 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 08:41:51] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-11 08:41:51,365 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 08:41:51] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+2025-08-11 08:41:51,367 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 08:41:51] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+2025-08-11 08:41:51,368 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 08:41:51] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-11 08:41:51,452 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 08:41:51] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+2025-08-11 08:42:18,095 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 08:42:18] "POST /info HTTP/1.1" 200 -
+2025-08-11 08:42:25,846 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 08:42:25] "POST /generate HTTP/1.1" 200 -
+2025-08-11 08:42:25,856 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 08:42:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 08:43:03,969 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 08:43:03] "POST /generate HTTP/1.1" 200 -
+2025-08-11 08:43:03,978 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 08:43:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 08:43:47,557 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 08:43:47] "POST /generate HTTP/1.1" 200 -
+2025-08-11 08:43:47,566 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 08:43:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 08:44:37,073 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 08:44:37] "GET / HTTP/1.1" 200 -
+2025-08-11 08:44:37,083 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 08:44:37] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-08-11 08:50:43,563 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 08:50:43] "GET / HTTP/1.1" 200 -
+2025-08-11 08:50:59,020 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 08:50:59] "GET / HTTP/1.1" 200 -
+2025-08-11 08:50:59,030 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 08:50:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 08:54:18,864 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
+2025-08-11 08:54:18,960 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-11 08:54:20,283 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-11 08:54:20,290 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-11 08:54:21,610 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 08:54:21] "GET / HTTP/1.1" 200 -
+2025-08-11 08:54:21,620 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 08:54:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 08:54:29,434 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 08:54:29] "POST /info HTTP/1.1" 200 -
+2025-08-11 08:56:48,395 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 08:56:48] "POST /generate HTTP/1.1" 200 -
+2025-08-11 08:56:48,407 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 08:56:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 08:57:35,177 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 08:57:35] "POST /info HTTP/1.1" 200 -
+2025-08-11 08:57:44,022 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 08:57:44] "POST /generate HTTP/1.1" 200 -
+2025-08-11 08:57:44,032 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 08:57:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 08:59:36,745 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
+2025-08-11 08:59:36,909 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-11 08:59:38,256 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-11 08:59:38,263 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-11 09:00:31,491 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/kNNMTD.py', reloading
+2025-08-11 09:00:31,607 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-11 09:00:32,859 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-11 09:00:32,866 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-11 09:00:57,891 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
+2025-08-11 09:00:57,993 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-11 09:00:59,176 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-11 09:00:59,183 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-11 09:01:32,456 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:01:32] "GET / HTTP/1.1" 200 -
+2025-08-11 09:01:32,469 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:01:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:01:49,691 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:01:49] "POST /info HTTP/1.1" 200 -
+2025-08-11 09:01:55,155 - ERROR - [app.py:351] - An unexpected error occurred: Traceback (most recent call last):
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 237, in generate_synthetic_data
+    sample_size = int(request.form.get('sample_size', app.config['DEFAULT_SAMPLE_SIZE']))
+ValueError: invalid literal for int() with base 10: ''
+
+2025-08-11 09:01:55,158 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:01:55] "POST /generate HTTP/1.1" 200 -
+2025-08-11 09:01:55,164 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:01:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:01:58,919 - ERROR - [app.py:351] - An unexpected error occurred: Traceback (most recent call last):
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 237, in generate_synthetic_data
+    sample_size = int(request.form.get('sample_size', app.config['DEFAULT_SAMPLE_SIZE']))
+ValueError: invalid literal for int() with base 10: ''
+
+2025-08-11 09:01:58,920 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:01:58] "POST /generate HTTP/1.1" 200 -
+2025-08-11 09:01:58,926 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:01:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:04:24,659 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
+2025-08-11 09:04:24,778 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-11 09:04:26,043 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-11 09:04:26,049 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-11 09:04:41,956 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/kNNMTD.py', reloading
+2025-08-11 09:04:42,057 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-11 09:04:43,446 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-11 09:04:43,453 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-11 09:05:07,057 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:05:07] "GET / HTTP/1.1" 200 -
+2025-08-11 09:05:07,073 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:05:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:05:14,436 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:05:14] "POST /info HTTP/1.1" 200 -
+2025-08-11 09:07:10,031 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:07:10] "POST /generate HTTP/1.1" 200 -
+2025-08-11 09:07:10,046 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:07:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:10:50,719 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
+2025-08-11 09:10:50,843 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-11 09:10:52,151 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-11 09:10:52,157 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-11 09:11:48,735 - INFO - [app.py:107] - Running Cross-Validated ML Utility Test for Big Data.
+2025-08-11 09:11:48,961 - ERROR - [app.py:260] - An unexpected error occurred: Traceback (most recent call last):
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 234, in generate_synthetic_data
+    pca_data = get_pca_data(real_df_processed, final_synthetic_processed)
+NameError: name 'get_pca_data' is not defined
+
+2025-08-11 09:11:48,964 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:11:48] "POST /generate HTTP/1.1" 200 -
+2025-08-11 09:12:04,837 - INFO - [app.py:107] - Running Cross-Validated ML Utility Test for Big Data.
+2025-08-11 09:12:05,010 - ERROR - [app.py:260] - An unexpected error occurred: Traceback (most recent call last):
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 234, in generate_synthetic_data
+    pca_data = get_pca_data(real_df_processed, final_synthetic_processed)
+NameError: name 'get_pca_data' is not defined
+
+2025-08-11 09:12:05,010 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:12:05] "POST /generate HTTP/1.1" 200 -
+2025-08-11 09:12:05,021 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:12:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:12:28,589 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:12:28] "GET / HTTP/1.1" 200 -
+2025-08-11 09:12:28,596 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:12:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:12:35,030 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:12:35] "POST /info HTTP/1.1" 200 -
+2025-08-11 09:13:49,689 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
+2025-08-11 09:13:49,790 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-11 09:13:50,938 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-11 09:13:50,944 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-11 09:14:03,791 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:14:03] "GET / HTTP/1.1" 200 -
+2025-08-11 09:14:03,806 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:14:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:14:11,327 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:14:11] "POST /info HTTP/1.1" 200 -
+2025-08-11 09:14:42,299 - INFO - [app.py:126] - Running Cross-Validated ML Utility Test for Big Data.
+2025-08-11 09:14:42,487 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:14:42] "POST /generate HTTP/1.1" 200 -
+2025-08-11 09:14:42,497 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:14:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:16:17,048 - INFO - [app.py:126] - Running Cross-Validated ML Utility Test for Big Data.
+2025-08-11 09:16:17,240 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:16:17] "POST /generate HTTP/1.1" 200 -
+2025-08-11 09:16:17,250 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:16:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:16:56,837 - INFO - [app.py:126] - Running Cross-Validated ML Utility Test for Big Data.
+2025-08-11 09:16:57,031 - ERROR - [app.py:294] - An unexpected error occurred: Traceback (most recent call last):
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 270, in generate_synthetic_data
+    return render_template('results.html',
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/templates/results.html", line 56, in top-level template code
+    {% for key, value in initial_metrics.items() %}
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'initial_metrics' is undefined
+
+2025-08-11 09:16:57,032 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:16:57] "POST /generate HTTP/1.1" 200 -
+2025-08-11 09:16:57,040 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:16:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:16:57,923 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:16:57] "GET / HTTP/1.1" 200 -
+2025-08-11 09:16:57,929 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:16:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:18:34,874 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
+2025-08-11 09:18:34,979 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-11 09:18:36,265 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-11 09:18:36,275 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-11 09:19:03,901 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:19:03] "POST /info HTTP/1.1" 200 -
+2025-08-11 09:19:35,324 - INFO - [app.py:126] - Running Cross-Validated ML Utility Test for Big Data.
+2025-08-11 09:19:35,514 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:19:35] "POST /generate HTTP/1.1" 200 -
+2025-08-11 09:19:35,525 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:19:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:22:37,039 - INFO - [app.py:126] - Running Cross-Validated ML Utility Test for Big Data.
+2025-08-11 09:22:37,223 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:22:37] "POST /generate HTTP/1.1" 200 -
+2025-08-11 09:22:37,233 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:22:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:23:11,890 - INFO - [app.py:126] - Running Cross-Validated ML Utility Test for Big Data.
+2025-08-11 09:23:12,071 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:23:12] "POST /generate HTTP/1.1" 200 -
+2025-08-11 09:23:12,081 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:23:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:25:18,704 - INFO - [app.py:126] - Running Cross-Validated ML Utility Test for Big Data.
+2025-08-11 09:25:18,891 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:25:18] "POST /generate HTTP/1.1" 200 -
+2025-08-11 09:25:18,900 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:25:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:27:33,273 - INFO - [app.py:126] - Running Cross-Validated ML Utility Test for Big Data.
+2025-08-11 09:27:33,473 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:27:33] "POST /generate HTTP/1.1" 200 -
+2025-08-11 09:27:33,480 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:27:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:28:20,549 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
+2025-08-11 09:28:20,708 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-11 09:28:22,116 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-11 09:28:22,124 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-11 09:29:13,616 - INFO - [app.py:126] - Running Cross-Validated ML Utility Test for Big Data.
+2025-08-11 09:29:13,804 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:29:13] "POST /generate HTTP/1.1" 200 -
+2025-08-11 09:29:13,819 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:29:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:31:20,609 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:31:20] "POST /info HTTP/1.1" 200 -
+2025-08-11 09:31:25,051 - INFO - [app.py:126] - Running Cross-Validated ML Utility Test for Big Data.
+2025-08-11 09:31:25,098 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:31:25] "POST /generate HTTP/1.1" 200 -
+2025-08-11 09:31:25,108 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:31:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:31:48,867 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
+2025-08-11 09:31:48,980 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-11 09:31:50,391 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-11 09:31:50,397 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-11 09:32:03,104 - INFO - [app.py:126] - Running Cross-Validated ML Utility Test for Big Data.
+2025-08-11 09:32:03,158 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:32:03] "POST /generate HTTP/1.1" 200 -
+2025-08-11 09:32:03,169 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:32:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:34:07,032 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
+2025-08-11 09:34:07,142 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-11 09:34:08,423 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-11 09:34:08,430 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-11 09:34:23,728 - INFO - [app.py:126] - Running Cross-Validated ML Utility Test for Big Data.
+2025-08-11 09:34:23,782 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:34:23] "POST /generate HTTP/1.1" 200 -
+2025-08-11 09:34:23,792 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:34:23] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:34:32,828 - INFO - [app.py:126] - Running Cross-Validated ML Utility Test for Big Data.
+2025-08-11 09:34:32,873 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:34:32] "POST /generate HTTP/1.1" 200 -
+2025-08-11 09:34:32,882 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:34:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:35:40,166 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:35:40] "POST /info HTTP/1.1" 200 -
+2025-08-11 09:35:42,034 - INFO - [app.py:126] - Running Cross-Validated ML Utility Test for Big Data.
+2025-08-11 09:35:42,041 - ERROR - [app.py:311] - An unexpected error occurred: Traceback (most recent call last):
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 247, in generate_synthetic_data
+    cv_metrics = run_cross_validated_ml_utility(real_df_raw, final_synthetic_df, class_col_name, task_mode)
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 127, in run_cross_validated_ml_utility
+    X_synth, y_synth = synthetic_df.drop(columns=[target_col_name]), synthetic_df[target_col_name]
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/pandas/core/frame.py", line 5588, in drop
+    return super().drop(
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/pandas/core/generic.py", line 4807, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/pandas/core/generic.py", line 4849, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/pandas/core/indexes/base.py", line 7136, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: '[None] not found in axis'
+
+2025-08-11 09:35:42,042 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:35:42] "POST /generate HTTP/1.1" 200 -
+2025-08-11 09:35:42,050 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:35:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:35:43,124 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:35:43] "GET / HTTP/1.1" 200 -
+2025-08-11 09:35:43,136 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:35:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:35:54,652 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:35:54] "POST /info HTTP/1.1" 200 -
+2025-08-11 09:35:58,988 - INFO - [app.py:126] - Running Cross-Validated ML Utility Test for Big Data.
+2025-08-11 09:35:59,029 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:35:59] "POST /generate HTTP/1.1" 200 -
+2025-08-11 09:35:59,039 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:35:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:36:43,028 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
+2025-08-11 09:36:43,189 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-11 09:36:44,630 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-11 09:36:44,636 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-11 09:37:37,367 - ERROR - [app.py:286] - An unexpected error occurred: Traceback (most recent call last):
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 219, in generate_synthetic_data
+    initial_cv_metrics = run_cross_validated_ml_utility(real_df_raw, initial_batch_final, class_col_name, task_mode)
+NameError: name 'run_cross_validated_ml_utility' is not defined
+
+2025-08-11 09:37:37,369 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:37:37] "POST /generate HTTP/1.1" 200 -
+2025-08-11 09:37:37,379 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:37:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:37:38,841 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:37:38] "GET / HTTP/1.1" 200 -
+2025-08-11 09:37:38,852 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:37:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:39:39,214 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
+2025-08-11 09:39:39,358 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-11 09:39:40,558 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-11 09:39:40,565 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-11 09:40:05,674 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:40:05] "POST /info HTTP/1.1" 200 -
+2025-08-11 09:40:11,411 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:40:11] "POST /generate HTTP/1.1" 200 -
+2025-08-11 09:40:11,423 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:40:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:40:34,189 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:40:34] "POST /info HTTP/1.1" 200 -
+2025-08-11 09:42:21,747 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:42:21] "POST /generate HTTP/1.1" 200 -
+2025-08-11 09:42:21,756 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:42:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:42:38,507 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:42:38] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+2025-08-11 09:42:38,507 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:42:38] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+2025-08-11 09:42:38,508 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:42:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-11 09:42:41,355 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:42:41] "POST /info HTTP/1.1" 200 -
+2025-08-11 09:42:43,926 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:42:43] "POST /generate HTTP/1.1" 200 -
+2025-08-11 09:42:43,936 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:42:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:43:51,487 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:43:51] "POST /generate HTTP/1.1" 200 -
+2025-08-11 09:43:51,499 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:43:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:43:57,253 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:43:57] "POST /info HTTP/1.1" 200 -
+2025-08-11 09:44:01,344 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:44:01] "POST /generate HTTP/1.1" 200 -
+2025-08-11 09:44:01,354 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:44:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:46:22,105 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
+2025-08-11 09:46:22,206 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-11 09:46:23,575 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-11 09:46:23,583 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-11 09:46:42,383 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:46:42] "GET / HTTP/1.1" 200 -
+2025-08-11 09:46:42,398 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:46:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:46:47,645 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:46:47] "POST /info HTTP/1.1" 200 -
+2025-08-11 09:46:53,387 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:46:53] "POST /generate HTTP/1.1" 200 -
+2025-08-11 09:46:53,397 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:46:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:50:43,104 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
+2025-08-11 09:50:43,190 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-11 09:50:44,500 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-11 09:50:44,507 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-11 09:51:33,646 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:51:33] "POST /generate HTTP/1.1" 200 -
+2025-08-11 09:51:33,656 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:51:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 09:51:55,678 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:51:55] "GET /analyze?real=processed_cervical.csv&synth=synthetic_data_20250811-095133.csv HTTP/1.1" 200 -
+2025-08-11 09:51:55,995 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 09:51:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:01:50,245 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:01:50] "GET /analyze?real=processed_cervical.csv&synth=synthetic_data_20250811-095133.csv HTTP/1.1" 200 -
+2025-08-11 10:01:50,255 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:01:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:03:13,011 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
+2025-08-11 10:03:13,123 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-11 10:03:14,632 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-11 10:03:14,641 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-11 10:03:49,544 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:03:49] "GET /analyze?real=processed_cervical.csv&synth=synthetic_data_20250811-095133.csv HTTP/1.1" 200 -
+2025-08-11 10:03:49,556 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:03:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:04:12,798 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:04:12] "POST /generate HTTP/1.1" 200 -
+2025-08-11 10:04:12,807 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:04:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:08:40,718 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
+2025-08-11 10:08:40,863 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-11 10:08:42,381 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-11 10:08:42,389 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-11 10:09:12,492 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:09:12] "GET /analyze?real=processed_cervical.csv&synth=synthetic_data_20250811-100412.csv HTTP/1.1" 200 -
+2025-08-11 10:09:13,064 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:09:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:09:43,646 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:09:43] "POST /generate HTTP/1.1" 200 -
+2025-08-11 10:09:43,654 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:09:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:12:22,211 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:12:22] "GET / HTTP/1.1" 200 -
+2025-08-11 10:12:22,220 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:12:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:12:27,019 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:12:27] "POST /info HTTP/1.1" 200 -
+2025-08-11 10:12:33,972 - ERROR - [app.py:236] - An unexpected error occurred: Traceback (most recent call last):
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 185, in generate_synthetic_data
+    metrics = run_ml_utility_test(data_to_process, batch_final, class_col_name, task_mode)
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 80, in run_ml_utility_test
+    model = RandomForestClassifier(random_state=42, n_estimators=50).fit(X_train_processed, y_synth)
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/sklearn/base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/sklearn/ensemble/_forest.py", line 419, in fit
+    y, expanded_class_weight = self._validate_y_class_weight(y)
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/sklearn/ensemble/_forest.py", line 831, in _validate_y_class_weight
+    check_classification_targets(y)
+  File "/Users/jayanthsivakumar/Library/Python/3.9/lib/python/site-packages/sklearn/utils/multiclass.py", line 222, in check_classification_targets
+    raise ValueError(
+ValueError: Unknown label type: continuous. Maybe you are trying to fit a classifier, which expects discrete classes on a regression target with continuous values.
+
+2025-08-11 10:12:33,973 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:12:33] "POST /generate HTTP/1.1" 200 -
+2025-08-11 10:12:33,978 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:12:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:12:40,880 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:12:40] "GET / HTTP/1.1" 200 -
+2025-08-11 10:12:40,889 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:12:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:13:50,279 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
+2025-08-11 10:13:50,459 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-11 10:13:51,980 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-11 10:13:51,988 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-11 10:14:45,021 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:14:45] "GET / HTTP/1.1" 200 -
+2025-08-11 10:14:45,031 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:14:45] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-08-11 10:14:54,970 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:14:54] "POST /info HTTP/1.1" 200 -
+2025-08-11 10:15:49,343 - ERROR - [app.py:216] - An unexpected error occurred: Traceback (most recent call last):
+  File "/Users/jayanthsivakumar/Desktop/kNNMTD/app.py", line 170, in generate_synthetic_data
+    metrics = run_ml_utility_test(data_to_process, batch_final, class_col_name, task_mode)
+NameError: name 'run_ml_utility_test' is not defined
+
+2025-08-11 10:15:49,344 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:15:49] "POST /generate HTTP/1.1" 200 -
+2025-08-11 10:15:49,348 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:15:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:20:30,326 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
+2025-08-11 10:20:30,431 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-11 10:20:31,836 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-11 10:20:31,843 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-11 10:21:09,588 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:21:09] "GET / HTTP/1.1" 200 -
+2025-08-11 10:21:09,604 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:21:09] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-08-11 10:21:11,736 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:21:11] "GET / HTTP/1.1" 200 -
+2025-08-11 10:21:11,744 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:21:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:21:57,310 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:21:57] "GET / HTTP/1.1" 200 -
+2025-08-11 10:21:57,320 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:21:57] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-08-11 10:22:05,677 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:22:05] "POST /info HTTP/1.1" 200 -
+2025-08-11 10:22:11,446 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:22:11] "POST /generate HTTP/1.1" 200 -
+2025-08-11 10:22:11,456 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:22:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:22:22,184 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:22:22] "GET /analyze?real=cervical.csv&synth=synthetic_20250811-102211_cervical.csv HTTP/1.1" 200 -
+2025-08-11 10:22:22,490 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:22:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:22:30,509 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:22:30] "POST /get_analysis_data HTTP/1.1" 200 -
+2025-08-11 10:22:42,211 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:22:42] "POST /get_analysis_data HTTP/1.1" 200 -
+2025-08-11 10:22:53,907 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:22:53] "POST /get_analysis_data HTTP/1.1" 200 -
+2025-08-11 10:22:56,857 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:22:56] "POST /get_analysis_data HTTP/1.1" 200 -
+2025-08-11 10:23:01,439 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:23:01] "POST /get_analysis_data HTTP/1.1" 200 -
+2025-08-11 10:23:41,985 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:23:41] "GET / HTTP/1.1" 200 -
+2025-08-11 10:23:41,996 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:23:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:24:29,696 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:24:29] "GET / HTTP/1.1" 200 -
+2025-08-11 10:24:29,705 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:24:29] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-08-11 10:25:17,945 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:25:17] "POST /info HTTP/1.1" 200 -
+2025-08-11 10:25:24,950 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:25:24] "POST /generate HTTP/1.1" 200 -
+2025-08-11 10:25:24,959 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:25:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:25:30,948 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:25:30] "GET /analyze?real=cervical.csv&synth=synthetic_20250811-102524_cervical.csv HTTP/1.1" 200 -
+2025-08-11 10:25:31,245 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:25:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:25:50,335 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:25:50] "POST /get_analysis_data HTTP/1.1" 200 -
+2025-08-11 10:25:56,249 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:25:56] "POST /get_analysis_data HTTP/1.1" 200 -
+2025-08-11 10:25:59,425 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:25:59] "POST /get_analysis_data HTTP/1.1" 200 -
+2025-08-11 10:26:05,607 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:26:05] "POST /get_analysis_data HTTP/1.1" 200 -
+2025-08-11 10:26:16,325 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:26:16] "POST /get_analysis_data HTTP/1.1" 200 -
+2025-08-11 10:26:26,680 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:26:26] "POST /get_analysis_data HTTP/1.1" 200 -
+2025-08-11 10:26:58,362 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
+2025-08-11 10:26:58,477 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-11 10:26:59,937 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-11 10:26:59,946 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-11 10:28:06,947 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:28:06] "GET /analyze?real=cervical.csv&synth=synthetic_20250811-102524_cervical.csv HTTP/1.1" 200 -
+2025-08-11 10:28:06,961 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:28:06] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-08-11 10:28:16,530 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:28:16] "POST /generate HTTP/1.1" 200 -
+2025-08-11 10:28:16,536 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:28:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:28:26,672 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:28:26] "GET / HTTP/1.1" 200 -
+2025-08-11 10:28:26,676 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:28:26] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:30:29,203 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:30:29] "GET / HTTP/1.1" 200 -
+2025-08-11 10:30:29,209 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:30:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:32:28,174 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:32:28] "GET / HTTP/1.1" 200 -
+2025-08-11 10:32:28,180 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:32:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:32:30,178 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:32:30] "GET / HTTP/1.1" 200 -
+2025-08-11 10:32:30,190 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:32:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:32:55,493 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:32:55] "POST /info HTTP/1.1" 200 -
+2025-08-11 10:33:00,716 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:33:00] "POST /generate HTTP/1.1" 200 -
+2025-08-11 10:33:00,725 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:33:00] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:33:10,578 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:33:10] "GET /analyze?real=cryotherapy.csv&synth=synthetic_20250811-103300_cryotherapy.csv HTTP/1.1" 200 -
+2025-08-11 10:33:10,870 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:33:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:33:42,667 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:33:42] "GET /analyze?real=cryotherapy.csv&synth=synthetic_20250811-103300_cryotherapy.csv HTTP/1.1" 200 -
+2025-08-11 10:33:42,677 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:33:42] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-08-11 10:33:46,796 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:33:46] "GET / HTTP/1.1" 200 -
+2025-08-11 10:33:46,808 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:33:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:34:00,899 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:34:00] "GET / HTTP/1.1" 200 -
+2025-08-11 10:34:00,908 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:34:00] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:34:01,919 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:34:01] "GET / HTTP/1.1" 200 -
+2025-08-11 10:34:01,924 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:34:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:34:08,720 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:34:08] "GET / HTTP/1.1" 200 -
+2025-08-11 10:34:08,724 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:34:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:35:04,210 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:35:04] "GET / HTTP/1.1" 200 -
+2025-08-11 10:35:04,220 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:35:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:35:05,693 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:35:05] "[33mGET /index.html HTTP/1.1[0m" 404 -
+2025-08-11 10:35:08,775 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:35:08] "[33mGET /index.html HTTP/1.1[0m" 404 -
+2025-08-11 10:35:12,019 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:35:12] "[33mGET /index HTTP/1.1[0m" 404 -
+2025-08-11 10:36:47,498 - INFO - [_internal.py:97] -  * Detected change in '/Users/jayanthsivakumar/Desktop/kNNMTD/app.py', reloading
+2025-08-11 10:36:47,608 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-11 10:36:49,097 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-11 10:36:49,106 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-11 10:38:17,248 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:38:17] "[33mGET /index HTTP/1.1[0m" 404 -
+2025-08-11 10:38:27,622 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:38:27] "[33mGET /index HTTP/1.1[0m" 404 -
+2025-08-11 10:38:30,598 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:38:30] "GET / HTTP/1.1" 200 -
+2025-08-11 10:38:30,609 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:38:30] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-08-11 10:42:26,994 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:42:26] "GET / HTTP/1.1" 200 -
+2025-08-11 10:42:27,001 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:42:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:42:30,673 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:42:30] "POST /info HTTP/1.1" 200 -
+2025-08-11 10:42:38,867 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:42:38] "POST /generate HTTP/1.1" 200 -
+2025-08-11 10:42:38,876 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:42:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:42:47,693 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:42:47] "GET /analyze?real=cervical.csv&synth=synthetic_20250811-104238_cervical.csv HTTP/1.1" 200 -
+2025-08-11 10:42:47,982 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:42:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:42:57,398 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:42:57] "POST /get_analysis_data HTTP/1.1" 200 -
+2025-08-11 10:43:02,957 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:43:02] "POST /get_analysis_data HTTP/1.1" 200 -
+2025-08-11 10:43:07,400 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:43:07] "POST /get_analysis_data HTTP/1.1" 200 -
+2025-08-11 10:43:10,483 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:43:10] "POST /get_analysis_data HTTP/1.1" 200 -
+2025-08-11 10:44:49,403 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:44:49] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+2025-08-11 10:44:49,403 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:44:49] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+2025-08-11 10:44:49,404 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:44:49] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-11 10:45:44,048 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:45:44] "GET / HTTP/1.1" 200 -
+2025-08-11 10:45:44,061 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:45:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:46:00,173 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:46:00] "GET / HTTP/1.1" 200 -
+2025-08-11 10:46:00,181 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:46:00] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:49:38,389 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:49:38] "GET / HTTP/1.1" 200 -
+2025-08-11 10:49:38,395 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:49:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:49:39,756 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:49:39] "GET / HTTP/1.1" 200 -
+2025-08-11 10:49:39,764 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:49:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:49:40,890 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:49:40] "GET / HTTP/1.1" 200 -
+2025-08-11 10:49:40,899 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:49:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:49:41,690 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:49:41] "GET / HTTP/1.1" 200 -
+2025-08-11 10:49:41,695 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:49:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:49:42,353 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:49:42] "GET / HTTP/1.1" 200 -
+2025-08-11 10:49:42,360 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:49:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:49:46,158 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:49:46] "GET / HTTP/1.1" 200 -
+2025-08-11 10:49:46,167 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:49:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:50:20,818 - INFO - [_internal.py:97] - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-11 10:50:20,818 - INFO - [_internal.py:97] - [33mPress CTRL+C to quit[0m
+2025-08-11 10:50:20,819 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-11 10:50:21,864 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-11 10:50:21,870 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-11 10:50:24,333 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:50:24] "GET / HTTP/1.1" 200 -
+2025-08-11 10:50:24,343 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:50:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:50:25,812 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:50:25] "GET / HTTP/1.1" 200 -
+2025-08-11 10:50:25,820 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:50:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:50:26,458 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:50:26] "GET / HTTP/1.1" 200 -
+2025-08-11 10:50:26,466 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:50:26] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:50:30,876 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:50:30] "GET / HTTP/1.1" 200 -
+2025-08-11 10:50:30,879 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:50:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:50:30,881 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:50:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:52:11,034 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:52:11] "GET / HTTP/1.1" 200 -
+2025-08-11 10:52:11,041 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:52:11] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-08-11 10:52:12,963 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:52:12] "GET / HTTP/1.1" 200 -
+2025-08-11 10:52:12,971 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:52:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:52:13,771 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:52:13] "GET / HTTP/1.1" 200 -
+2025-08-11 10:52:13,775 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:52:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:52:14,108 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:52:14] "GET / HTTP/1.1" 200 -
+2025-08-11 10:52:14,115 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:52:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:52:14,425 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:52:14] "GET / HTTP/1.1" 200 -
+2025-08-11 10:52:14,430 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:52:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:52:14,825 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:52:14] "GET / HTTP/1.1" 200 -
+2025-08-11 10:52:14,832 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:52:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:52:15,159 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:52:15] "GET / HTTP/1.1" 200 -
+2025-08-11 10:52:15,164 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:52:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:52:15,492 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:52:15] "GET / HTTP/1.1" 200 -
+2025-08-11 10:52:15,497 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:52:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:52:15,825 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:52:15] "GET / HTTP/1.1" 200 -
+2025-08-11 10:52:15,830 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:52:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:52:16,139 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:52:16] "GET / HTTP/1.1" 200 -
+2025-08-11 10:52:16,144 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:52:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:52:16,456 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:52:16] "GET / HTTP/1.1" 200 -
+2025-08-11 10:52:16,461 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:52:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:52:26,644 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:52:26] "GET / HTTP/1.1" 200 -
+2025-08-11 10:52:26,647 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:52:26] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:52:26,651 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:52:26] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:52:54,446 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:52:54] "GET / HTTP/1.1" 200 -
+2025-08-11 10:52:54,452 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:52:54] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-08-11 10:52:56,031 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:52:56] "GET / HTTP/1.1" 200 -
+2025-08-11 10:52:56,041 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:52:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:52:56,929 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:52:56] "GET / HTTP/1.1" 200 -
+2025-08-11 10:52:56,937 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:52:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:53:29,123 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:53:29] "GET / HTTP/1.1" 200 -
+2025-08-11 10:53:29,132 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:53:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:53:33,407 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:53:33] "GET / HTTP/1.1" 200 -
+2025-08-11 10:53:33,410 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:53:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:53:33,415 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:53:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:54:29,444 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:54:29] "GET / HTTP/1.1" 200 -
+2025-08-11 10:54:29,454 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:54:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:54:30,918 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:54:30] "GET / HTTP/1.1" 200 -
+2025-08-11 10:54:30,926 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:54:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:54:31,783 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:54:31] "GET / HTTP/1.1" 200 -
+2025-08-11 10:54:31,791 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:54:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:55:11,776 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:55:11] "GET / HTTP/1.1" 200 -
+2025-08-11 10:55:11,781 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:55:11] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-08-11 10:55:13,011 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:55:13] "GET / HTTP/1.1" 200 -
+2025-08-11 10:55:13,016 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:55:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:55:13,975 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:55:13] "GET / HTTP/1.1" 200 -
+2025-08-11 10:55:13,980 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:55:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:55:43,814 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:55:43] "GET / HTTP/1.1" 200 -
+2025-08-11 10:55:43,824 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:55:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:55:45,065 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:55:45] "GET / HTTP/1.1" 200 -
+2025-08-11 10:55:45,074 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:55:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:55:56,812 - INFO - [_internal.py:97] - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-11 10:55:56,813 - INFO - [_internal.py:97] - [33mPress CTRL+C to quit[0m
+2025-08-11 10:55:56,813 - INFO - [_internal.py:97] -  * Restarting with stat
+2025-08-11 10:55:57,868 - WARNING - [_internal.py:97] -  * Debugger is active!
+2025-08-11 10:55:57,875 - INFO - [_internal.py:97] -  * Debugger PIN: 142-116-905
+2025-08-11 10:56:01,794 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:56:01] "GET / HTTP/1.1" 200 -
+2025-08-11 10:56:01,802 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:56:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:56:01,805 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:56:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:57:45,880 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:57:45] "GET / HTTP/1.1" 200 -
+2025-08-11 10:57:45,884 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:57:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:57:46,932 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:57:46] "GET / HTTP/1.1" 200 -
+2025-08-11 10:57:46,940 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:57:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:57:47,835 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:57:47] "GET / HTTP/1.1" 200 -
+2025-08-11 10:57:47,843 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:57:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:58:31,782 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:58:31] "GET / HTTP/1.1" 200 -
+2025-08-11 10:58:31,785 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:58:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:58:31,788 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:58:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:59:27,666 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:59:27] "GET / HTTP/1.1" 200 -
+2025-08-11 10:59:27,676 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:59:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:59:29,006 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:59:29] "GET / HTTP/1.1" 200 -
+2025-08-11 10:59:29,016 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:59:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:59:29,970 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:59:29] "GET / HTTP/1.1" 200 -
+2025-08-11 10:59:29,979 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:59:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:59:49,426 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:59:49] "GET / HTTP/1.1" 200 -
+2025-08-11 10:59:49,431 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:59:49] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-08-11 10:59:50,684 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:59:50] "GET / HTTP/1.1" 200 -
+2025-08-11 10:59:50,694 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:59:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 10:59:51,490 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:59:51] "GET / HTTP/1.1" 200 -
+2025-08-11 10:59:51,498 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 10:59:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:00:47,414 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:00:47] "GET / HTTP/1.1" 200 -
+2025-08-11 11:00:47,424 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:00:47] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-08-11 11:00:48,706 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:00:48] "GET / HTTP/1.1" 200 -
+2025-08-11 11:00:48,716 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:00:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:01:11,697 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:01:11] "GET / HTTP/1.1" 200 -
+2025-08-11 11:01:11,705 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:01:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:01:40,978 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:01:40] "GET / HTTP/1.1" 200 -
+2025-08-11 11:01:40,988 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:01:40] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-08-11 11:02:17,938 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:02:17] "GET / HTTP/1.1" 200 -
+2025-08-11 11:02:17,943 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:02:17] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-08-11 11:02:22,959 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:02:22] "GET / HTTP/1.1" 200 -
+2025-08-11 11:02:22,966 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:02:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:02:27,374 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:02:27] "GET / HTTP/1.1" 200 -
+2025-08-11 11:02:27,379 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:02:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:02:31,908 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:02:31] "GET / HTTP/1.1" 200 -
+2025-08-11 11:02:31,916 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:02:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:02:57,677 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:02:57] "GET / HTTP/1.1" 200 -
+2025-08-11 11:02:57,686 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:02:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:02:59,085 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:02:59] "GET / HTTP/1.1" 200 -
+2025-08-11 11:02:59,094 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:02:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:03:00,022 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:03:00] "GET / HTTP/1.1" 200 -
+2025-08-11 11:03:00,030 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:03:00] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:04:33,593 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:04:33] "GET / HTTP/1.1" 200 -
+2025-08-11 11:04:33,600 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:04:33] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-08-11 11:04:35,158 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:04:35] "GET / HTTP/1.1" 200 -
+2025-08-11 11:04:35,168 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:04:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:04:35,988 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:04:35] "GET / HTTP/1.1" 200 -
+2025-08-11 11:04:35,996 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:04:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:06:25,806 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:06:25] "GET / HTTP/1.1" 200 -
+2025-08-11 11:06:25,811 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:06:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:06:27,041 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:06:27] "GET / HTTP/1.1" 200 -
+2025-08-11 11:06:27,049 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:06:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:06:27,972 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:06:27] "GET / HTTP/1.1" 200 -
+2025-08-11 11:06:27,978 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:06:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:07:42,153 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:07:42] "GET / HTTP/1.1" 200 -
+2025-08-11 11:07:42,163 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:07:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:07:43,125 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:07:43] "GET / HTTP/1.1" 200 -
+2025-08-11 11:07:43,135 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:07:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:07:43,922 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:07:43] "GET / HTTP/1.1" 200 -
+2025-08-11 11:07:43,929 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:07:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:07:44,137 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:07:44] "GET / HTTP/1.1" 200 -
+2025-08-11 11:07:44,143 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:07:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:07:44,472 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:07:44] "GET / HTTP/1.1" 200 -
+2025-08-11 11:07:44,477 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:07:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:07:44,805 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:07:44] "GET / HTTP/1.1" 200 -
+2025-08-11 11:07:44,810 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:07:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:07:45,121 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:07:45] "GET / HTTP/1.1" 200 -
+2025-08-11 11:07:45,126 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:07:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:07:45,439 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:07:45] "GET / HTTP/1.1" 200 -
+2025-08-11 11:07:45,445 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:07:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:07:45,755 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:07:45] "GET / HTTP/1.1" 200 -
+2025-08-11 11:07:45,759 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:07:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:07:46,219 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:07:46] "GET / HTTP/1.1" 200 -
+2025-08-11 11:07:46,223 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:07:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:07:46,537 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:07:46] "GET / HTTP/1.1" 200 -
+2025-08-11 11:07:46,542 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:07:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:07:46,856 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:07:46] "GET / HTTP/1.1" 200 -
+2025-08-11 11:07:46,862 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:07:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:07:47,172 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:07:47] "GET / HTTP/1.1" 200 -
+2025-08-11 11:07:47,176 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:07:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:09:13,472 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:09:13] "GET / HTTP/1.1" 200 -
+2025-08-11 11:09:13,481 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:09:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:10:46,400 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:10:46] "POST /info HTTP/1.1" 200 -
+2025-08-11 11:10:52,009 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:10:52] "POST /generate HTTP/1.1" 200 -
+2025-08-11 11:10:52,018 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:10:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:10:56,560 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:10:56] "GET /analyze?real=cervical.csv&synth=synthetic_20250811-111052_cervical.csv HTTP/1.1" 200 -
+2025-08-11 11:10:56,838 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:10:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:11:44,913 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:11:44] "GET / HTTP/1.1" 200 -
+2025-08-11 11:11:44,918 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:11:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:11:49,228 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:11:49] "POST /info HTTP/1.1" 200 -
+2025-08-11 11:11:55,769 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:11:55] "POST /generate HTTP/1.1" 200 -
+2025-08-11 11:11:55,778 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:11:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:13:52,156 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:13:52] "GET / HTTP/1.1" 200 -
+2025-08-11 11:13:52,164 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:13:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:13:53,450 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:13:53] "GET / HTTP/1.1" 200 -
+2025-08-11 11:13:53,458 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:13:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:13:58,770 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:13:58] "GET / HTTP/1.1" 200 -
+2025-08-11 11:13:58,778 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:13:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:14:01,023 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:14:01] "GET / HTTP/1.1" 200 -
+2025-08-11 11:14:01,031 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:14:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:14:31,223 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:14:31] "GET / HTTP/1.1" 200 -
+2025-08-11 11:14:31,233 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:14:31] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-08-11 11:14:32,486 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:14:32] "GET / HTTP/1.1" 200 -
+2025-08-11 11:14:32,497 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:14:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:14:49,585 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:14:49] "GET / HTTP/1.1" 200 -
+2025-08-11 11:14:49,592 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:14:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:14:53,907 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:14:53] "[33mGET /index HTTP/1.1[0m" 404 -
+2025-08-11 11:14:57,430 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:14:57] "GET / HTTP/1.1" 200 -
+2025-08-11 11:14:57,434 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:14:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:14:57,438 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:14:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:15:19,065 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:15:19] "GET / HTTP/1.1" 200 -
+2025-08-11 11:15:19,074 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:15:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-11 11:15:30,062 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:15:30] "GET / HTTP/1.1" 200 -
+2025-08-11 11:15:30,072 - INFO - [_internal.py:97] - 127.0.0.1 - - [11/Aug/2025 11:15:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -

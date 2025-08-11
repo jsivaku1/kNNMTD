@@ -7,11 +7,12 @@ import logging
 from logging.handlers import RotatingFileHandler
 import traceback
 from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
-from sklearn.metrics import accuracy_score, f1_score, roc_auc_score, r2_score, mean_absolute_error, mean_squared_error
-from sklearn.cluster import KMeans
+from sklearn.metrics import accuracy_score, f1_score, r2_score, mean_absolute_error, roc_auc_score
+from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 import numpy as np
+from dython.nominal import associations
 
 # Import your custom modules
 from kNNMTD import kNNMTD
@@ -23,6 +24,8 @@ UPLOAD_FOLDER = 'uploads'
 GENERATED_FOLDER = 'generated'
 LOG_FILE = 'app.log'
 app.config.from_object(__name__)
+app.config['BIG_DATA_CELL_THRESHOLD'] = 500000 
+app.config['DEFAULT_SAMPLE_SIZE'] = 5000
 
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(GENERATED_FOLDER, exist_ok=True)
@@ -40,11 +43,8 @@ app.logger.setLevel(logging.INFO)
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() == 'csv'
 
-def prepare_data(df, fit_encoder=None):
-    """Pipeline Step 1: Prepares raw data for the algorithm."""
+def prepare_data(df):
     df_processed = df.copy()
-    
-    # Impute missing values
     for col in df_processed.columns:
         if pd.api.types.is_numeric_dtype(df_processed[col]):
             if df_processed[col].isnull().any():
@@ -52,25 +52,56 @@ def prepare_data(df, fit_encoder=None):
         else:
             if df_processed[col].isnull().any():
                 df_processed[col].fillna(df_processed[col].mode()[0], inplace=True)
-
-    # Convert object columns to category for one-hot encoding
     for col in df_processed.select_dtypes(include=['object']).columns:
         df_processed[col] = df_processed[col].astype('category')
-    
-    # One-hot encode categorical features
     df_processed = pd.get_dummies(df_processed, drop_first=True)
-    return df_processed, {} # Return empty inversion map for now
+    return df_processed
 
-def postprocess_data(synthetic_df, original_df, inversion_maps):
-    """Pipeline Step 3: Converts generated data back to original format."""
+def postprocess_data(synthetic_df, original_df):
     df_final = synthetic_df.copy()
-    for col, mapping in inversion_maps.items():
-        inverse_map = {v: k for k, v in mapping.items()}
-        df_final[col] = df_final[col].round().astype(int).map(inverse_map)
     for col in original_df.columns:
         if col in df_final.columns:
-            df_final[col] = df_final[col].astype(original_df[col].dtype)
+            df_final[col] = df_final[col].astype(original_df[col].dtype, errors='ignore')
     return df_final
+
+def align_columns(df_to_align, reference_columns):
+    aligned_df = pd.DataFrame(columns=reference_columns, index=df_to_align.index)
+    common_cols = [col for col in df_to_align.columns if col in reference_columns]
+    aligned_df[common_cols] = df_to_align[common_cols]
+    return aligned_df.fillna(0)
+
+def run_ml_utility_test(real_df_raw, synthetic_df_final, target_col_name, task_mode):
+    if target_col_name not in real_df_raw.columns or synthetic_df_final.empty: return {}
+    X_real, y_real = real_df_raw.drop(columns=[target_col_name]), real_df_raw[target_col_name]
+    X_synth, y_synth = synthetic_df_final.drop(columns=[target_col_name]), synthetic_df_final[target_col_name]
+    X_train_processed, X_test_processed = prepare_data(X_synth), prepare_data(X_real)
+    X_test_aligned = align_columns(X_test_processed, X_train_processed.columns)
+    metrics = {}
+    if task_mode == 'classification':
+        model = RandomForestClassifier(random_state=42, n_estimators=50).fit(X_train_processed, y_synth)
+        preds = model.predict(X_test_aligned)
+        metrics['accuracy'] = accuracy_score(y_real, preds)
+        metrics['f1_score'] = f1_score(y_real, preds, average='weighted')
+    else:
+        model = RandomForestRegressor(random_state=42, n_estimators=50).fit(X_train_processed, y_synth)
+        preds = model.predict(X_test_aligned)
+        metrics['r2_score'] = r2_score(y_real, preds)
+        metrics['mae'] = mean_absolute_error(y_real, preds)
+    return {k: round(v, 4) for k, v in metrics.items()}
+
+def get_pca_data(real_df_processed, synthetic_df_processed):
+    if real_df_processed.empty or synthetic_df_processed.empty: return {}
+    synth_aligned = align_columns(synthetic_df_processed, real_df_processed.columns)
+    scaler = StandardScaler().fit(real_df_processed)
+    real_scaled, synth_scaled = scaler.transform(real_df_processed), scaler.transform(synth_aligned)
+    pca = PCA(n_components=2).fit(real_scaled)
+    real_pca, synth_pca = pca.transform(real_scaled), pca.transform(synth_scaled)
+    explained_variance = sum(pca.explained_variance_ratio_) * 100
+    return {
+        'real': pd.DataFrame(real_pca, columns=['x', 'y']).to_dict('records'),
+        'synthetic': pd.DataFrame(synth_pca, columns=['x', 'y']).to_dict('records'),
+        'variance': round(explained_variance, 2)
+    }
 
 @app.route('/')
 def index():
@@ -83,223 +114,218 @@ def get_file_info():
     if file.filename == '': return jsonify({"error": "No selected file"}), 400
     if file and allowed_file(file.filename):
         try:
-            df = pd.read_csv(file)
+            df = pd.read_csv(file, low_memory=False)
             column_info = analyze_columns(df)
-            return jsonify(column_info)
+            num_rows, num_cols = df.shape
+            is_big_data = (num_rows * num_cols) > app.config['BIG_DATA_CELL_THRESHOLD']
+            response_data = {
+                "categorical": column_info['categorical'],
+                "numerical": column_info['numerical'],
+                "is_big_data": is_big_data,
+                "row_count": num_rows,
+                "col_count": num_cols,
+                "default_sample_size": app.config['DEFAULT_SAMPLE_SIZE']
+            }
+            return jsonify(response_data)
         except Exception as e:
+            app.logger.error(f"Error in /info: {e}")
             return jsonify({"error": "Could not process CSV file."}), 500
     return jsonify({"error": "Invalid file type"}), 400
-
-def run_ml_utility_test(real_df_raw, synthetic_df_final, target_col_name, task_mode):
-    if target_col_name not in real_df_raw.columns or synthetic_df_final.empty:
-        return {}
-    X_real, y_real = real_df_raw.drop(columns=[target_col_name]), real_df_raw[target_col_name]
-    X_synth, y_synth = synthetic_df_final.drop(columns=[target_col_name]), synthetic_df_final[target_col_name]
-    
-    X_train, _ = prepare_data(X_synth)
-    y_train = y_synth
-    X_test, _ = prepare_data(X_real)
-    y_test = y_real
-    
-    train_cols = X_train.columns
-    test_cols = X_test.columns
-    missing_in_test = set(train_cols) - set(test_cols)
-    for c in missing_in_test: X_test[c] = 0
-    missing_in_train = set(test_cols) - set(train_cols)
-    for c in missing_in_train: X_train[c] = 0
-    X_test = X_test[train_cols]
-    
-    metrics = {}
-    
-    if task_mode == 'classification':
-        model = RandomForestClassifier(random_state=42, n_estimators=50).fit(X_train, y_train)
-        preds = model.predict(X_test)
-        metrics['accuracy'] = accuracy_score(y_test, preds)
-        metrics['f1_score'] = f1_score(y_test, preds, average='weighted')
-        if len(y_train.unique()) > 1 and len(y_test.unique()) > 1:
-            try:
-                preds_proba = model.predict_proba(X_test)
-                if len(y_train.unique()) == 2 and preds_proba.shape[1] == 2:
-                     metrics['auc'] = roc_auc_score(y_test, preds_proba[:, 1])
-                elif len(y_train.unique()) > 2:
-                     metrics['auc'] = roc_auc_score(y_test, preds_proba, multi_class='ovr', average='weighted')
-            except Exception: pass
-    elif task_mode == 'regression':
-        model = RandomForestRegressor(random_state=42, n_estimators=50).fit(X_train, y_train)
-        preds = model.predict(X_test)
-        metrics['r2_score'] = r2_score(y_test, preds)
-        metrics['mae'] = mean_absolute_error(y_test, preds)
-        metrics['rmse'] = np.sqrt(mean_squared_error(y_test, preds))
-        
-    return {k: round(v, 4) for k, v in metrics.items()}
-
-def run_unsupervised_utility_test(real_df_processed, synthetic_df_processed):
-    if real_df_processed.empty or synthetic_df_processed.empty:
-        return {}
-    
-    real_cols = real_df_processed.columns
-    synth_cols = synthetic_df_processed.columns
-    missing_in_synth = set(real_cols) - set(synth_cols)
-    for c in missing_in_synth: synthetic_df_processed[c] = 0
-    synthetic_df_processed = synthetic_df_processed[real_cols]
-
-    scaler = StandardScaler()
-    real_scaled = scaler.fit_transform(real_df_processed)
-    synth_scaled = scaler.transform(synthetic_df_processed)
-    
-    n_clusters = 5 
-    kmeans = KMeans(n_clusters=n_clusters, random_state=42, n_init=10).fit(real_scaled)
-    
-    real_clusters = pd.Series(kmeans.predict(real_scaled))
-    synth_clusters = pd.Series(kmeans.predict(synth_scaled))
-    
-    real_dist = real_clusters.value_counts(normalize=True).sort_index()
-    synth_dist = synth_clusters.value_counts(normalize=True).sort_index()
-    
-    dist_df = pd.DataFrame({'Real': real_dist, 'Synthetic': synth_dist}).fillna(0) * 100
-    
-    return {f"Cluster {i} (%)": [round(dist_df.loc[i, 'Real'],2), round(dist_df.loc[i, 'Synthetic'],2)] for i in dist_df.index}
-
-def get_pca_data(real_df_processed, synthetic_df_processed):
-    if real_df_processed.empty or synthetic_df_processed.empty:
-        return {}
-        
-    real_cols = real_df_processed.columns
-    synth_cols = synthetic_df_processed.columns
-    missing_in_synth = set(real_cols) - set(synth_cols)
-    for c in missing_in_synth: synthetic_df_processed[c] = 0
-    synthetic_df_processed = synthetic_df_processed[real_cols]
-
-    scaler = StandardScaler()
-    real_scaled = scaler.fit_transform(real_df_processed)
-    synth_scaled = scaler.transform(synthetic_df_processed)
-
-    pca = PCA(n_components=2)
-    real_pca = pca.fit_transform(real_scaled)
-    synth_pca = pca.transform(synth_scaled)
-
-    return {
-        'real': pd.DataFrame(real_pca, columns=['x', 'y']).to_dict('records'),
-        'synthetic': pd.DataFrame(synth_pca, columns=['x', 'y']).to_dict('records')
-    }
-
 
 @app.route('/generate', methods=['POST'])
 def generate_synthetic_data():
     try:
         start_time = time.time()
-        if 'dataset' not in request.files: return redirect(request.url)
         file = request.files['dataset']
-        if file.filename == '': return redirect(request.url)
-
-        if file and allowed_file(file.filename):
-            real_data_path = os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(file.filename))
-            file.seek(0); file.save(real_data_path)
-            
-            class_col_name = request.form.get('class_col', None)
-            n_epochs = int(request.form.get('n_epochs', 10))
-            if not class_col_name or class_col_name == "none": class_col_name = None
-
-            real_df_raw = pd.read_csv(real_data_path)
-            
-            real_df_processed, inversion_maps = prepare_data(real_df_raw)
-            task_mode = 'unsupervised'
-            if class_col_name:
-                y_raw = real_df_raw[class_col_name]
-                analysis = analyze_columns(y_raw.to_frame())
-                task_mode = 'classification' if analysis['categorical'] else 'regression'
-            
-            max_k = len(real_df_raw) - 1
-            if task_mode == 'classification':
-                min_class_size = real_df_raw[class_col_name].value_counts().min()
-                max_k = min_class_size
-            
-            k_options = [k for k in [2, 3, 5] if k <= max_k]
-            if not k_options: k_options = [2]
-            
-            best_k, best_pcd = -1, float('inf')
-            
-            for k_val in k_options:
-                n_obs_test = min(20, int(request.form['n_obs']))
-                X, y = real_df_processed.copy(), None
-                if class_col_name: y = X.pop(class_col_name)
-                model = kNNMTD(n_obs=n_obs_test, k=k_val, n_epochs=1)
-                final_df_for_k = next(model.fit_generate(X, y), None)
-                if final_df_for_k is not None and not final_df_for_k.empty:
-                    current_pcd = PCD(real_df_processed, final_df_for_k)
-                    if not np.isnan(current_pcd) and current_pcd < best_pcd:
-                        best_pcd = current_pcd
-                        best_k = k_val
-            
-            if best_k == -1:
-                return render_template('error.html', error_message="Failed to generate data for any k value.")
-
-            n_obs = int(request.form['n_obs'])
-            X, y = real_df_processed.copy(), None
-            if class_col_name: y = X.pop(class_col_name)
-            model = kNNMTD(n_obs=n_obs, k=best_k, n_epochs=n_epochs)
-            pcd_over_time, ml_metrics_over_time, final_synthetic_df = [], {}, None
-            
-            for synthetic_batch_processed in model.fit_generate(X, y):
-                synthetic_batch_final = postprocess_data(synthetic_batch_processed, real_df_raw, inversion_maps)
-                pcd_over_time.append(PCD(real_df_raw, synthetic_batch_final))
-                
-                if task_mode != 'unsupervised':
-                    metrics = run_ml_utility_test(real_df_raw, synthetic_batch_final, class_col_name, task_mode)
+        
+        original_filename = secure_filename(file.filename)
+        real_data_path = os.path.join(app.config['UPLOAD_FOLDER'], original_filename)
+        file.seek(0); file.save(real_data_path)
+        
+        class_col_name = request.form.get('class_col', None)
+        if not class_col_name or class_col_name == "none": class_col_name = None
+        
+        real_df_raw = pd.read_csv(real_data_path, low_memory=False)
+        
+        original_row_count, original_col_count = real_df_raw.shape
+        task_mode = 'unsupervised'
+        if class_col_name:
+            y_raw = real_df_raw[class_col_name]
+            task_mode = 'classification' if y_raw.nunique() <= 25 else 'regression'
+        is_big_data_mode = 'big_data_mode' in request.form
+        data_to_process = real_df_raw
+        if is_big_data_mode:
+            sample_size_str = request.form.get('sample_size')
+            sample_size = int(sample_size_str) if sample_size_str and sample_size_str.isdigit() else app.config['DEFAULT_SAMPLE_SIZE']
+            if sample_size < original_row_count:
+                if task_mode == 'classification' and class_col_name:
+                    data_to_process = real_df_raw.groupby(class_col_name, group_keys=False).apply(lambda x: x.sample(n=min(len(x), int(np.ceil(sample_size * len(x) / original_row_count))), random_state=42)).sample(frac=1, random_state=42)
                 else:
-                    metrics = run_unsupervised_utility_test(real_df_processed, synthetic_batch_processed)
+                    data_to_process = real_df_raw.sample(n=sample_size, random_state=42)
+        
+        real_df_processed = prepare_data(data_to_process)
+        max_k = len(data_to_process) - 1
+        if task_mode == 'classification':
+            min_class_size = data_to_process[class_col_name].value_counts().min()
+            max_k = min(max_k, min_class_size)
+        k_options = [k for k in [3, 5, 7] if k < max_k]
+        best_k = k_options[0] if k_options else 3
+        n_obs, n_epochs = int(request.form['n_obs']), int(request.form['n_epochs'])
+        X, y = real_df_processed.copy(), None
+        if class_col_name: y = X.pop(class_col_name)
+        model = kNNMTD(n_obs=n_obs, k=best_k, n_epochs=n_epochs)
+        
+        pcd_over_time, ml_metrics_over_time = [], {}
+        initial_metrics, final_metrics = {}, {}
+        all_batches = list(model.fit_generate(X, y))
+        if not all_batches: return render_template('error.html', error_message="Failed to generate any synthetic data.")
 
+        for batch_processed in all_batches:
+            batch_final = postprocess_data(batch_processed, data_to_process)
+            pcd_over_time.append(PCD(data_to_process, batch_final))
+            if task_mode != 'unsupervised':
+                metrics = run_ml_utility_test(data_to_process, batch_final, class_col_name, task_mode)
                 for key, value in metrics.items():
                     ml_metrics_over_time.setdefault(key, []).append(value)
-                final_synthetic_df = synthetic_batch_final
-
-            timestamp = time.strftime("%Y%m%d-%H%M%S")
-            base_filename = secure_filename(file.filename).rsplit('.', 1)[0]
-            synthetic_filename = f"{base_filename}_sd_{timestamp}.csv"
-            final_synthetic_df.to_csv(os.path.join(app.config['GENERATED_FOLDER'], synthetic_filename), index=False)
-            
-            total_runtime = round(time.time() - start_time, 2)
-            
-            final_synthetic_df_processed, _ = prepare_data(final_synthetic_df)
-            pca_data = get_pca_data(real_df_processed, final_synthetic_df_processed)
-
-            initial_metrics = {"PCD": pcd_over_time[0] if pcd_over_time else "N/A"}
-            final_metrics = {"PCD": pcd_over_time[-1] if pcd_over_time else "N/A"}
-            for key, values in ml_metrics_over_time.items():
+        
+        final_synthetic_df = postprocess_data(all_batches[-1], data_to_process)
+        
+        if pcd_over_time:
+            initial_metrics["PCD"] = pcd_over_time[0]
+            final_metrics["PCD"] = pcd_over_time[-1]
+        for key, values in ml_metrics_over_time.items():
+            if values:
                 initial_metrics[key] = values[0]
                 final_metrics[key] = values[-1]
 
-            return render_template('results.html', 
-                                   pcd_scores=pcd_over_time, 
-                                   ml_metrics_over_time=ml_metrics_over_time,
-                                   generated_filename=synthetic_filename,
-                                   initial_metrics=initial_metrics,
-                                   final_metrics=final_metrics,
-                                   pca_data=pca_data,
-                                   pipeline_stages=[
-                                       ("Data Preparation", "Cleaned & encoded data"),
-                                       ("K-Optimization", f"Best k found: {best_k}"),
-                                       ("Generation", f"Created {n_obs} samples over {n_epochs} epochs"),
-                                       ("Post-processing", "Converted data to original format")
-                                   ],
-                                   input_options={
-                                       "Dataset": secure_filename(file.filename),
-                                       "Real Data": f"{len(real_df_raw)} rows, {len(real_df_raw.columns)} columns",
-                                       "Synthetic Data": f"{len(final_synthetic_df)} rows, {len(final_synthetic_df.columns)} columns",
-                                       "Task": task_mode.capitalize(),
-                                       "Target": class_col_name if class_col_name else "None",
-                                       "Total Runtime": f"{total_runtime} seconds"
-                                   })
-        else:
-            return render_template('error.html', error_message="Invalid file type.")
+        timestamp = time.strftime("%Y%m%d-%H%M%S")
+        synthetic_filename = f"synthetic_{timestamp}_{original_filename}"
+        final_synthetic_df.to_csv(os.path.join(app.config['GENERATED_FOLDER'], synthetic_filename), index=False)
+        
+        if 'augment' in request.form.get('generation_mode', ''):
+            final_df_to_save = pd.concat([real_df_raw, final_synthetic_df], ignore_index=True)
+            final_df_to_save.to_csv(os.path.join(app.config['GENERATED_FOLDER'], synthetic_filename), index=False)
+        
+        total_runtime = round(time.time() - start_time, 2)
 
+        return render_template('results.html', 
+                               pcd_scores=pcd_over_time,
+                               ml_metrics_over_time=ml_metrics_over_time,
+                               generated_filename=synthetic_filename,
+                               original_real_filename=original_filename,
+                               initial_metrics=initial_metrics,
+                               final_metrics=final_metrics,
+                               pipeline_stages=[
+                                   ("Data Preparation", "Cleaned & encoded data"),
+                                   ("Scaling Strategy", f"Processed {len(data_to_process)} rows" if is_big_data_mode else "Full dataset processed"),
+                                   ("Generation", f"Created {n_obs} new samples using k={best_k}"),
+                                   ("Evaluation", "Metrics calculated over epochs")
+                               ],
+                               input_options={
+                                   "Dataset": original_filename,
+                                   "Original Data": f"{original_row_count} rows, {original_col_count} columns",
+                                   "Final Synthetic Data": f"{len(final_synthetic_df)} rows, {len(final_synthetic_df.columns)} columns",
+                                   "Task": task_mode.capitalize(),
+                                   "Target": class_col_name if class_col_name else "None",
+                                   "Total Runtime": f"{total_runtime} seconds"
+                               })
     except Exception as e:
         app.logger.error(f"An unexpected error occurred: {traceback.format_exc()}")
         return render_template('error.html', error_message="An internal error occurred. Details have been logged.")
 
-@app.route('/download/<filename>')
-def download_file(filename):
-    return send_from_directory(app.config['GENERATED_FOLDER'], filename, as_attachment=True)
+@app.route('/analyze')
+def analyze():
+    real_filename = request.args.get('real')
+    synth_filename = request.args.get('synth')
+
+    if not real_filename or not synth_filename:
+        return "Error: Missing data file parameters.", 400
+
+    real_df = pd.read_csv(os.path.join(app.config['UPLOAD_FOLDER'], real_filename))
+    
+    all_columns = sorted(real_df.columns.tolist())
+
+    return render_template('analysis.html', 
+                           columns=all_columns, 
+                           real_filename=real_filename,
+                           synth_filename=synth_filename)
+
+@app.route('/get_analysis_data', methods=['POST'])
+def get_analysis_data():
+    data = request.json
+    real_filename = data.get('real_filename')
+    synth_filename = data.get('synth_filename')
+    analysis_type = data.get('analysis_type')
+    selected_columns = data.get('columns')
+
+    real_df = pd.read_csv(os.path.join(app.config['UPLOAD_FOLDER'], real_filename))
+    synth_df = pd.read_csv(os.path.join(app.config['GENERATED_FOLDER'], synth_filename))
+
+    if analysis_type == 'distribution':
+        col = selected_columns[0]
+        col_type = 'categorical' if pd.api.types.is_object_dtype(real_df[col]) or real_df[col].nunique() < 20 else 'numerical'
+        
+        if col_type == 'categorical':
+            real_counts = real_df[col].value_counts(normalize=True).to_dict()
+            synth_counts = synth_df[col].value_counts(normalize=True).to_dict()
+            return jsonify({ "type": "categorical", "real": real_counts, "synth": synth_counts })
+        else:
+            real_stats = { 'Mean': round(real_df[col].mean(), 2), 'Std Dev': round(real_df[col].std(), 2), 'Min': round(real_df[col].min(), 2), 'Max': round(real_df[col].max(), 2) }
+            synth_stats = { 'Mean': round(synth_df[col].mean(), 2), 'Std Dev': round(synth_df[col].std(), 2), 'Min': round(synth_df[col].min(), 2), 'Max': round(synth_df[col].max(), 2) }
+            return jsonify({ "type": "numerical", "real": real_df[col].dropna().tolist(), "synth": synth_df[col].dropna().tolist(), "stats": {"real": real_stats, "synth": synth_stats} })
+
+    elif analysis_type == 'correlation':
+        real_corr = associations(real_df[selected_columns], compute_only=True)['corr']
+        synth_corr = associations(synth_df[selected_columns], compute_only=True)['corr']
+        return jsonify({ 'labels': real_corr.columns.tolist(), 'real_matrix': real_corr.values.tolist(), 'synth_matrix': synth_corr.values.tolist() })
+
+    elif analysis_type == 'pca':
+        real_df_processed, synth_df_processed = prepare_data(real_df), prepare_data(synth_df)
+        pca_data = get_pca_data(real_df_processed, synth_df_processed)
+        return jsonify(pca_data)
+
+    elif analysis_type == 'ml_efficacy':
+        target_col = selected_columns[-1]
+        features = selected_columns[:-1]
+        if not features: return jsonify({"error": "Please select at least one feature and one target column."})
+        
+        real_subset = real_df[selected_columns]
+        synth_subset = synth_df[selected_columns]
+        task = 'classification' if real_subset[target_col].nunique() <= 25 else 'regression'
+
+        tstr_metrics = run_ml_utility_test(real_subset, synth_subset, target_col, task)
+        trts_metrics = run_ml_utility_test(synth_subset, real_subset, target_col, task)
+        return jsonify({'tstr': tstr_metrics, 'trts': trts_metrics})
+
+    elif analysis_type == 'privacy':
+        real_processed = prepare_data(real_df[selected_columns])
+        synth_processed = prepare_data(synth_df[selected_columns])
+        
+        real_processed['is_synthetic'] = 0
+        synth_processed['is_synthetic'] = 1
+        
+        combined = pd.concat([real_processed, synth_processed], ignore_index=True)
+        combined_aligned = align_columns(combined, combined.columns)
+        
+        X = combined_aligned.drop(columns=['is_synthetic'])
+        y = combined_aligned['is_synthetic']
+        
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+        
+        model = RandomForestClassifier(random_state=42).fit(X_train, y_train)
+        probs = model.predict_proba(X_test)[:, 1]
+        auc = roc_auc_score(y_test, probs)
+        return jsonify({'auc': round(auc, 4)})
+
+    return jsonify({"error": "Invalid analysis type"})
+
+
+@app.route('/download/<folder>/<filename>')
+def download_file(folder, filename):
+    folder_path = app.config.get(folder.upper() + '_FOLDER')
+    if not folder_path:
+        return "Invalid folder specified", 404
+    return send_from_directory(folder_path, filename, as_attachment=True)
 
 if __name__ == '__main__':
     app.run(debug=True)

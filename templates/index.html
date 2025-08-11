@@ -8,7 +8,6 @@
 </head>
 <body>
     <div class="main-grid">
-        <!-- Left Column: Information -->
         <div class="info-container">
             <div class="info-header">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="header-icon"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
@@ -21,13 +20,12 @@
                 <p>kNNMTD is specifically designed to overcome the challenges of generating high-quality synthetic data from small and imbalanced datasets, a common problem in many real-world scenarios.</p>
                 <ul>
                     <li><span class="highlight">Handles Minority Classes:</span> Its iterative, row-by-row approach ensures that even rare data patterns are learned and represented in the synthetic output.</li>
-                    <li><span class="highlight">Preserves Data Structure:</span> By finding neighbors for each attribute individually, it maintains the complex relationships and correlations present in the original data.</li>
+                    <li><span class="highlight">Preserves Data Structure:</span> By finding neighbors for each data point and diffusing per attribute, it maintains the complex relationships and correlations present in the original data.</li>
                     <li><span class="highlight">Automated & Smart:</span> This tool automates the entire pipeline, from data cleaning and preparation to finding the optimal 'k' value for the best results.</li>
                 </ul>
             </div>
         </div>
 
-        <!-- Right Column: Action Form -->
         <div class="container action-container">
             <h2>Start Generating</h2>
             <p>Upload a dataset to begin the analysis and generation process.</p>
@@ -39,8 +37,16 @@
                     <input type="file" id="dataset" name="dataset" accept=".csv" required>
                 </div>
 
-                <div id="analysis-spinner" class="hidden">
-                    <div class="spinner"></div><p>Analyzing dataset...</p>
+                <div id="big-data-section" class="hidden warning-box">
+                    <p><strong>Big Data Mode Activated:</strong> Your dataset has <strong id="row-count-display"></strong> rows. To ensure fast performance, we will run the algorithm on a smaller, representative sample.</p>
+                    <div class="form-group-inline">
+                        <input type="checkbox" id="big_data_mode" name="big_data_mode" checked>
+                        <label for="big_data_mode">Enable Sampling</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="sample_size">Sample Size</label>
+                        <input type="number" id="sample_size" name="sample_size" min="1000" step="1000">
+                    </div>
                 </div>
 
                 <div class="form-group" id="target-column-group">
@@ -68,6 +74,16 @@
                     <label for="n_obs">5. Number of Synthetic Samples</label>
                     <input type="number" id="n_obs" name="n_obs" value="100" min="10" step="10" required>
                 </div>
+                
+                <div class="form-group">
+                    <label>6. Generation Mode</label>
+                    <div class="radio-button-group">
+                        <input type="radio" id="mode-standalone" name="generation_mode" value="standalone" checked>
+                        <label for="mode-standalone">Generate New Dataset</label>
+                        <input type="radio" id="mode-augment" name="generation_mode" value="augment">
+                        <label for="mode-augment">Augment Real Data</label>
+                    </div>
+                </div>
 
                 <div class="progress-container hidden" id="progress-container">
                     <div class="progress-bar-label">Generating Data...</div>
@@ -85,16 +101,19 @@
         document.addEventListener('DOMContentLoaded', function() {
             const fileInput = document.getElementById('dataset');
             const targetSelect = document.getElementById('class_col');
-            const spinner = document.getElementById('analysis-spinner');
             const form = document.getElementById('generation-form');
             const generateBtn = document.getElementById('generate-btn');
             const progressContainer = document.getElementById('progress-container');
             const progressBarFill = document.getElementById('progress-bar-fill');
+            const bigDataSection = document.getElementById('big-data-section');
+            const rowCountDisplay = document.getElementById('row-count-display');
+            const sampleSizeInput = document.getElementById('sample_size');
 
             fileInput.addEventListener('change', async function() {
                 const file = this.files[0];
                 if (!file) return;
-                spinner.classList.remove('hidden');
+                
+                bigDataSection.classList.add('hidden');
                 targetSelect.innerHTML = '<option value="none">None (Unsupervised Task)</option>';
                 
                 const formData = new FormData();
@@ -104,22 +123,28 @@
                     const response = await fetch('/info', { method: 'POST', body: formData });
                     if (!response.ok) throw new Error('Server error during analysis.');
                     
-                    const columnData = await response.json();
-                    if (columnData.error) throw new Error(columnData.error);
+                    const data = await response.json();
+                    if (data.error) throw new Error(data.error);
 
-                    if (columnData.categorical && columnData.categorical.length > 0) {
+                    if (data.is_big_data) {
+                        rowCountDisplay.textContent = data.row_count.toLocaleString();
+                        sampleSizeInput.value = data.default_sample_size;
+                        bigDataSection.classList.remove('hidden');
+                    }
+
+                    if (data.categorical && data.categorical.length > 0) {
                         const optgroupCat = document.createElement('optgroup');
                         optgroupCat.label = 'Categorical (for Classification)';
-                        columnData.categorical.forEach(col => {
+                        data.categorical.forEach(col => {
                             optgroupCat.innerHTML += `<option value="${col.name}">${col.name}</option>`;
                         });
                         targetSelect.appendChild(optgroupCat);
                     }
 
-                    if (columnData.numerical && columnData.numerical.length > 0) {
+                    if (data.numerical && data.numerical.length > 0) {
                         const optgroupNum = document.createElement('optgroup');
                         optgroupNum.label = 'Numerical (for Regression)';
-                        columnData.numerical.forEach(col => {
+                        data.numerical.forEach(col => {
                             optgroupNum.innerHTML += `<option value="${col.name}">${col.name}</option>`;
                         });
                         targetSelect.appendChild(optgroupNum);
@@ -127,8 +152,6 @@
 
                 } catch (error) {
                     alert(`Error analyzing file: ${error.message}`);
-                } finally {
-                    spinner.classList.add('hidden');
                 }
             });
             
